@@ -1,7 +1,8 @@
 # Internet-services-lab-hateoas
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## Graphical HATEOAS Representation for REST API Development
+
+An important aspect of Restful APIs is the concept of “Hypermedia as the engine of application state” (HATEOAS). In this project we will develop a graphical REST API prototyping system as a web application and include the concept of HATEOAS.
 
 ## Prerequisites
 
@@ -20,7 +21,7 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
-## Running / Development
+## Running / Development on local machine
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
@@ -29,7 +30,7 @@ You will need the following things properly installed on your computer.
 
 Make use of the many generators for code, try `ember help generate` for more details
 
-### Running Tests
+### Running Tests on local machine
 
 * `ember test`
 * `ember test --server`
@@ -41,7 +42,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+Once we have completed all the development and testing we will be uploading web app either on Git Pages or other hosting options like AWS S3.
 
 ## Further Reading / Useful Links
 
@@ -50,4 +51,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
