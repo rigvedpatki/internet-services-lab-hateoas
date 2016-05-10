@@ -1,7 +1,7 @@
 {
   "name": "internet-services-lab-hateoas",
-  "version": "0.0.0",
-  "description": "Small description for internet-services-lab-hateoas goes here",
+  "version": "0.0.1",
+  "description": "This is a graphical REST API prototyping system that includes the concept of HATEOAS",
   "private": true,
   "directories": {
     "doc": "doc",
