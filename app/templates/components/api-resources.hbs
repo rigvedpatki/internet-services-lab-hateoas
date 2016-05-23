@@ -1,2 +1,15 @@
 <h3>Resources</h3>
-{{#link-to "resources" tagName="button"}}Resources{{/link-to}}
+<button {{action "createResource"}}>Create Resource</button>
+{{#link-to "resources" tagName="button"}}Show Resources{{/link-to}}
+
+<ul>
+{{#each model as |resource|}}
+  {{#if resource.path}}
+      <li>
+          <p>{{resource.path}}</p>
+          <p>{{resource.name}}</p>
+          <p>{{resource.description}}</p>
+      </li>
+  {{/if}}
+{{/each}}
+</ul>
