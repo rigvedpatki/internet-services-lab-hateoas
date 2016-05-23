@@ -6,6 +6,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('resources');
+  this.route('representations');
 });
 
 export default Router;
