@@ -4,8 +4,9 @@
 
 <ul>
 {{#each model as |resource|}}
-  {{#if resource.path}}
+  {{#if resource.resId}}
       <li>
+          <p>{{resource.resId}}</p>
           <p>{{resource.path}}</p>
           <p>{{resource.name}}</p>
           <p>{{resource.description}}</p>
