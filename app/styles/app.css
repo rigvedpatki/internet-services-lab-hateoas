@@ -1,9 +1,8 @@
 body {
-    background-color: #d0e4fe;
+    background-color: #9b9be2;
 }
 
 h1 {
-    color: orange;
     text-align: center;
 }
 
@@ -11,3 +10,9 @@ p {
     font-family: "Times New Roman";
     font-size: 20px;
 }
+.panel-height {
+  height: 300px; 
+  }
+  .panel-width{
+  	width: 200px;
+  }
