@@ -12,7 +12,7 @@
 
         <div id="navbar" class="collapse navbar-collapse">
          
-            %the add Endpoint button%
+           <!--the add Endpoint button-->
             <div class="pull-right">
                 <ul class="nav navbar-nav">
                     <li><button type="submit" class="btn navbar-btn btn-danger" name="Add Endpoint">Add Endpoint</button></li>
@@ -30,29 +30,36 @@
     </div>
 </nav>
 
+
+
 <div class="container">
+
   
-    <div class="span6">
-        <h2 style="padding-left:5px;">Graphical HATEOAS Representation for REST API Development</h2>
-        <p  style="padding-left:5px;">Welcome to the new design of our HATEOAS website.</p>
+    <div class="span2">
+        <h2>Graphical HATEOAS Representation for REST API Development</h2>
+        <p>Welcome to the new design of our HATEOAS website.</p>
 	</div>
 
-    <div class="span4">
+
+    <!--<div class="span1">
         <div class="panel panel-default">
             <div class="panel-heading">Features</div>
             <div class="panel-body panel-height">Here the features will be shown</div>
         </div>
     </div>
-
-    <div>
-      {{api-resources model=model store=store}}
-    </div>
+-->
+     <!-- resources bottun-->
+    
 
     <div class="row">
         <div class="col-md-12">
             {{outlet}}
         </div>    
     </div>	
+
+    <div class="centered">
+         {{api-resources model=model store=store}}
+    </div>
 
 </div><!-- /.container -->
 
