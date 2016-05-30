@@ -1,16 +1,16 @@
 <h3>Resources</h3>
 <button {{action "createResource"}}>Create Resource</button>
-{{#link-to "resources" tagName="button"}}Show Resources{{/link-to}}
-
 <ul>
 {{#each model as |resource|}}
-  {{#if resource.resId}}
+  {{#if resource.id}}
+    {{#link-to 'resource' resource.id}}
       <li>
-          <p>{{resource.resId}}</p>
+          <p>{{resource.id}}</p>
           <p>{{resource.path}}</p>
           <p>{{resource.name}}</p>
           <p>{{resource.description}}</p>
       </li>
+    {{/link-to}}
   {{/if}}
 {{/each}}
 </ul>

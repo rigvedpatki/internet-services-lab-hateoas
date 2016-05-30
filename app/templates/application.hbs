@@ -1,60 +1,59 @@
 <nav class="navbar navbar-inverse">
-      <div class="container">    
+    <div class="container">    
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand">Graphical HATEOAS</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Graphical HATEOAS</a>
         </div>
 
         <div id="navbar" class="collapse navbar-collapse">
          
-           %the add Endpoint button%
-		<div class="pull-right">
-		        <ul class="nav navbar-nav">
-		            <li><button type="submit" class="btn navbar-btn btn-danger" name="Add Endpoint">Add Endpoint</button></li>
-		        </ul>     
-		</div>
+            %the add Endpoint button%
+            <div class="pull-right">
+                <ul class="nav navbar-nav">
+                    <li><button type="submit" class="btn navbar-btn btn-danger" name="Add Endpoint">Add Endpoint</button></li>
+                </ul>     
+            </div>
 
-          <ul class="nav navbar-nav">
-           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          	<li><a href="#Help">Help</a></li>
-          </ul>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#Help">Help</a></li>
+            </ul>
             
-          </ul>
         </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    </div>
+</nav>
 
-    <div class="container">
-       <div class="row">
-       		<div class="col-md-12">
-       		    {{outlet}}
-       		</div>    
-       	</div>	
-
+<div class="container">
   
-      <div class="span6">
-    <h2 style="padding-left:5px;">Graphical HATEOAS Representation for REST API Development</h2>
-    <p  style="padding-left:5px;">Welcome to the new design of our HATEOAS website.</p>
+    <div class="span6">
+        <h2 style="padding-left:5px;">Graphical HATEOAS Representation for REST API Development</h2>
+        <p  style="padding-left:5px;">Welcome to the new design of our HATEOAS website.</p>
 	</div>
 
-     
+    <div class="span4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Features</div>
+            <div class="panel-body panel-height">Here the features will be shown</div>
+        </div>
+    </div>
 
-	<div class="span4">
-  <div class="panel panel-default">
-    <div class="panel-heading">Features</div>
-    <div class="panel-body panel-height">Here will the features be shown</div>
-  </div>
-</div>
+    <div>
+      {{api-resources model=model store=store}}
+    </div>
 
+    <div class="row">
+        <div class="col-md-12">
+            {{outlet}}
+        </div>    
+    </div>	
 
-    </div><!-- /.container -->
+</div><!-- /.container -->
 
 

@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('resources');
+  this.route('resource', { path: '/resources/:resource_id' });
   this.route('representations');
 });
 
