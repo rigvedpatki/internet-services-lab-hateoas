@@ -21,7 +21,7 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `npm install -g ember-cli`
 * `bower install`
-* 'bower install bootstrap'
+* `bower install bootstrap`
 
 
 ## Running / Development on local machine
