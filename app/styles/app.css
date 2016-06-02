@@ -5,25 +5,30 @@ body {
 }
 p {
     font-family: "Times New Roman";
-    padding-left: 250px;
     font-size: 20px;
+    padding-left: 300px;
+
 
 }
 h2 {
-	padding-left: 250px;
+	padding-left: 300px;
 	}
-.panel-height {
-  height: 10em; 
-  }
-.panel-width{
-  	width: 200px;
-  }     
-.panel-border{
- 	border: 1px;
- } 
 
 .centered {
-    margin: 0 auto;
     text-align: left;
-    width: 650px;
+    margin-left: 300px;
+
+}
+.pull-right{
+	margin-top: 8px;
+}
+.col-md-3{
+	background-color: #cecece;
+	margin-left: 8px;
+
+}
+.row{
+	margin-top: 8px;
+}
+.container{
 }
