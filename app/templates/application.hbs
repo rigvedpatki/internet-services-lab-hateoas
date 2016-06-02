@@ -14,9 +14,7 @@
          
            <!--the add Endpoint button-->
             <div class="pull-right">
-                <ul class="nav navbar-nav">
-                    <li><button type="submit" class="btn navbar-btn btn-danger" name="Add Endpoint">Add Endpoint</button></li>
-                </ul>     
+                  <button type="button" class="btn btn-danger">Add Endpoint</button>
             </div>
 
             <ul class="nav navbar-nav">
@@ -31,36 +29,74 @@
 </nav>
 
 
+   
 
-<div class="container">
-
-  
-    <div class="span2">
-        <h2>Graphical HATEOAS Representation for REST API Development</h2>
-        <p>Welcome to the new design of our HATEOAS website.</p>
-	</div>
-
-
-    <!--<div class="span1">
-        <div class="panel panel-default">
-            <div class="panel-heading">Features</div>
-            <div class="panel-body panel-height">Here the features will be shown</div>
-        </div>
+<div class="container-fluid">  <!-- container-fluid begin-->
+   
+<div class="row">           
+    <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#">Section</a></li>
+        <li><a>Pet</a></li>
+        <li><a>Computer</a></li>
+        <li><a>HATEOAS</a></li>
+      </ul>
     </div>
--->
-     <!-- resources bottun-->
+         <!-- container begin-->
+         <div class="container">
+          <div class="row">
+            <h2>Graphical HATEOAS Representation for REST API Development</h2>
+            <p>Welcome to the new design of our HATEOAS website.</p>
+	     </div>
+       </div><!-- container end-->
+</div> <!-- Row end-->
+     
+    <div class="row">
+       <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#">Resources</a></li>
+        <li><a href="#">Resource 1</a></li>
+        <li><a href="#">Resource 2</a></li>
+        <li><a href="#">Resource 3</a></li>
+      </ul>
+      </div>
+    </div>
+    
+    
+    <div class="row">
+     <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#">Entities</a></li>
+        <li><a href="#">Example 1</a></li>
+        <li><a href="#">Example 2</a></li>
+        <li><a href="#">Example 3</a></li>
+      </ul>
+     </div>
+    </div>
+    
+   
+
+   
     
 
-    <div class="row">
+  <!--  <div class="row">
         <div class="col-md-12">
             {{outlet}}
         </div>    
-    </div>	
-
-    <div class="centered">
-         {{api-resources model=model store=store}}
-    </div>
-
-</div><!-- /.container -->
+    </div>	-->
+ 
 
 
+
+
+</div><!-- /.container-fluid-end -->
+
+
+<div class="container">  <!-- /.container-begin -->
+ <!-- resources bottun-->
+    <div class="row">
+      <div class="centered">
+          {{api-resources model=model store=store}}
+      </div>
+            </div>
+</div> <!-- /.container-end -->
