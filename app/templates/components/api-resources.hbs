@@ -1,5 +1,5 @@
 <h3>Resources</h3>
-<button {{action "createResource"}}>Create Resource</button>
+{{#link-to "resources.new" tagName="button"}}New Resource{{/link-to}}
 <ul>
 {{#each model as |resource|}}
   {{#if resource.id}}
