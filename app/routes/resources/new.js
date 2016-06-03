@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     model() {
         var res = this.store.createRecord('resource', {
             id: this.nextResourceId,
-            path: '',
+            path: 'newPath',
             name: '',
             description: '',
             variables: '',

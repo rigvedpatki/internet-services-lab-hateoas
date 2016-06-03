@@ -1,7 +1,6 @@
 {{#if model.id}}
     <h2>Resource</h2>
     <form {{action "save" on="change"}}>
-      id:{{input value=model.id }}
       path:{{input value=model.path }}
       name:{{input value=model.name }}
       description:{{input value=model.description }}
