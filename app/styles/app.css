@@ -32,3 +32,7 @@ h2 {
 }
 .container{
 }
+.navbar-inverse .navbar-nav > .active > a {
+    color: #141313;
+    background-color: #efeff7;
+}
