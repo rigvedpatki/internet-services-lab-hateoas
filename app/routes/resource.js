@@ -5,8 +5,9 @@ export default Ember.Route.extend({
         return this.store.findRecord('resource', params.resource_id);
     },
     actions: {
-        save() {
-            Ember.Logger.log("Data is saved.");
+        save(resource) {
+            resource.save();
+            Ember.Logger.log("Data is saved for id: " + resource.id);
         }
     }
 });

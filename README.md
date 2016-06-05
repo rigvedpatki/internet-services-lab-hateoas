@@ -22,6 +22,7 @@ You will need the following things properly installed on your computer.
 * `npm install -g ember-cli`
 * `bower install`
 * `bower install bootstrap`
+* `ember install ember-localstorage-adapter`
 
 ## Addon Installed:
 * `ember-cli-github-pages`
