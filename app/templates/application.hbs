@@ -46,25 +46,31 @@
          <div class="container">
           <div class="row">
             <h2>Graphical HATEOAS Representation for REST API Development</h2>
-            <p>Welcome to the new design of our HATEOAS website.</p>
-            <div class="col-md-12">
-                {{outlet}}
-            </div>    
+            <p>Welcome to the new design of our HATEOAS website.</p> 
+
+             {{outlet}}
+              
 	     </div>
+	     
        </div><!-- container end-->
 </div> <!-- Row end-->
      
     <div class="row">
        <div class="col-md-3">
-          {{api-resources model=model store=store}}
+           <div class="cls">
+           <ul class="nav nav-pills nav-stacked">
+	        <li class="active"><a>Resources</a></li>
+	        <li> {{api-resources model=model store=store}}</li>
+
+         </ul>
        </div>
     </div>
-    
+    </div>
     
     <div class="row">
      <div class="col-md-3">
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#">Entities</a></li>
+        <li class="active"><a>Entities</a></li>
         <li><a href="#">Example 1</a></li>
         <li><a href="#">Example 2</a></li>
         <li><a href="#">Example 3</a></li>
