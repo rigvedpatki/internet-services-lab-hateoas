@@ -10,6 +10,7 @@ export default Ember.Route.extend({
             methods: ''
         });
         res.save();
+        Ember.get(this, 'flashMessages').success('Resource was created!');
         return res;
     },
     redirect(model, transition) {

@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('resources', function() {
       this.route('new');
+      this.route('delete', { path: '/resources/delete/:resource_id' });
   });
   this.route('resource', { path: '/resources/:resource_id' });
   this.route('representations');

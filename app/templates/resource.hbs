@@ -4,4 +4,10 @@
       name:{{input value=model.name }}
       description:{{input value=model.description }}
     </form>
+    
+    {{#link-to "resources.delete" model tagName="button"}}Delete Resource{{/link-to}}
+    
+    {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
 {{/if}}

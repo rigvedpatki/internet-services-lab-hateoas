@@ -23,6 +23,7 @@ You will need the following things properly installed on your computer.
 * `bower install`
 * `bower install bootstrap`
 * `ember install ember-localstorage-adapter`
+* `ember install ember-cli-flash`
 
 ## Addon Installed:
 * `ember-cli-github-pages`
@@ -63,3 +64,6 @@ When on the master branch after making the changes, do the following steps:
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+* Addons
+  * [local storage adaptor] (https://github.com/locks/ember-localstorage-adapter)
+  * [flash messages] (https://github.com/poteto/ember-cli-flash)
