@@ -1,17 +1,18 @@
-<h3>Resources</h3>
-{{#link-to "resources.new" tagName="button"}}New Resource{{/link-to}}
-<ul>
-{{#each model as |resource|}}
-  {{#if resource.id}}
-    {{#link-to 'resource' resource.id}}
-      <li>
-          {{#if resource.path}}
-            <p>{{resource.path}}</p>
-          {{else}}
-            <p>{{resource.id}}</p>
-          {{/if}}
-      </li>
-    {{/link-to}}
-  {{/if}}
-{{/each}}
+<ul class="nav nav-pills nav-stacked">
+  <li class="active"><a>Resources</a></li>
+  <li>{{#link-to "resources.new" tagName="button"}}New Resource{{/link-to}}</li>
+
+  {{#each model as |resource|}}
+    {{#if resource.id}}
+      {{#link-to 'resource' resource.id}}
+        <li>
+            {{#if resource.path}}
+              <p>{{resource.path}}</p>
+            {{else}}
+              <p>{{resource.id}}</p>
+            {{/if}}
+        </li>
+      {{/link-to}}
+    {{/if}}
+  {{/each}}
 </ul>

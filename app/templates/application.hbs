@@ -18,7 +18,7 @@
             </div>
 
             <ul class="nav navbar-nav">
-                <li class="active">{{#link-to 'application'}}Home{{/link-to}}</li>
+                <li>{{#link-to 'application'}}Home{{/link-to}}</li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#Help">Help</a></li>
@@ -48,11 +48,8 @@
 
   <div class="row">
             <div class="cls">
-           <ul class="nav nav-pills nav-stacked">
-	        <li class="active"><a>Resources</a></li>
-	        <li> {{api-resources model=model store=store}}</li>
+	        {{api-resources model=model store=store}}
 
-         </ul>
        </div>
     </div>
     
