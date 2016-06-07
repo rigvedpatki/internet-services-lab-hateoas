@@ -6,8 +6,7 @@ export default Ember.Route.extend({
             path: 'newPath',
             name: '',
             description: '',
-            variables: '',
-            methods: ''
+            variables: ''
         });
         res.save();
         Ember.get(this, 'flashMessages').success('Resource was created!');

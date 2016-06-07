@@ -33,7 +33,7 @@ h2 {
 }
 .container{
 }
-.navbar-inverse .navbar-nav > li> a >.active  {
+.navbar-inverse .navbar-nav > li > a.active  {
     color: #141313;
     background-color: #efeff7;
 }

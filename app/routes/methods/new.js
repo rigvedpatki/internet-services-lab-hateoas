@@ -1,17 +1,19 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
-  actions: {
-    createMethod(resource) {
+export default Ember.Route.extend({
+    model() {
         var method = this.store.createRecord('method', {
-            name: 'newMethod',
-            resource: resource,
+            method: 'newMethod',
+            name: '',
+            description: '',
             queryparams: '',
             responses: ''
         });
         method.save();
-        resource.save();
         Ember.get(this, 'flashMessages').success('Method was created!');
+        return method;
+    },
+    redirect(model, transition) {
+        this.transitionTo('method', model);
     }
-  }
 });

@@ -10,7 +10,12 @@ Router.map(function() {
       this.route('new');
       this.route('delete', { path: '/resources/delete/:resource_id' });
   });
+  this.route('methods', function() {
+      this.route('new');
+      this.route('delete', { path: '/methods/delete/:method_id' });
+  });
   this.route('resource', { path: '/resources/:resource_id' });
+  this.route('method', { path: '/methods/:method_id' });
   this.route('representations');
 });
 

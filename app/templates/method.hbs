@@ -1,0 +1,13 @@
+{{#if model.id}}
+    <form {{action "save" model on="change"}}>
+      method:{{input value=model.method }}
+      name:{{input value=model.name }}
+      description:{{input value=model.description }}
+    </form>
+    
+    {{#link-to "methods.delete" model tagName="button"}}Delete Method{{/link-to}}
+    
+    {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
+{{/if}}
