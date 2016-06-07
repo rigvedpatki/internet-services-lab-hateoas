@@ -13,7 +13,9 @@ p {
 h2 {
 	padding-left: 300px;
 	}
-
+h3 {
+	padding-left: 300px;
+	}	
 .centered {
     text-align: left;
     margin-left: 300px;
@@ -33,9 +35,7 @@ h2 {
 }
 .container{
 }
-.navbar-inverse .navbar-nav > li > a.active  {
-    color: #141313;
-    background-color: #efeff7;
+.navbar-inverse .navbar-nav > li > a .active  {
 }
 .cls{
 
