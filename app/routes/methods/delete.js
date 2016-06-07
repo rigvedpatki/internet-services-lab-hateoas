@@ -6,20 +6,19 @@ export default Ember.Route.extend({
         return this.store.findRecord('method', params.method_id);
     },
     afterModel(method, transition) {
-        let resourceId = "1";
+        const flashMessages = Ember.get(this, 'flashMessages');
         let methodId = method.id;
 
         method.get('resource').then(function(resource) {
-            resourceId = resource.id;
             resource.get('methods').then( function(methods) {
                 methods.removeObject(method.id);
                 resource.save();
                 method.destroyRecord();
                 
+                flashMessages.success('Method deleted!');
                 Ember.Logger.log("Data is destroyed for method id: " + methodId);
-                Ember.get(this, 'flashMessages').success('Method was deleted!');
             });
         });
-        this.transitionTo('resource', resourceId);
+        transition.abort();
     }
 });
