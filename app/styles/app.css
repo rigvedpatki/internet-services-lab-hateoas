@@ -16,6 +16,7 @@ h2 {
 h3 {
 	padding-left: 300px;
 	}	
+
 .centered {
     text-align: left;
     margin-left: 300px;
@@ -40,3 +41,24 @@ h3 {
 .cls{
 
 }
+.input-group .btn.dropdown-toggle {
+    float: none;
+}
+.dropdown-toggle{
+}
+.from-control{
+	margin-left: 750px;
+	background-color: blue;
+}
+.input-group{
+	margin-left: 750px;
+}
+
+#right
+{
+    position:absolute;
+    right:115px;
+    margin-top: 8px;
+}
+
+
