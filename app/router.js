@@ -18,6 +18,7 @@ Router.map(function() {
   this.route('method', { path: '/methods/:method_id' });
   this.route('representations');
   this.route('about');
+  this.route('contact');
 });
 
 export default Router;
