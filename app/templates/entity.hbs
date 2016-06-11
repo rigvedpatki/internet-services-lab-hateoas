@@ -1,0 +1,24 @@
+{{#if model.id}}
+    <form {{action "save" model on="change"}}>
+      name:{{input value=model.name }}
+      description:{{input value=model.description }}
+      type:{{input value=model.type }}
+    </form>
+
+    {{#link-to "entities.delete" model tagName="button"}}Delete Entity{{/link-to}}
+
+    {{#if model.properties}}
+        <h3>Properties</h3>
+        {{#each model.properties as |property|}}
+            <form {{action "save" property on="change"}}>
+              name:{{input value=property.name }}
+              description:{{input value=property.description }}
+            </form>
+            {{#link-to "properties.delete" property.id tagName="button"}}Delete Property{{/link-to}}
+        {{/each}}
+    {{/if}}
+
+    {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
+{{/if}}

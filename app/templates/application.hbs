@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse">
-    <div class="container">   
-    
+    <div class="container">
+
        <div class="col-lg-12">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -10,12 +10,12 @@
                 <span class="icon-bar"></span>
             </button>
             {{#link-to 'application' class="navbar-brand"}}Graphical HATEOAS{{/link-to}}
-        
+
 		 </div> <!-- col-lg-->
-		
+
 
         <div id="navbar" class="collapse navbar-collapse">
-	
+
 		 <!--the add API button-->
             <div class="pull-right">
                  <button type="button" class="btn btn-danger">Add API</button>
@@ -33,33 +33,24 @@
         	   </div>
         	    </div>
 
-   
-     
+
+
             <ul class="nav navbar-nav">
                 <li>{{#link-to 'application'}}Home{{/link-to}}</li>
                 <li>{{#link-to 'about'}}About{{/link-to}}</li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#Help">Help</a></li>
             </ul>
-            
+
         </div><!--/.nav-collapse -->
     </div>
      </div>
-
-   				 
-   			
-         
 </nav>
 
-
-   
-
 <div class="container-fluid">  <!-- container-fluid begin-->
-   
-    <div class="row">           
+    <div class="row">
         <div class="col-md-3">
           <div class ="row">
-
           <ul class="nav nav-pills nav-stacked">
             <li class="active"><a href="#">Section</a></li>
             <li><a>Pet</a></li>
@@ -67,37 +58,27 @@
             <li><a>HATEOAS</a></li>
           </ul>
           </div>
-
-
     <div class="row">
         <div class="cls">
             {{api-resources model=model store=store}}
         </div>
     </div>
-        
     <div class="row">
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a>Entities</a></li>
-        <li><a href="#">Example 1</a></li>
-        <li><a href="#">Example 2</a></li>
-        <li><a href="#">Example 3</a></li>
-      </ul>
+      <div class="cls">
+          {{api-entities model=model store=store}}
+      </div>
     </div>
-
-
     </div>
         <!-- container begin-->
         <div class="container">
             <div class="row">
                 <h2>Graphical HATEOAS Representation for REST API Development</h2>
-                <p>Welcome to the new design of our HATEOAS website.</p> 
+                <p>Welcome to the new design of our HATEOAS website.</p>
 
                 {{outlet}}
-              
             </div>
-         
        </div><!-- container end-->
     </div> <!-- Row end-->
-         
-  
+
+
 </div><!-- /.container-fluid-end -->

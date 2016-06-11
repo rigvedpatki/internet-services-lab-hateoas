@@ -16,8 +16,17 @@ Router.map(function() {
   });
   this.route('resource', { path: '/resources/:resource_id' });
   this.route('method', { path: '/methods/:method_id' });
-  this.route('representations');
   this.route('about');
+  this.route('entity', { path: '/entities/:entity_id' });
+  this.route('entities', function() {
+    this.route('new');
+    this.route('delete', { path: '/entities/delete/:enitity_id' });
+  });
+  this.route('property', { path: '/properties/:property_id' });
+  this.route('properties', function() {
+    this.route('new');
+    this.route('delete', { path: '/properties/delete/:property_id' });
+  });
 });
 
 export default Router;
