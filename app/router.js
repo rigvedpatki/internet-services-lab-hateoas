@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('resource', { path: '/resources/:resource_id' });
   this.route('method', { path: '/methods/:method_id' });
   this.route('about');
+<<<<<<< HEAD
   this.route('entity', { path: '/entities/:entity_id' });
   this.route('entities', function() {
     this.route('new');
@@ -27,6 +28,9 @@ Router.map(function() {
     this.route('new');
     this.route('delete', { path: '/properties/delete/:property_id' });
   });
+=======
+  this.route('contact');
+>>>>>>> master
 });
 
 export default Router;
