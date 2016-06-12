@@ -1,4 +1,5 @@
 {{#if model.id}}
+    <h2>Entity</h2>
     <form {{action "save" model on="change"}}>
       name:{{input value=model.name }}
       description:{{input value=model.description }}
