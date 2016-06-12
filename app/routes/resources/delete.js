@@ -7,6 +7,9 @@ export default Ember.Route.extend({
     },
     afterModel(resource, transition) {
         let resId = resource.id;
+        resource.get('methods').forEach( function(method) {
+            method.destroyRecord();
+        });
         resource.destroyRecord();
         Ember.Logger.log("Data is destroyed for id: " + resId);
         Ember.get(this, 'flashMessages').success('Resource was deleted!');

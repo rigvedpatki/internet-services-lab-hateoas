@@ -8,6 +8,8 @@
         {{#link-to linkToModel model.id}}
             {{#if model.name}}
               {{model.name}}
+            {{else if model.path}}
+              {{model.path}}
             {{else}}
               {{model.id}}
             {{/if}}

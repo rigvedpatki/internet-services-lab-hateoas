@@ -7,6 +7,9 @@ export default Ember.Route.extend({
   },
   afterModel(entity, transition) {
       let entityId = entity.id;
+      entity.get('properties').forEach( function(property) {
+          property.destroyRecord();
+      });
       entity.destroyRecord();
       Ember.Logger.log("Data is destroyed for id: " + entityId);
       Ember.get(this, 'flashMessages').success('Entity was deleted!');
