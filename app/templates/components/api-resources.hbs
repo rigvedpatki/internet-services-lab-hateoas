@@ -2,7 +2,7 @@
   <li class="active"><a>Resources</a></li>
   <li>{{#link-to "resources.new" tagName="button"}}New Resource{{/link-to}}</li>
 
-  {{#each model as |resource|}}
+  {{#each model.resources as |resource|}}
     {{#if resource.id}}
       <li>
         <p>{{#link-to 'resource' resource.id}}
