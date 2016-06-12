@@ -6,20 +6,19 @@ body {
 p {
     font-family: "Times New Roman";
     font-size: 20px;
-    padding-left: 300px;
-
+    padding-left: 20px;
 
 }
 h2 {
-	padding-left: 300px;
+	padding-left: 20px;
 	}
 h3 {
-	padding-left: 300px;
+	padding-left: 20px;
 	}	
 
 .centered {
     text-align: left;
-    margin-left: 300px;
+    margin-left: 20px;
 
 }
 .pull-right{
@@ -59,6 +58,11 @@ h3 {
     position:absolute;
     right:115px;
     margin-top: 8px;
+}
+.panel-default{
+	width: 990px;
+	margin-left: 360px;
+	background-color: #c0f2c0;
 }
 
 

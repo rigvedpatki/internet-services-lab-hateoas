@@ -5,13 +5,13 @@
   {{#each model.resources as |resource|}}
     {{#if resource.id}}
       <li>
-        <p>{{#link-to 'resource' resource.id}}
-            {{#if resource.path}}
-              <p>{{resource.path}}</p>
-            {{else}}
-              <p>{{resource.id}}</p>
-            {{/if}}
-        {{/link-to}}</p>
+        {{#link-to 'resource' resource.id}}
+          {{#if resource.path}}
+            {{resource.path}}
+          {{else}}
+            {{resource.id}}
+          {{/if}}
+        {{/link-to}}
         <button {{action "createMethod" resource}}>New Method</button>
       </li>
     {{/if}}

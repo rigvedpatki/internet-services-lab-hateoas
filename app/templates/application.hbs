@@ -23,23 +23,21 @@
 
             <!--Input API-->
               <div id="right">
-              <div class="input-group">
-			      <div class="input-group-btn">
-		 			<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-					          <span class="caret"></span>
-					        </button>
-        	  </div>
+                <div class="input-group">
+			             <div class="input-group-btn">
+		 			               <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+					                      <span class="caret"></span>
+					               </button>
+        	         </div>
         	   <input type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="API name...">
+        	     </div>
         	   </div>
-        	    </div>
-
-
 
             <ul class="nav navbar-nav">
                 <li>{{#link-to 'application'}}Home{{/link-to}}</li>
                 <li>{{#link-to 'about'}}About{{/link-to}}</li>
                 <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
-                <li><a href="#Help">Help</a></li>
+                <li>{{#link-to 'help'}}Help{{/link-to}}</li>
             </ul>
 
         </div><!--/.nav-collapse -->
@@ -69,16 +67,18 @@
       </div>
     </div>
     </div>
-        <!-- container begin-->
-        <div class="container">
-            <div class="row">
-                <h2>Graphical HATEOAS Representation for REST API Development</h2>
-                <p>Welcome to the new design of our HATEOAS website.</p>
+            <!-- Panel begin-->
+    <div class="panel panel-default">
+        <div class="panel-body">
 
-                {{outlet}}
-            </div>
-       </div><!-- container end-->
-    </div> <!-- Row end-->
+           <h2>Graphical HATEOAS Representation for REST API Development</h2>
+            <p>Welcome to the new design of our HATEOAS website.</p>
+
+            {{outlet}}
+
+        </div>
+      </div><!-- Panel end-->
+    </div> <!-- body end-->
 
 
 </div><!-- /.container-fluid-end -->

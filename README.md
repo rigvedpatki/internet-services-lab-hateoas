@@ -22,13 +22,10 @@ You will need the following things properly installed on your computer.
 * `npm install -g ember-cli`
 * `bower install`
 * `bower install bootstrap`
+* `emebr install ember-cli-github-pages`
 * `ember install ember-localstorage-adapter`
 * `ember install ember-cli-flash`
-
-## Addon Installed:
-* `ember-cli-github-pages`
-For more information on this Addon please follow this [link](https://github.com/poetic/ember-cli-github-pages)
-
+* `bower install -S rsvp`
 
 ## Running / Development on local machine
 
@@ -65,5 +62,7 @@ When on the master branch after making the changes, do the following steps:
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 * Addons
-  * [local storage adaptor] (https://github.com/locks/ember-localstorage-adapter)
-  * [flash messages] (https://github.com/poteto/ember-cli-flash)
+  * [ember git pages](https://github.com/poetic/ember-cli-github-pages)
+  * [local storage adaptor](https://github.com/locks/ember-localstorage-adapter)
+  * [flash messages](https://github.com/poteto/ember-cli-flash)
+  * [rsvp](https://github.com/tildeio/rsvp.js)
