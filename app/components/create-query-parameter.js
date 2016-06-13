@@ -6,7 +6,7 @@ export default Ember.Component.extend({
         var method = this.get('model');
         var queryParam = this.store.createRecord('query-parameter', {
             name: 'QueryParameter',
-            Type: 'String',
+            type: 'String',
             description: 'This is my query parameter.',
             example: '',
             method: method

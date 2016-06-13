@@ -18,4 +18,16 @@
     {{else}}
       <p>No Query Parameters yet.</p>
     {{/if}}
+
+    <h4>Responses</h4>
+    {{create-response model=model store=store}}
+    
+    {{#if model.responses}}
+      {{#each model.responses as |response|}}
+        {{show-response model=response}}
+        {{#link-to "responses.delete" response tagName="button"}}Delete Response{{/link-to}}
+      {{/each}}
+    {{else}}
+      <p>No Responses yet.</p>
+    {{/if}}
 {{/if}}

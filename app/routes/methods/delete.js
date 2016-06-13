@@ -12,6 +12,9 @@ export default Ember.Route.extend({
         method.get('queryParams').forEach( function(queryParam) {
             queryParam.destroyRecord();
         });
+        method.get('responses').forEach( function(response) {
+            response.destroyRecord();
+        });
         
         method.get('resource').then(function(resource) {
             resource.get('methods').then( function(methods) {
