@@ -8,6 +8,9 @@ export default Ember.Route.extend({
     afterModel(resource, transition) {
         let resId = resource.id;
         resource.get('methods').forEach( function(method) {
+            method.get('queryParams').forEach( function(queryParam) {
+                queryParam.destroyRecord();
+            });
             method.destroyRecord();
         });
         resource.destroyRecord();

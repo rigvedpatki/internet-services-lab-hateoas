@@ -9,6 +9,10 @@ export default Ember.Route.extend({
         const flashMessages = Ember.get(this, 'flashMessages');
         let methodId = method.id;
 
+        method.get('queryParams').forEach( function(queryParam) {
+            queryParam.destroyRecord();
+        });
+        
         method.get('resource').then(function(resource) {
             resource.get('methods').then( function(methods) {
                 methods.removeObject(method.id);
