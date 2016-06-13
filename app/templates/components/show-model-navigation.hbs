@@ -6,10 +6,10 @@
     {{#if model.id}}
       <li>
         {{#link-to linkToModel model.id}}
-            {{#if model.name}}
-              {{model.name}}
-            {{else if model.path}}
+            {{#if model.path}}
               {{model.path}}
+            {{else if model.name}}
+              {{model.name}}
             {{else}}
               {{model.id}}
             {{/if}}
