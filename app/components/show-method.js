@@ -5,7 +5,9 @@ export default Ember.Component.extend({
         save(method) {
             method.save();
             Ember.Logger.log("Data is saved for method id: " + method.id);
-            Ember.get(this, 'flashMessages').success('Saved!');
+            const flashMessage = Ember.get(this, 'flashMessages');
+            flashMessage.clearMessages();
+            flashMessage.success('Saved!');
         }
     }
 });
