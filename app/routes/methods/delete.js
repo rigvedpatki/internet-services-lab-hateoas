@@ -6,6 +6,7 @@ export default Ember.Route.extend({
         return this.store.findRecord('method', params.method_id);
     },
     afterModel(method, transition) {
+        const flashMessages = Ember.get(this, 'flashMessages');
         let methodId = method.id;
 
         method.get('resource').then(function(resource) {
