@@ -1,6 +1,10 @@
-<form {{action "save" model on="change"}}>
-  Status:{{input value=model.status}}
-  Name:{{input value=model.name}}
-  Description:{{input value=model.description}}
-  Entity:{{input value=model.entity}}
-</form>
+<h4 {{action "toggleBody"}}>{{model.status}}</h4>
+{{#if isShowingBody}}
+  <form {{action "save" model on="change"}}>
+    Status:{{input value=model.status}}
+    Name:{{input value=model.name}}
+    Description:{{input value=model.description}}
+    Entity:{{input value=model.entity}}
+  </form>
+  {{#link-to "responses.delete" model tagName="button"}}Delete Response{{/link-to}}
+{{/if}}

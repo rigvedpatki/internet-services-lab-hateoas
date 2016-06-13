@@ -1,6 +1,10 @@
-<form {{action "save" model on="change"}}>
-  Name:{{input value=model.name}}
-  Type:{{input value=model.type}}
-  Description:{{input value=model.description}}
-  Example:{{input value=model.example}}
-</form>
+<h4 {{action "toggleBody"}}>{{model.name}}</h4>
+{{#if isShowingBody}}
+  <form {{action "save" model on="change"}}>
+    Name:{{input value=model.name}}
+    Type:{{input value=model.type}}
+    Description:{{input value=model.description}}
+    Example:{{input value=model.example}}
+  </form>
+  {{#link-to "queryParameters.delete" model tagName="button"}}Delete Query Parameter{{/link-to}}
+{{/if}}

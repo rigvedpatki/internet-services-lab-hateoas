@@ -13,7 +13,7 @@
       <h3>Methods</h3>
       {{#if model.methods}}
         {{#each model.methods as |method|}}
-          <div>{{show-method model=method store=store}}</div>
+          {{show-method model=method store=store}}
         {{/each}}
       {{else}}
         <p>No methods yet.</p>

@@ -5,9 +5,7 @@ export default Ember.Component.extend({
     createProperty(entity) {
         var property = this.store.createRecord('property', {
             name: 'newProperty',
-            entity: entity,
-            queryparams: '',
-            responses: ''
+            entity: entity
         });
         property.save();
         entity.save();

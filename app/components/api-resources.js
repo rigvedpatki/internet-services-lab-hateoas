@@ -4,12 +4,10 @@ export default Ember.Component.extend({
   actions: {
     createMethod(resource) {
         var method = this.store.createRecord('method', {
-            method: 'newMethod',
-            name: 'This is my method.',
-            description: '',
-            resource: resource,
-            queryparams: '',
-            responses: ''
+            method: 'GET',
+            name: 'myMethod',
+            description: 'This is my method.',
+            resource: resource
         });
         method.save();
         resource.save();

@@ -1,33 +1,34 @@
 {{#if model.id}}
-    <form {{action "save" model on="change"}}>
-      Method:{{input value=model.method}}
-      Name:{{input value=model.name}}
-      Description:{{input value=model.description}}
-    </form>
-    
-    {{#link-to "methods.delete" model tagName="button"}}Delete Method{{/link-to}}
+    <h4 {{action "toggleBody"}}>{{model.method}}</h4>
+    {{#if isShowingBody}}
+        <form {{action "save" model on="change"}}>
+          Method:{{input value=model.method}}
+          Name:{{input value=model.name}}
+          Description:{{input value=model.description}}
+        </form>
+        
+        {{#link-to "methods.delete" model tagName="button"}}Delete Method{{/link-to}}
 
-    <h4>Query Parameters</h4>
-    {{create-query-parameter model=model store=store}}
-    
-    {{#if model.queryParams}}
-      {{#each model.queryParams as |queryParam|}}
-        {{show-query-parameter model=queryParam}}
-        {{#link-to "queryParameters.delete" queryParam tagName="button"}}Delete Query Parameter{{/link-to}}
-      {{/each}}
-    {{else}}
-      <p>No Query Parameters yet.</p>
-    {{/if}}
+        <h4>Query Parameters</h4>
+        {{create-query-parameter model=model store=store}}
+        
+        {{#if model.queryParams}}
+          {{#each model.queryParams as |queryParam|}}
+            {{show-query-parameter model=queryParam}}
+          {{/each}}
+        {{else}}
+          <p>No Query Parameters yet.</p>
+        {{/if}}
 
-    <h4>Responses</h4>
-    {{create-response model=model store=store}}
-    
-    {{#if model.responses}}
-      {{#each model.responses as |response|}}
-        {{show-response model=response}}
-        {{#link-to "responses.delete" response tagName="button"}}Delete Response{{/link-to}}
-      {{/each}}
-    {{else}}
-      <p>No Responses yet.</p>
+        <h4>Responses</h4>
+        {{create-response model=model store=store}}
+        
+        {{#if model.responses}}
+          {{#each model.responses as |response|}}
+            {{show-response model=response}}
+          {{/each}}
+        {{else}}
+          <p>No Responses yet.</p>
+        {{/if}}
     {{/if}}
 {{/if}}
