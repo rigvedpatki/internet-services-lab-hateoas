@@ -1,0 +1,25 @@
+{{#if model.id}}
+    <form {{action "save" model on="change"}}>
+      Method:{{input value=model.method}}
+      Name:{{input value=model.name}}
+      Description:{{input value=model.description}}
+    </form>
+    
+    {{#link-to "methods.delete" model tagName="button"}}Delete Method{{/link-to}}
+
+    <h4>Query Parameters</h4>
+    {{create-query-parameter model=model store=store}}
+    
+    {{#if model.queryParams}}
+      {{#each model.queryParams as |queryParam|}}
+        {{show-query-parameter model=queryParam}}
+        {{#link-to "queryParameters.delete" queryParam tagName="button"}}Delete Query Parameter{{/link-to}}
+      {{/each}}
+    {{else}}
+      <p>No Query Parameters yet.</p>
+    {{/if}}
+    
+    {{#each flashMessages.queue as |flash|}}
+      {{flash-message flash=flash}}
+    {{/each}}
+{{/if}}

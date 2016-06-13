@@ -6,6 +6,7 @@ export default Ember.Route.extend({
             method: 'newMethod',
             name: '',
             description: '',
+            resource: '',
             queryparams: '',
             responses: ''
         });

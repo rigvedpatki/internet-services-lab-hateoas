@@ -1,25 +1,26 @@
 {{#if model.id}}
-    <h2>Resource</h2>
-    <form {{action "save" model on="change"}}>
-      path:{{input value=model.path }}
-      name:{{input value=model.name }}
-      description:{{input value=model.description }}
-    </form>
+    <div>
+      <h2>Resource</h2>
+      <form {{action "save" model on="change"}}>
+        path:{{input value=model.path }}
+        name:{{input value=model.name }}
+        description:{{input value=model.description }}
+      </form>
+      {{#link-to "resources.delete" model tagName="button"}}Delete Resource{{/link-to}}
+    </div>
     
-    {{#link-to "resources.delete" model tagName="button"}}Delete Resource{{/link-to}}
-    
-    {{#if model.methods}}
-        <h3>Methods</h3>
+    <div>
+      <h3>Methods</h3>
+      {{#if model.methods}}
         {{#each model.methods as |method|}}
-            <form {{action "save" method on="change"}}>
-              name:{{input value=method.name }}
-              description:{{input value=method.description }}
-            </form>
-            {{#link-to "methods.delete" method.id tagName="button"}}Delete Method{{/link-to}}
+          <div>{{show-method model=method store=store}}</div>
         {{/each}}
-    {{/if}}
+      {{else}}
+        <p>No methods yet.</p>
+      {{/if}}
 
-    {{#each flashMessages.queue as |flash|}}
-      {{flash-message flash=flash}}
-    {{/each}}
+      {{#each flashMessages.queue as |flash|}}
+        {{flash-message flash=flash}}
+      {{/each}}
+    </div>
 {{/if}}
