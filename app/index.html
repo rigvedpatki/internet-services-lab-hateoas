@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Internet of Services Lab - Hateoas</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
 
-    {{content-for "head"}}
+    <title>Internet of Services Lab - Hateoas</title>
 
     <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/internet-services-lab-hateoas.css">
+
+    {{content-for "head"}}
 
     {{content-for "head-footer"}}
   </head>
   <body>
-    {{content-for "body"}}
-
     <script src="assets/vendor.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="assets/internet-services-lab-hateoas.js"></script>
 
-    {{content-for "body-footer"}}
+    <div class="container">
+      {{content-for "body"}}
+    
+      {{content-for "body-footer"}}
+    </div>
   </body>
 </html>
