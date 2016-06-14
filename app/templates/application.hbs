@@ -1,70 +1,79 @@
-<div class="row">
-  <div class="col-md-12">
-    <nav class="navbar navbar-inverse">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div> <!-- col-lg-->
+<nav class="navbar navbar-inverse">
+    
+
+       <div class="col-md-12">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+           
+
+		 </div> <!-- col-lg-->
 
 
-      <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="collapse navbar-collapse">
 
-        <!--the add API button-->
-        <div class="pull-right">
-          <button type="button" class="btn btn-danger">Add API</button>
-        </div>
-
-        <!--Input API-->
-        <div id="right">
-          <div class="input-group">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
+		 <!--the add API button-->
+            <div class="pull-right">
+                 <button type="button" class="btn btn-danger">Add API</button>
             </div>
-            <input type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="API name...">
-          </div>
+
+            <!--Input API-->
+              <div id="right">
+                <div class="input-group">
+			             <div class="input-group-btn">
+		 			               <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+					                      <span class="caret"></span>
+					               </button>
+        	         </div>
+        	   <input type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="API name...">
+        	     </div>
+        	   </div>
+
+            <ul class="nav navbar-nav">
+           
+             {{#link-to 'application' class="navbar-brand"}}Graphical HATEOAS{{/link-to}}
+                <li>{{#link-to 'application'}}Home{{/link-to}}</li>
+                <li>{{#link-to 'about'}}About{{/link-to}}</li>
+                <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+                <li>{{#link-to 'help'}}Help{{/link-to}}</li>
+            </ul>
+
+        </div><!--/.nav-collapse -->
+    </div>
+    
+</nav>
+
+<div class="container-fluid">  <!-- container-fluid begin-->
+    <div class="row">
+        <div class="col-md-3">
+        
+    <div class="row">
+        <div class="cls">
+            {{api-resources model=model.resources store=store}}
         </div>
-
-        {{#link-to 'application' class="navbar-brand"}}Graphical HATEOAS{{/link-to}}
-        <ul class="nav navbar-nav">
-          <li>{{#link-to 'application'}}Home{{/link-to}}</li>
-          <li>{{#link-to 'about'}}About{{/link-to}}</li>
-          <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
-          <li>{{#link-to 'help'}}Help{{/link-to}}</li>
-        </ul>
-
-      </div> <!--/.nav-collapse -->
-    </nav>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-3" id="sidebar">
-    <div class="row">
-      <div class="cls">
-        {{api-resources model=model.resources store=store}}
-      </div>
     </div>
     <div class="row">
       <div class="cls">
-        {{api-entities model=model.entities store=store}}
+          {{api-entities model=model.entities store=store}}
       </div>
     </div>
-  </div>
-  
-  <div class="col-md-9 col-md-offset-3" id="main">
-    <!-- Panel begin-->
+    </div>
+            <!-- Panel begin-->
     <div class="panel panel-default">
-      <div class="panel-body">
-        <h2>Graphical HATEOAS Representation for REST API Development</h2>
-        <p>Welcome to the new design of our HATEOAS website.</p>
-        {{outlet}}
-      </div>
-    </div> <!-- Panel end-->
-  </div>
-</div>
+        <div class="panel-body">
+
+           <h2>Graphical HATEOAS Representation for REST API Development</h2>
+            <p>Welcome to the new design of our HATEOAS website.</p>
+
+            {{outlet}}
+
+        </div>
+      </div><!-- Panel end-->
+    </div> <!-- body end-->
+
+
+</div><!-- /.container-fluid-end -->
