@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse">
     
 
-       <div class="col-md-12">
+       <div class="col-sm-12 col-md-12 col-lg-12">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -49,9 +49,9 @@
 
 <div class="container-fluid">  <!-- container-fluid begin-->
     <div class="row">
-        <div class="col-md-3">
-        
-    <div class="row">
+     
+        <div class="col-sm-2 col-md-3 col-lg-3">
+    	<div class="row">
         <div class="cls">
             {{api-resources model=model.resources store=store}}
         </div>
@@ -63,6 +63,7 @@
     </div>
     </div>
             <!-- Panel begin-->
+            <div class="col-sm-9 col-md-8 col-lg-8">
     <div class="panel panel-default">
         <div class="panel-body">
 
@@ -72,8 +73,8 @@
             {{outlet}}
 
         </div>
+        </div>
       </div><!-- Panel end-->
     </div> <!-- body end-->
-
-
+  
 </div><!-- /.container-fluid-end -->

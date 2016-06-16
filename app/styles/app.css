@@ -61,12 +61,15 @@ h3 {
     position:absolute;
     right:115px;
     margin-top: 8px;
-   margin-left: 210px;
+   max-width: 1000px;
+    min-width: 500px;
+
 }
 .panel-default{
 	width: 990px;
-	margin-left: 360px;
 	background-color: #cecece;
 }
 
 
+
+ 
