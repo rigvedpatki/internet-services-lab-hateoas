@@ -23,6 +23,7 @@ h3 {
 }
 .pull-right{
 	margin-top: 8px;
+
 }
 .col-md-3{
 	background-color: #cecece;
@@ -61,15 +62,24 @@ h3 {
     position:absolute;
     right:115px;
     margin-top: 8px;
-   max-width: 1000px;
-    min-width: 500px;
-
+    width: 1020px;
+    margin-right: 1%;
+    
 }
 .panel-default{
 	width: 990px;
 	background-color: #cecece;
 }
+@-ms-viewport{
+  width: device-width;
 
+}
+@-md-viewport{
+  width: device-width;
+}
+@-lg-viewport{
+  width: device-width;
+}
 
 
  
