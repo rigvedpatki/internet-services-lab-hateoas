@@ -1,24 +1,32 @@
 {{#if model.id}}
     <h2>Entity</h2>
+    <div class="jumbotron">
     <form {{action "save" model on="change"}}>
       name:{{input value=model.name }}
       description:{{input value=model.description }}
       type:{{input value=model.type }}
     </form>
+    <div id="res">
+    {{#link-to "entities.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
 
-    {{#link-to "entities.delete" model tagName="button"}}Delete Entity{{/link-to}}
+    </div>
+     </div>
 
+    <h3>Properties</h3>
+   <div class="jumbotron">
     {{#if model.properties}}
-        <h3>Properties</h3>
+        
         {{#each model.properties as |property|}}
             <form {{action "save" property on="change"}}>
               name:{{input value=property.name }}
               description:{{input value=property.description }}
             </form>
-            {{#link-to "properties.delete" property.id tagName="button"}}Delete Property{{/link-to}}
+            <div id="res">
+            {{#link-to "properties.delete" property.id tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
+            </div>
         {{/each}}
     {{/if}}
-
+</div>
     {{#each flashMessages.queue as |flash|}}
       {{flash-message flash=flash}}
     {{/each}}

@@ -1,6 +1,6 @@
 <ul class="nav nav-pills nav-stacked">
   <li class="active"><a>{{modelNamePlural}}</a></li>
-    <li>{{#link-to linkCreateNew tagName="button"}}New {{modelNameSingular}}{{/link-to}}</li>
+    <li>{{#link-to linkCreateNew tagName="button" class="btn btn-success btn-md round"}}Add {{modelNameSingular}}{{/link-to}}</li>
 
   {{#each models as |model|}}
     {{#if model.id}}
@@ -14,7 +14,7 @@
               {{model.id}}
             {{/if}}
         {{/link-to}}
-        <button {{action createFirstSubModel model}}>New {{firstSubModelNameSingular}}</button>
+        <button class="btn btn-primary btn-md round"{{action createFirstSubModel model}}>Add {{firstSubModelNameSingular}}</button>
       </li>
     {{/if}}
   {{/each}}
