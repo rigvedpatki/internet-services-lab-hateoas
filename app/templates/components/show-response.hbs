@@ -1,7 +1,11 @@
 <h4 {{action "toggleBody"}}>{{model.status}}</h4>
 {{#if isShowingBody}}
   <form {{action "save" model on="change"}}>
-    Status:{{input value=model.status}}
+    Status:{{#x-select value=model.status}}
+      {{#each statusCodes as |code|}}
+        {{#x-option selected=(if (eq model.status code) "selected" "") value=code}}{{code}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
     Name:{{input value=model.name}}
     Description:{{input value=model.description}}
     Entity:{{input value=model.entity}}
