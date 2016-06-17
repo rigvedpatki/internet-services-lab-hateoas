@@ -6,10 +6,10 @@
           Name:{{input value=model.name}}
           Description:{{input value=model.description}}
         </form>
-        
-        {{#link-to "methods.delete" model tagName="button"}}Delete Method{{/link-to}}
-
-        <h4>Query Parameters</h4>
+         <div id="res">
+        {{#link-to "methods.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
+        </div>
+        <!-- <h4>Query Parameters</h4> -->
         {{create-query-parameter model=model store=store}}
         
         {{#if model.queryParams}}
@@ -20,7 +20,7 @@
           <p>No Query Parameters yet.</p>
         {{/if}}
 
-        <h4>Responses</h4>
+        <!-- <h4>Responses</h4> -->
         {{create-response model=model store=store}}
         
         {{#if model.responses}}

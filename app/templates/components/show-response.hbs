@@ -6,5 +6,7 @@
     Description:{{input value=model.description}}
     Entity:{{input value=model.entity}}
   </form>
-  {{#link-to "responses.delete" model tagName="button"}}Delete Response{{/link-to}}
+  <div id="res">
+  {{#link-to "responses.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
+  </div>
 {{/if}}

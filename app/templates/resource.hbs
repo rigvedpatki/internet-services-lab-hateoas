@@ -1,16 +1,21 @@
 {{#if model.id}}
     <div>
       <h2>Resource</h2>
+       <div class="jumbotron">
       <form {{action "save" model on="change"}}>
         path:{{input value=model.path }}
         name:{{input value=model.name }}
         description:{{input value=model.description }}
       </form>
-      {{#link-to "resources.delete" model tagName="button"}}Delete Resource{{/link-to}}
+      <div id="res">
+      {{#link-to "resources.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
     </div>
-    
+    </div>
+    </div>
+
     <div>
       <h3>Methods</h3>
+      <div class="jumbotron">
       {{#if model.methods}}
         {{#each model.methods as |method|}}
           {{show-method model=method store=store}}
@@ -23,4 +28,5 @@
         {{flash-message flash=flash}}
       {{/each}}
     </div>
+</div>
 {{/if}}
