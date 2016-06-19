@@ -2,7 +2,11 @@
   <h4 {{action "toggleBody"}}>{{model.method}}</h4>
   {{#if isShowingBody}}
     <form {{action "save" model on="change"}}>
-      Method:{{input value=model.method}}
+      Method:{{#x-select value=model.method}}
+      {{#each methods as |method|}}
+        {{#x-option selected=(if (eq model.method method) "selected" "") value=method}}{{method}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
       Name:{{input value=model.name}}
       Description:{{input value=model.description}}
     </form>
