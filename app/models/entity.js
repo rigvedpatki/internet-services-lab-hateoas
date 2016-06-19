@@ -6,5 +6,6 @@ export default Model.extend({
   name: attr('string'),
   description: attr('string'),
   type: attr('string'),
-  properties: hasMany('property') 
+  properties: hasMany('property'),
+  responses: hasMany('response')
 });

@@ -6,6 +6,6 @@ export default Model.extend({
   status: attr('string'),
   name: attr('string'),
   description: attr('string'),
-  entity: attr('string'),
-  method: belongsTo('method')
+  method: belongsTo('method'),
+  entity: belongsTo('entity')
 });
