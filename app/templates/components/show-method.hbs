@@ -1,5 +1,9 @@
 {{#if model.id}}
-  <h4 {{action "toggleBody"}}>{{model.method}}</h4>
+
+
+<h4  {{action "toggleBody"}}>  <span  data-toggle="collapse" class="collapsed" class="caret caret-right" ></span>
+{{model.method}}</h4>
+
   {{#if isShowingBody}}
     <form {{action "save" model on="change"}}>
       Method:{{#x-select value=model.method}}
@@ -16,7 +20,8 @@
     </div>
     <!-- <h4>Query Parameters</h4> -->
     {{create-query-parameter model=model store=store}}
-    
+           
+
     {{#if model.queryParams}}
       {{#each model.queryParams as |queryParam|}}
         {{show-query-parameter model=queryParam}}
@@ -27,7 +32,6 @@
 
     <!-- <h4>Responses</h4> -->
     {{create-response model=model store=store}}
-    
     {{#if model.responses}}
       {{#each model.responses as |response|}}
         {{show-response model=response entities=entities}}

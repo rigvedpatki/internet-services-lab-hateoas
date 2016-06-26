@@ -1,9 +1,11 @@
-<h4 {{action "toggleBody"}}>{{model.name}}</h4>
+<h4 {{action "toggleBody"}}><span class="caret caret-right"></span>{{model.name}}</h4>
 {{#if isShowingBody}}
   <form {{action "save" model on="change"}}>
     Name:{{input value=model.name}}
     Type:{{input value=model.type}}
     Description:{{input value=model.description}}
+  </form>
+  <form id="dd" {{action "save" model on="change"}}>
     Example:{{input value=model.example}}
   </form>
   <div id="res">
