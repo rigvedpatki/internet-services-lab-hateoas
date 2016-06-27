@@ -1,21 +1,36 @@
 <ul class="nav nav-pills nav-stacked">
   <li class="active"><a>{{modelNamePlural}}</a></li>
     <li>{{#link-to linkCreateNew tagName="button" class="btn btn-success btn-md round"}}Add {{modelNameSingular}}{{/link-to}}</li>
-
+    <ul class="nav nav-list">
   {{#each models as |model|}}
     {{#if model.id}}
+      <li><label class="nav nav-header" {{action "toggleBody"}} >{{model.name}}</label></li>
+      {{#if isShowingTree }}
       <li>
         {{#link-to linkToModel model.id}}
             {{#if model.path}}
               {{model.path}}
             {{else if model.name}}
               {{model.name}}
-            {{else}}
-              {{model.id}}
             {{/if}}
         {{/link-to}}
-        <button class="btn btn-primary btn-md round"{{action createFirstSubModel model}}>Add {{firstSubModelNameSingular}}</button>
-      </li>
+    </li>
+    <li><button class="btn btn-primary btn-md round "{{action createFirstSubModel model}}>Add {{firstSubModelNameSingular}}</button></li>
+      <ul class="nav nav-list tree">
+          {{#each model.methods as |method|}}
+            {{#if method.id}}
+            <li>
+              {{#if method.method}}
+                {{method.method}}
+              {{else if method.name}}
+                {{method.name}}
+              {{/if}}
+            </li>
+            {{/if}}
+          {{/each}}
+    </ul>
+    {{/if}}
     {{/if}}
   {{/each}}
+</ul>
 </ul>
