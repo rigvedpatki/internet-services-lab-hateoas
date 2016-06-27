@@ -10,21 +10,37 @@ export default Ember.Route.extend({
       let responseId = response.id;
 
       response.get('entity').then(function(entity) {
-        entity.get('responses').then(function(entityResponses) {
-          entityResponses.removeObject(responseId);
-          
+        Ember.Logger.log("entity: " + entity);
+        if (entity && entity.hasOwnProperty('responses')) {
+          entity.get('responses').then(function(entityResponses) {
+            Ember.Logger.log("entityResponse: " + entityResponses);
+            entityResponses.removeObject(responseId);
+            
+            response.get('method').then(function(method) {
+              method.get('responses').then(function(methodResponses) {
+                methodResponses.removeObject(responseId);
+                response.destroyRecord();
+                
+                entity.save();
+                method.save();
+                flashMessages.success('Response deleted!');
+                Ember.Logger.log("Data is destroyed for response with id: " + responseId);
+              });
+            });
+          });
+        } else {
+          Ember.Logger.log("Entity has no responses");
           response.get('method').then(function(method) {
             method.get('responses').then(function(methodResponses) {
               methodResponses.removeObject(responseId);
               response.destroyRecord();
               
-              entity.save();
               method.save();
               flashMessages.success('Response deleted!');
               Ember.Logger.log("Data is destroyed for response with id: " + responseId);
             });
           });
-        });
+        }
       });
       transition.abort();
     }
