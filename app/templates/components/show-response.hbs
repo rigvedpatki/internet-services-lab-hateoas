@@ -1,4 +1,4 @@
-<h4 {{action "toggleBody"}}>{{model.status}}</h4>
+<h4 {{action "toggleBody"}}> < span class="caret caret-right"> </span>{{model.status}} </h4>
 {{#if isShowingBody}}
   <form {{action "save" model on="change"}}>
     Status:{{#x-select value=model.status}}
@@ -7,6 +7,9 @@
       {{/each}}
     {{/x-select}}
     Name:{{input value=model.name}}
+   
+  </form>
+  <form id="en"{{action "save" model on="change"}}>
     Description:{{input value=model.description}}
     Entity:
       {{#if entities}}
