@@ -1,10 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  isShowingTree:false,
   actions: {
-    toggleBody(){
-      this.toggleProperty('isShowingTree');
+    toggleModel(item){
+      if (! item) {
+        return;
+      }
+      item.toggleProperty('isExpanded', true);
     }
   }
 });

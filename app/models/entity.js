@@ -7,5 +7,6 @@ export default Model.extend({
   description: attr('string'),
   type: attr('string'),
   properties: hasMany('property'),
-  responses: hasMany('response')
+  responses: hasMany('response'),
+  isExpanded: attr('boolean')
 });

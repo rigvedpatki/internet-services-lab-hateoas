@@ -6,6 +6,6 @@ export default Model.extend({
   path: attr('string'),
   name: attr('string'),
   description: attr('string'),
-  variables: attr(),
-  methods: hasMany('method')
+  methods: hasMany('method'),
+  isExpanded: attr('boolean')
 });
