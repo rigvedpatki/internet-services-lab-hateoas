@@ -134,3 +134,12 @@ h4 {
     border-left: 8px solid;
     display: inline-block;
 }
+.caret-down{
+	position: inline-block;
+	cursor: pointer;
+	border-bottom: 6px solid transparent;
+	border-top: 6px	solid;
+	border-left: 6px solid transparent; 
+	border-right: 6px solid transparent;
+	display: inline-block;
+}

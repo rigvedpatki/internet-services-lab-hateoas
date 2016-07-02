@@ -1,7 +1,7 @@
 {{#if model.id}}
 
 
-<h4  {{action "toggleBody"}}>  <span  data-toggle="collapse" class="collapsed" class="caret caret-right" ></span>
+<h4  {{action "toggleBody"}}>  < span class="caret {{if isShowingBody "caret-down" "caret-right"}}"> </span>
 {{model.method}}</h4>
 
   {{#if isShowingBody}}

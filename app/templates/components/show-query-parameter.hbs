@@ -1,4 +1,4 @@
-<h4 {{action "toggleBody"}}>< span class="caret caret-right"> </span>{{model.name}}</h4>
+<h4 {{action "toggleBody"}}>< span class="caret {{if isShowingBody "caret-down" "caret-right"}}"> </span> {{model.name}}</h4>
 {{#if isShowingBody}}
   <form {{action "save" model on="change"}}>
     Name:{{input value=model.name}}
