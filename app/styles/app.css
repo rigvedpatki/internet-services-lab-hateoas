@@ -143,3 +143,16 @@ h4 {
 	border-right: 6px solid transparent;
 	display: inline-block;
 }
+.btn-sm{
+	margin-top: -65px;
+	margin-left: 280px;
+	position: static;
+}
+.nav-stacked{
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+     
+
+}
