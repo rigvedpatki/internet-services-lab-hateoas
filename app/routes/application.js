@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       resources: this.store.findAll('resource'),
       entities: this.store.findAll('entity'),
-      apiurl: this.store.findAll('api-url')
+      apiurl: this.store.findAll('apiurl')
     });
   }
 });

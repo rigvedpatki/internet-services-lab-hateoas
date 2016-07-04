@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('apiurl', 'Unit | Model | api url', {
+moduleForModel('apiurl', 'Unit | Model | apiurl', {
   // Specify the other units that are required for this test.
   needs: []
 });

@@ -39,6 +39,13 @@ Router.map(function() {
 
   this.route('contact');
   this.route('help');
+
+  this.route('apiurl', { path: '/apiurls/:apiurl_id' });
+
+  this.route('apiurls', function() {
+    this.route('new');
+    this.route('delete', { path: '/apiurls/delete/:apiurl_id' });
+  });
 });
 
 export default Router;

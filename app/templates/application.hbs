@@ -15,23 +15,7 @@
 
         <div id="navbar" class="collapse navbar-collapse">
 
-		 <!--the add API button-->
-            <div class="pull-right">
-                 <button type="button" class="btn btn-danger">Add API</button>
-                 <!--{{#link-to 'api-url' model=model.api-url tagName='button'class="btn btn-danger btn-xs"}}Add-API{{/link-to}}-->
-            </div>
-
-            <!--Input API-->
-              <div id="right">
-                <div class="input-group">
-			             <div class="input-group-btn">
-		 			               <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-					                      <span class="caret"></span>
-					               </button>
-        	         </div>
-        	   <input type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="API name...">
-        	     </div>
-        	   </div>
+          {{show-apiurls model=model.apiurl store=store}}
 
             <ul class="nav navbar-nav">
 
