@@ -20,17 +20,29 @@
         {{#if model.isExpanded }}
         <li><button class="btn btn-primary btn-md round "{{action createFirstSubModel model}}>Add {{firstSubModelNameSingular}}</button></li>
         <ul class="nav nav-list tree">
-          {{#each model.methods as |method|}}
-            {{#if method.id}}
-            <li>
-              {{#if method.method}}
-                {{method.method}}
-              {{else if method.name}}
-                {{method.name}}
+          {{#if submodelIsMethod}}
+            {{#each model.methods as |method|}}
+              {{#if method.id}}
+              <li>
+                {{#if method.method}}
+                  {{method.method}}
+                {{else if method.name}}
+                  {{method.name}}
+                {{/if}}
+              </li>
               {{/if}}
-            </li>
-            {{/if}}
-          {{/each}}
+            {{/each}}
+          {{else}}
+            {{#each model.properties as |property|}}
+              {{#if property.id}}
+              <li>
+                {{#if property.name}}
+                  {{property.name}}
+                {{/if}}
+              </li>
+              {{/if}}
+            {{/each}}
+          {{/if}}
         </ul>
         {{/if}}
       {{/if}}
