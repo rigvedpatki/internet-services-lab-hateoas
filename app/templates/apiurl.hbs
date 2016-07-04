@@ -3,10 +3,15 @@
     <h2>API URL</h2>
     <div class="jumbotron">
       <form {{action "save" model.apiurl on="change"}}>
-        Protocol:{{input value=model.protocol }}
-        Port:{{input value=model.port }}
-        Domain:{{input value=model.domain }}
-        Base Path:{{input value=model.base_path }}
+        Protocol:{{#x-select value=model.protocol}}
+        {{#each protocols as |protocol|}}
+        {{#x-option selected=(if (eq model.protocol protocol) "selected" "") value=protocol}}{{protocol}}{{/x-option}}
+        {{/each}}
+        {{/x-select}}<br>
+        Port:{{input value=model.port }}<br>
+        Domain:{{input value=model.domain }}<br>
+        Base Path:{{input value=model.base_path }}<br>
+        Endpoint : {{input value=model.endpoint_url}}<br>
       </form>
       <div id="res">
         {{#link-to "apiurls.delete" model.apiurl tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
