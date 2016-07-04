@@ -9,6 +9,15 @@ export default Model.extend({
   port: attr('string'),
   domain: attr('string'),
   base_path: attr('string'),
-  endpoint_uri: attr('string')
+  endpoint_uri: Ember.computed('protocol','domain','base_path', function(){
+    var protocol_url = null;
+    if (this.get('protocol') == 'HTTP/1.1'){
+      protocol_url = 'http://'
+    }else if (this.get('protocol') == 'HTTPS/1.1') {
+      protocol_url = 'https://'
+    }
+    var final_url = protocol_url.concat(protocol_url,this.get('domain'),this.get('base_path'));
+    return `final_url` ;
+  })
 
 });

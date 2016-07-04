@@ -17,7 +17,7 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    
+
     // Settings for the flash messages
     flashMessageDefaults: {
       // flash message defaults
@@ -53,8 +53,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.locationType = 'hash';
-    ENV.baseURL = '/internet-services-lab-hateoas/';
     ENV.locationType = 'hash';
     ENV.baseURL = '/internet-services-lab-hateoas/';
   }
