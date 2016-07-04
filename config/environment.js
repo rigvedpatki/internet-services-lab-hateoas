@@ -55,6 +55,8 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.baseURL = '/internet-services-lab-hateoas/';
+    ENV.locationType = 'hash';
+    ENV.baseURL = '/internet-services-lab-hateoas/';
   }
 
   return ENV;
