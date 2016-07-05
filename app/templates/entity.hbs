@@ -1,33 +1,27 @@
 {{#if model.id}}
-    <h2>Entity</h2>
-    <div class="jumbotron">
+  <h2>Entity</h2>
+  <div class="jumbotron">
     <form {{action "save" model on="change"}}>
       name:{{input value=model.name }}
       description:{{input value=model.description }}
       type:{{input value=model.type }}
     </form>
     <div id="res">
-    {{#link-to "entities.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
-
+      {{#link-to "entities.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
     </div>
-     </div>
+  </div>
 
-    <h3>Properties<button id="mtd" class="btn btn-primary btn-md round "{{action "createProperty" model}}>Add </button></h3>
-   <div class="jumbotron">
+  {{create-property model=model store=store}}
+  <div class="jumbotron">
     {{#if model.properties}}
-        
-        {{#each model.properties as |property|}}
-            <form {{action "save" property on="change"}}>
-              name:{{input value=property.name }}
-              description:{{input value=property.description }}
-            </form>
-            <div id="res">
-            {{#link-to "properties.delete" property.id tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
-            </div>
-        {{/each}}
+      {{#each model.properties as |property|}}
+        {{show-property model=property}}
+      {{/each}}
+    {{else}}
+      <p>No Properties yet.</p>
     {{/if}}
-</div>
-    {{#each flashMessages.queue as |flash|}}
-      {{flash-message flash=flash}}
-    {{/each}}
+  </div>
+  {{#each flashMessages.queue as |flash|}}
+    {{flash-message flash=flash}}
+  {{/each}}
 {{/if}}

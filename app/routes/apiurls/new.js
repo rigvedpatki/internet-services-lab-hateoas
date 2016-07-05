@@ -10,7 +10,6 @@ export default Ember.Route.extend({
       endpoint_url: ''
     });
     var_apiurl.save();
-    Ember.get(this, 'flashMessages').success('API URL was created!');
 
     return var_apiurl;
   },

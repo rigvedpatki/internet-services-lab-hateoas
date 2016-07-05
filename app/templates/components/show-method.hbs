@@ -1,9 +1,9 @@
 {{#if model.id}}
 
-<h4  {{action "toggleBody"}}>  < span class="caret {{if isShowingBody "caret-down" "caret-right"}}"> </span>
+<h4  {{action "toggleVisibility" model}}>  < span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>
 {{model.method}}</h4>
 
-  {{#if isShowingBody}}
+  {{#if model.visible}}
     <form {{action "save" model on="change"}}>
       Method:{{#x-select value=model.method}}
       {{#each methods as |method|}}

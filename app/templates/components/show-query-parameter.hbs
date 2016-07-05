@@ -1,8 +1,12 @@
-<h4 {{action "toggleBody"}}>< span class="caret {{if isShowingBody "caret-down" "caret-right"}}"> </span> {{model.name}}</h4>
-{{#if isShowingBody}}
+<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{model.name}}</h4>
+{{#if model.visible}}
   <form {{action "save" model on="change"}}>
     Name:{{input value=model.name}}
-    Type:{{input value=model.type}}
+    Type:{{#x-select value=model.type}}
+      {{#each types as |type|}}
+        {{#x-option selected=(if (eq model.type type) "selected" "") value=type}}{{type}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
     Description:{{input value=model.description}}
  
   </form>

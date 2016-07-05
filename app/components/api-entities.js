@@ -9,7 +9,6 @@ export default Ember.Component.extend({
         });
         property.save();
         entity.save();
-        Ember.get(this, 'flashMessages').success('Property was created!');
     }
   }
 });

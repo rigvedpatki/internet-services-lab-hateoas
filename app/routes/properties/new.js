@@ -10,7 +10,6 @@ export default Ember.Route.extend({
           responses: ''
       });
       property.save();
-      Ember.get(this, 'flashMessages').success('Property was created!');
       return property;
   },
   redirect(model, transition) {

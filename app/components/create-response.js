@@ -8,11 +8,11 @@ export default Ember.Component.extend({
             status: '200 - OK',
             name: 'myOKResponse',
             description: 'This is my OK response.',
-            method: method
+            method: method,
+            visible: 'true'
         });
         response.save();
         method.save();
-        Ember.get(this, 'flashMessages').success('Response was created!');
     }
   }
 });

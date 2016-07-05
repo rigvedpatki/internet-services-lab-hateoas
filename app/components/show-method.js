@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     "PATCH",
     "POST",
     "PUT"
-  ],isShowingBody: false,
+  ],
   actions: {
     save(method) {
       method.save();
@@ -17,8 +17,9 @@ export default Ember.Component.extend({
       flashMessage.clearMessages();
       flashMessage.success('Saved!');
     },
-    toggleBody() {
-      this.toggleProperty('isShowingBody');
+    toggleVisibility(method) {
+      method.get('visible') == true ? method.set('visible', false) : method.set('visible', true);
+      method.save();
     }
   }
 });

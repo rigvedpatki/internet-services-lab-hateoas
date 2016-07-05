@@ -80,15 +80,16 @@ export default Ember.Component.extend({
       var entities = this.get('entities');
       var myResponse = component.get('response');
       entities.forEach( function(entity2) {
-        if( entity != entity2) {
+        if( entity !== entity2) {
           entity2.get('responses').removeObject(myResponse);
         }
         entity2.save();
       });
       Ember.Logger.log("Entity saved.");
     },
-    toggleBody() {
-      this.toggleProperty('isShowingBody');
+    toggleVisibility(response) {
+      response.get('visible') == true ? response.set('visible', false) : response.set('visible', true);
+      response.save();
     }
   }
 });

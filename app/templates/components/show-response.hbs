@@ -1,5 +1,5 @@
-<h4 {{action "toggleBody"}}> < span class="caret {{if isShowingBody "caret-down" "caret-right"}}"> </span>{{model.status}} </h4>
-{{#if isShowingBody}}
+<h4 {{action "toggleVisibility" model}}> < span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>{{model.status}} </h4>
+{{#if model.visible}}
   <form {{action "save" model on="change"}}>
     Status:{{#x-select value=model.status}}
       {{#each statusCodes as |code|}}

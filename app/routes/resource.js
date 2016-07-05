@@ -14,11 +14,11 @@ export default Ember.Route.extend({
             method: 'GET',
             name: 'myMethod',
             description: 'This is my method.',
-            resource: resource
+            resource: resource,
+            visible: 'true'
         });
         method.save();
         resource.save();
-        Ember.get(this, 'flashMessages').success('Method was created!');
     },
     save(resource) {
       resource.save();

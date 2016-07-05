@@ -7,5 +7,6 @@ export default Model.extend({
   name: attr('string'),
   description: attr('string'),
   method: belongsTo('method'),
-  entity: belongsTo('entity')
+  entity: belongsTo('entity'),
+  visible: attr('boolean')
 });

@@ -9,5 +9,6 @@ export default Model.extend({
   description: attr('string'),
   resource: belongsTo('resource'),
   queryParams: hasMany('query-parameter'),
-  responses: hasMany('response')
+  responses: hasMany('response'),
+  visible: attr('boolean')
 });

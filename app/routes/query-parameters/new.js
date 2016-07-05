@@ -9,7 +9,6 @@ export default Ember.Route.extend({
             example: ''
         });
         queryParam.save();
-        Ember.get(this, 'flashMessages').success('queryParameter was created!');
         return queryParam;
     }
 });

@@ -11,7 +11,6 @@ export default Ember.Route.extend({
             responses: ''
         });
         method.save();
-        Ember.get(this, 'flashMessages').success('Method was created!');
         return method;
     },
     redirect(model, transition) {

@@ -8,7 +8,6 @@ export default Ember.Route.extend({
             description: 'My OK Response'
         });
         response.save();
-        Ember.get(this, 'flashMessages').success('Response was created!');
         return response;
     }
 });

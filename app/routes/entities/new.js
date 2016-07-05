@@ -8,7 +8,6 @@ export default Ember.Route.extend({
           type: ''
       });
       var_entity.save();
-      Ember.get(this, 'flashMessages').success('Entity was created!');
       return var_entity;
   },
   redirect(model, transition) {

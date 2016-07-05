@@ -11,7 +11,6 @@ export default Ember.Component.extend({
         });
         method.save();
         resource.save();
-        Ember.get(this, 'flashMessages').success('Method was created!');
     }
   }
 });

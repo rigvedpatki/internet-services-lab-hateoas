@@ -8,7 +8,6 @@ export default Ember.Route.extend({
         description: 'This is my new Path.'
       });
       res.save();
-      Ember.get(this, 'flashMessages').success('Resource was created!');
       
       return res;
     },

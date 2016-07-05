@@ -8,6 +8,6 @@ export default Model.extend({
   type: attr('string'),
   required: attr('boolean'),
   list: attr('boolean'),
-  entity: belongsTo('entity')
-
+  entity: belongsTo('entity'),
+  visible: attr('boolean')
 });
