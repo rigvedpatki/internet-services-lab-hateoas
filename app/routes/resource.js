@@ -9,6 +9,17 @@ export default Ember.Route.extend({
     });
   },
   actions: {
+    createMethod(resource) {
+        var method = this.store.createRecord('method', {
+            method: 'GET',
+            name: 'myMethod',
+            description: 'This is my method.',
+            resource: resource
+        });
+        method.save();
+        resource.save();
+        Ember.get(this, 'flashMessages').success('Method was created!');
+    },
     save(resource) {
       resource.save();
       Ember.Logger.log("Data is saved for resource id: " + resource.id);

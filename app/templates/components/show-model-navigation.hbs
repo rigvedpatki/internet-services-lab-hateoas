@@ -5,20 +5,22 @@
   {{#each models as |model|}}
     {{#if model.id}}
     <li>
-      <label class="nav nav-header" {{action "toggleModel" model }} >
-        <span  data-toggle="collapse" class="collapsed" class="caret caret-right" ></span>
+      {{#link-to linkToModel model.id}}
+     
+      <label id="lbl" {{action "toggleModel" model }} >
+      < span class="caret {{if model.isExpanded "caret-down" "caret-right"}}"> </span>
+        
         {{#if model.path}}
         {{model.path}}
         {{else if model.name}}
         {{model.name}}
         {{/if}}
-        {{#link-to linkToModel model.id}}
+         </label>
         TODO : insert image here
-        {{/link-to}}
-      </label>
+     
+      {{/link-to}}
       </li>
         {{#if model.isExpanded }}
-        <li><button class="btn btn-primary btn-md round "{{action createFirstSubModel model}}>Add {{firstSubModelNameSingular}}</button></li>
         <ul class="nav nav-list tree">
           {{#if submodelIsMethod}}
             {{#each model.methods as |method|}}

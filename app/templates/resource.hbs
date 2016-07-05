@@ -14,7 +14,10 @@
   </div>
 
   <div>
-    <h3>Methods</h3>
+  
+    <h3>Methods<button id="mtd" class="btn btn-primary btn-md round "{{action "createMethod" model.resource}}>Add </button>
+    </h3> 
+          
     <div class="jumbotron">
       {{#if model.resource.methods}}
         {{#each model.resource.methods as |method|}}

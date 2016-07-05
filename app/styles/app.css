@@ -148,11 +148,14 @@ h4 {
 	margin-left: 280px;
 	position: static;
 }
-.nav-stacked{
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
-     
-
+#mtd{
+	margin-left: 15px;
+}
+#bbt{
+	margin-left: 350px;
+	margin-top: 500px;
+}
+#lbl{
+	color: black;
+	cursor: pointer;
 }
