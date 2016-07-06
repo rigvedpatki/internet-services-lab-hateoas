@@ -1,0 +1,13 @@
+<h3>Formats</h3>
+<p>Select the Formats to use.</p>
+{{#x-select value=model.format multiple=true action="save"}}
+  {{#each formats as |format|}}
+    {{#x-option value=format}}{{format}}{{/x-option}}
+  {{/each}}
+{{/x-select}}
+<h4>Selected formats</h4>
+<ul>
+  {{#each model.format as |format|}}
+    <li>{{format}}</li>
+  {{/each}}
+</ul>

@@ -10,6 +10,8 @@
       {{#link-to "entities.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
     </div>
   </div>
+  
+  {{select-entity-formats model=model store=store}}
 
   {{create-property model=model store=store}}
   <div class="jumbotron">
