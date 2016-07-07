@@ -7,9 +7,7 @@
       {{/each}}
     {{/x-select}}
     Name:{{input value=model.name}}
-   
-  </form>
-  <form id="en"{{action "save" model on="change"}}>
+  <div id="en">
     Description:{{input value=model.description}}
     Entity:
       {{#if entities}}
@@ -24,7 +22,9 @@
       {{else}}
         No Entities found.
       {{/if}}
+  </div>
   </form>
+
   <div id="res">
   {{#link-to "responses.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
   </div>

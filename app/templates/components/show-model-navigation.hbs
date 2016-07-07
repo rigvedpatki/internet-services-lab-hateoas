@@ -27,9 +27,27 @@
               {{#if method.id}}
               <li>
                 {{#if method.method}}
-                  {{method.method}}
+                 {{#if (eq method.method "PATCH")}}
+                   <button id=btnmm" class="btn btn-warning btn-sm raised">{{method.method}}</button>
+                 {{/if}}
+                  {{#if (eq method.method "POST")}}
+                   <button id=btnmm" class="btn btn-warning btn-sm raised">{{method.method}}</button>
+                 {{/if}}
+                 {{#if (eq method.method "GET")}}
+                   <button id=btnmm" class="btn btn-success btn-sm raised">{{method.method}}</button>
+                 {{/if}}
+                 {{#if (eq method.method "OPTIONS")}}
+                   <button id=btnmm" class="btn btn-success btn-sm raised">{{method.method}}</button>
+                 {{/if}}
+                 {{#if (eq method.method "PUT")}}
+                   <button id=btnmm" class="btn btn-info btn-sm raised">{{method.method}}</button>
+                 {{/if}}
+                 {{#if (eq method.method "DELETE")}}
+                   <button id=btnmm" class="btn btn-danger btn-sm raised">{{method.method}}</button>
+                 {{/if}}
                 {{else if method.name}}
                   {{method.name}}
+                  
                 {{/if}}
               </li>
               {{/if}}
@@ -39,7 +57,7 @@
               {{#if property.id}}
               <li>
                 {{#if property.name}}
-                  {{property.name}}
+                   <button id=btnmm" class="btn btn-primary btn-sm outline">{{property.name}}</button>
                 {{/if}}
               </li>
               {{/if}}

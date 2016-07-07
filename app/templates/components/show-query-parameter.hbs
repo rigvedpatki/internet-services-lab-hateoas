@@ -8,13 +8,12 @@
       {{/each}}
     {{/x-select}}
     Description:{{input value=model.description}}
- 
+    <div id="dd">
+    Example:{{input value=model.example}}
+ 	</div>
   </form>
 
-  <form id="dd"{{action "save" model on="change"}}>
-   
-    Example:{{input value=model.example}}
-  </form>
+ 
   <div id="res">
   {{#link-to "queryParameters.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
 </div>
