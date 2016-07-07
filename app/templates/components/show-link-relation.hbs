@@ -1,0 +1,21 @@
+<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{model.name}}</h4>
+{{#if model.visible}}
+  
+  <strong>Numbers Disabled:</strong> {{numbersDisabled}}
+  
+  <form {{action "save" model on="change"}}>
+    Type:\{{#radio-button value?true groupValue=numbersDisabled}}<br>
+	&nbsp;&nbsp;Disabled<br>
+	\{{/radio-button}}<br>
+	\{{#radio-button value=false groupValue=numbersDisabled}}<br>
+      &nbsp;&nbsp;Enabled<br>
+    \{{/radio-button}}<br>
+    Rel:{{input value=model.rel}}
+ 
+  </form>
+
+
+  <div id="res">
+  {{#link-to "linkRelation.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
+</div>
+{{/if}}
