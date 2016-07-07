@@ -17,6 +17,20 @@
      <div id="res">
       {{#link-to "methods.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
     </div>
+	
+	   <!-- <h4>Link Relation</h4> -->
+    {{create-link-relation model=model store=store}}
+           
+
+    {{#if model.linkRelation}}
+      {{#each model.linkRelations as |linkRelation|}}
+        {{show-link-relation model=linkRelation}}
+      {{/each}}
+    {{else}}
+      <p>No Link Relations yet.</p>
+    {{/if}}
+	
+	
     <!-- <h4>Query Parameters</h4> -->
     {{create-query-parameter model=model store=store}}
            
