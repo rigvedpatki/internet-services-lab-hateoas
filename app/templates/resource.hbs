@@ -18,10 +18,10 @@
     <h3>Methods<button id="mtd" class="btn btn-primary btn-md round "{{action "createMethod" model.resource}}>Add </button>
     </h3> 
           
-    <div class="jumbotron">
+   
       {{#if model.resource.methods}}
         {{#each model.resource.methods as |method|}}
-          {{show-method model=method entities=model.entities store=store}}
+          <div id="sep" class="panel panel-default">{{show-method model=method entities=model.entities store=store}}</div>
         {{/each}}
       {{else}}
         <p>No methods yet.</p>
@@ -31,5 +31,4 @@
         {{flash-message flash=flash}}
       {{/each}}
     </div>
-  </div>
 {{/if}}

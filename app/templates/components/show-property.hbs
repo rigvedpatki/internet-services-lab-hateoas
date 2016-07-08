@@ -1,9 +1,11 @@
 <h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{model.name}}</h4>
 {{#if model.visible}}
-  <form {{action "save" model on="change"}}>
-    name:{{input value=model.name }}
-    description:{{input value=model.description }}
-  </form>
+	<div id="margine">  
+	  <form {{action "save" model on="change"}}>
+	    name:{{input value=model.name }}
+	    description:{{input value=model.description }}
+	  </form>
+	</div>  
   <div id="res">
     {{#link-to "properties.delete" model.id tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
   </div>

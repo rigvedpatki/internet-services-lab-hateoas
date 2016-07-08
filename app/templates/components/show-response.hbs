@@ -1,5 +1,6 @@
 <h4 {{action "toggleVisibility" model}}> < span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>{{model.status}} </h4>
 {{#if model.visible}}
+ <div id="margine"> 
   <form {{action "save" model on="change"}}>
     Status:{{#x-select value=model.status}}
       {{#each statusCodes as |code|}}
@@ -24,6 +25,7 @@
       {{/if}}
   </div>
   </form>
+</div>
 
   <div id="res">
   {{#link-to "responses.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}

@@ -4,6 +4,7 @@
 {{model.method}}</h4>
 
   {{#if model.visible}}
+   <div id="margine"> 
     <form {{action "save" model on="change"}}>
       Method:{{#x-select value=model.method}}
       {{#each methods as |method|}}
@@ -13,7 +14,7 @@
       Name:{{input value=model.name}}
       Description:{{input value=model.description}}
     </form>
-    
+  </div>  
      <div id="res">
       {{#link-to "methods.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
     </div>
