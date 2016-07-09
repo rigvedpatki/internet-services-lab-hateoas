@@ -5,13 +5,14 @@ actions: {
     createLinkRelation() {
       var method = this.get('model');
       var linkrelation = this.store.createRecord('link-relation', {
-		registered: 'false',
-		self_defined: 'true',
-		method: method,
+        registered: 'true',
+        rel: 'next',
+        method: method,
         visible: 'true'
       });
       linkrelation.save();
       method.save();
+      Ember.Logger.log("Created a new Link Relation.");
     }
   }
 });

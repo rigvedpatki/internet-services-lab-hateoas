@@ -1,17 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
- types : [
-    "String",
-    "Integer",
-    "Boolean",
-    "Double",
-    "Long",
-    "Float",
-    "Short",
-    "Byte",
-    "Timestamp"
-  ],
+  willRender() {
+    Ember.Logger.log("Initializing.");
+    this.set('hints', {
+      "next": "Indicates that the link's context is a part of a series, and that the next in the series is the link target."
+    });
+  },
   actions: {
     save(model) {
       model.save();
@@ -19,7 +14,7 @@ export default Ember.Component.extend({
       Ember.get(this, 'flashMessages').success('Saved!');
     },
     toggleVisibility(linkRelation) {
-      linkRelation.get('visible') == true ? linkRelation.set('visible', false) : linkRelation.set('visible', true);
+      linkRelation.get('visible') === true ? linkRelation.set('visible', false) : linkRelation.set('visible', true);
       linkRelation.save();
     }
   }

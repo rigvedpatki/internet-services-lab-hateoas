@@ -8,7 +8,7 @@ export default Model.extend({
   name: attr('string'),
   description: attr('string'),
   resource: belongsTo('resource'),
-  linkRelation: belongsTo('link-relation'),
+  linkRelation: hasMany('link-relation'),
   queryParams: hasMany('query-parameter'),
   responses: hasMany('response'),
   rel: attr('string'),
