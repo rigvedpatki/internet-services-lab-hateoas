@@ -1,4 +1,4 @@
-<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{model.name}}</h4>
+<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"></span>QueryParameter</h4>
 {{#if model.visible}}
   <div id="margine">
 	  <form {{action "save" model on="change"}}>
@@ -14,8 +14,9 @@
 	 	</div>
 	  </form>
    </div>
+   <hr>
  
-  <div id="res">
+  <div id="ress">
   {{#link-to "queryParameters.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
 </div>
 {{/if}}

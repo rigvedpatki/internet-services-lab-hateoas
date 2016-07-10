@@ -18,6 +18,7 @@ h3 {
 	
 h4 {
 	cursor: pointer;
+
 }
 
 .centered {
@@ -87,10 +88,19 @@ h4 {
 }
 #res{
 	position: absolute;
-	margin-top: -35px;
+	margin-top: -70px;
 	margin-left: 750px;
+}
+#res1{
+	position: absolute;
+	margin-top: -30px;
+	margin-left: 750px;
+}
 
-
+#ress{
+	position: absolute;
+	margin-top: -90px;
+	margin-left: 750px;
 }
 .jumbotron{
 	background-color: #a2a2a2;
@@ -99,6 +109,7 @@ h4 {
 #ds{
 	margin-top: 20px;
 }
+
 .round{
 	border-radius: 24px;
 }
@@ -152,6 +163,7 @@ h4 {
 }
 #mtd{
 	margin-left: 15px;
+
 }
 #bbt{
 	margin-left: 350px;
@@ -194,6 +206,20 @@ h4 {
 	margin-left: 30px;
 	margin-top: 10px;
 	margin-bottom: 20px;
+	border: 1px;
+}
+hr{
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
+}
+#btnss{
+  margin-left: 15px;
+}
+#btnss1{
+  margin-left: 165px;
+ margin-bottom: -50px;
 }
 
 
