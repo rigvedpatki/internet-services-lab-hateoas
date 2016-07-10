@@ -1,5 +1,4 @@
 <h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{if model.rel model.rel "-"}}</h4>
-
 {{#if model.visible}}
   <div id="margine">
     <form {{action "save" model on="change"}}>
@@ -29,13 +28,5 @@
       </form>
     {{/if}}
   </div>
-<<<<<<< HEAD
-  <hr>
-
-  <div id="res">
-  {{#link-to "linkRelation.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
-</div>
+   <hr>
 {{/if}}
-=======
-{{/if}}
->>>>>>> 05cb75a00dce1561a43a690412f6f01de5a03e93
