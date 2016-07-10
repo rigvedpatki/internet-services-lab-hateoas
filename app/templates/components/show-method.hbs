@@ -7,11 +7,14 @@
    <div id="margine"> 
     <form {{action "save" model on="change"}}>
       Method:{{#x-select value=model.method}}
-      {{#each methods as |method|}}
-        {{#x-option selected=(if (eq model.method method) "selected" "") value=method}}{{method}}{{/x-option}}
-      {{/each}}
-    {{/x-select}}
-      Name:{{input value=model.name}}
+        {{#each methods as |method|}}
+          {{#x-option selected=(if (eq model.method method) "selected" "") value=method}}{{method}}{{/x-option}}
+        {{/each}}
+      {{/x-select}}
+      Name a:{{input class=(if hasValidationError "inputError" "") value=model.name}}
+      {{#if hasValidationError}}
+        <span class="error">{{errorMessage}}</span>
+      {{/if}}
       Description:{{input value=model.description}}
     </form>
   </div>
@@ -25,7 +28,7 @@
            
 
     {{#if model.linkRelation}}
-      {{#each model.linkRelations as |linkRelation|}}
+      {{#each model.linkRelation as |linkRelation|}}
         {{show-link-relation model=linkRelation}}
       {{/each}}
     {{else}}

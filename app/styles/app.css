@@ -195,6 +195,15 @@ h4 {
     margin-left: 50px;
 
 }
+
+.inputError {
+  border: 1px solid red;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 #sep{
 	    border: 2px solid #000000;
 	    width: 950px;

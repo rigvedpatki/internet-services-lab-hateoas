@@ -1,22 +1,41 @@
-<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{model.name}}</h4>
+<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{if model.rel model.rel "-"}}</h4>
+
 {{#if model.visible}}
-  
-  <strong>Numbers Disabled:</strong> {{numbersDisabled}}
   <div id="margine">
     <form {{action "save" model on="change"}}>
-      Type:\{{#radio-button value?true groupValue=numbersDisabled}}<br>
-  	&nbsp;&nbsp;Disabled<br>
-  	\{{/radio-button}}<br>
-  	\{{#radio-button value=false groupValue=numbersDisabled}}<br>
-        &nbsp;&nbsp;Enabled<br>
-      \{{/radio-button}}<br>
-      Rel:{{input value=model.rel}}
-   
+      Link Relation Type:{{#radio-button value=true groupValue=model.registered}}Registered <span class="break">(IANA-REL, MF-REL)</span>{{/radio-button}}
+      {{#radio-button value=false groupValue=model.registered}}Self-registered{{/radio-button}}<br/>
     </form>
+    {{#if model.registered}}
+      Rel:{{#x-select value=model.rel action="saveRel"}}
+        {{#x-option value=""}}{{/x-option}}
+        {{#each-in hints as |name hint|}}
+          {{#x-option value=name}}{{name}}{{/x-option}}
+        {{/each-in}}
+      {{/x-select}}
+      <div>
+        {{#each-in hints as |name hint|}}
+          {{#if (compareNames model.rel name)}}
+            <span class="bold">{{name}}: </span>{{hint}}
+          {{/if}}
+        {{/each-in}}
+      </div>
+    {{else}}
+      <form {{action "save" model on="change"}}>
+        Rel:{{input class=(if validationError "inputError" "") value=model.rel placeholder="Type a URL (e.g. 'http://example.org/rels/todo')"}}<br/>
+        {{#if validationError}}
+          <span class="error">{{errorMessage}}</span>
+        {{/if}}
+      </form>
+    {{/if}}
   </div>
+<<<<<<< HEAD
   <hr>
 
   <div id="res">
   {{#link-to "linkRelation.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
 </div>
 {{/if}}
+=======
+{{/if}}
+>>>>>>> 05cb75a00dce1561a43a690412f6f01de5a03e93
