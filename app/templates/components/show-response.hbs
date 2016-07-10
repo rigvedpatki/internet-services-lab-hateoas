@@ -1,34 +1,33 @@
 <h4 {{action "toggleVisibility" model}}> < span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>{{model.status}} </h4>
 {{#if model.visible}}
- <div id="margine"> 
-  <form {{action "save" model on="change"}}>
-    Status:{{#x-select value=model.status}}
-      {{#each statusCodes as |code|}}
-        {{#x-option selected=(if (eq model.status code) "selected" "") value=code}}{{code}}{{/x-option}}
-      {{/each}}
-    {{/x-select}}
-    Name:{{input value=model.name}}
-  <div id="en">
-    Description:{{input value=model.description}}
-    Entity:
-      {{#if entities}}
-        {{#x-select value=model.entity action="saveEntity" response=model}}
-          {{#unless model.entity}}
-            {{#x-option selected="selected" value=""}}{{/x-option}}
-          {{/unless}}
-          {{#each entities as |entity|}}
-            {{#x-option selected=(if (eq model.entity.id entity.id) "selected" "") value=entity}}{{entity.name}}{{/x-option}}
-          {{/each}}
-        {{/x-select}}
-      {{else}}
-        No Entities found.
-      {{/if}}
+  <div id="margine"> 
+    <form {{action "save" model on="change"}}>
+      Status:{{#x-select value=model.status}}
+        {{#each statusCodes as |code|}}
+          {{#x-option selected=(if (eq model.status code) "selected" "") value=code}}{{code}}{{/x-option}}
+        {{/each}}
+      {{/x-select}}
+      Name:{{input value=model.name}}
+      <div id="en">
+        Description:{{input value=model.description}}
+        Entity:
+        {{#if entities}}
+          {{#x-select value=model.entity action="saveEntity" response=model}}
+            {{#unless model.entity}}
+              {{#x-option selected="selected" value=""}}{{/x-option}}
+            {{/unless}}
+            {{#each entities as |entity|}}
+              {{#x-option selected=(if (eq model.entity.id entity.id) "selected" "") value=entity}}{{entity.name}}{{/x-option}}
+            {{/each}}
+          {{/x-select}}
+        {{else}}
+          No Entities found.
+        {{/if}}
+      </div>
+    </form>
   </div>
-  </form>
-</div>
-
 
   <div id="res">
-  {{#link-to "responses.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
+    {{#link-to "responses.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
   </div>
 {{/if}}

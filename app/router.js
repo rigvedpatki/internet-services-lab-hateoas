@@ -14,6 +14,10 @@ Router.map(function() {
       this.route('new');
       this.route('delete', { path: '/methods/delete/:method_id' });
   });
+  this.route('linkRelations', function() {
+      this.route('new');
+      this.route('delete', { path: '/linkrelations/delete/:linkrelation_id' });
+  });
   this.route('queryParameters', function() {
       this.route('new');
       this.route('delete', { path: '/queryparameters/delete/:qparam_id' });
