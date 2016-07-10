@@ -11,18 +11,18 @@
       <div id="en">
         Description:{{input value=model.description}}
         Entity:
-        {{#if entities}}
-          {{#x-select value=model.entity action="saveEntity" response=model}}
-            {{#unless model.entity}}
-              {{#x-option selected="selected" value=""}}{{/x-option}}
-            {{/unless}}
-            {{#each entities as |entity|}}
-              {{#x-option selected=(if (eq model.entity.id entity.id) "selected" "") value=entity}}{{entity.name}}{{/x-option}}
-            {{/each}}
-          {{/x-select}}
-        {{else}}
-          No Entities found.
-        {{/if}}
+        {{#x-select value=model.entity action="saveEntity" response=model}}
+          {{#unless model.entity}}
+            {{#x-option selected="selected"}}{{/x-option}}
+            {{#x-option}}Create new Entity{{/x-option}}
+          {{/unless}}
+          {{#each entities as |entity|}}
+            {{#if model.entity}}
+              {{#x-option}}Create new Entity{{/x-option}}
+            {{/if}}
+            {{#x-option selected=(if (eq model.entity.id entity.id) "selected" "") value=entity}}{{entity.name}}{{/x-option}}
+          {{/each}}
+        {{/x-select}}
       </div>
     </form>
   </div>

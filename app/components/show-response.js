@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  routing: Ember.inject.service('-routing'),
   statusCodes : [
     // Source: http://www.restapitutorial.com/httpstatuscodes.html
     "100 - Continue",
@@ -72,6 +73,10 @@ export default Ember.Component.extend({
   ],
   actions: {
     save(model) {
+      if( !this.get('model').get('entity').get('id')) {
+        this.get("routing").transitionTo("entities.new");
+        return;
+      }
       model.save();
       Ember.Logger.log("Data is saved for Response id: " + model.id);
       Ember.get(this, 'flashMessages').success('Saved!');
