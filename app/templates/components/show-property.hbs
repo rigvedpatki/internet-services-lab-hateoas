@@ -4,6 +4,12 @@
 	  <form {{action "save" model on="change"}}>
 	    name:{{input value=model.name }}
 	    description:{{input value=model.description }}
+	    Type:{{#x-select value=model.type}}
+        {{#x-option}}{{/x-option}}
+	      {{#each types as |type|}}
+	        {{#x-option selected=(if (eq model.type type) "selected" "") value=type}}{{type}}{{/x-option}}
+	      {{/each}}
+	    {{/x-select}}
 	  </form>
 	</div>  
   <div id="res">
