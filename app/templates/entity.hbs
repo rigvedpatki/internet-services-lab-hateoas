@@ -4,6 +4,10 @@
     <form {{action "save" model on="change"}}>
       name:{{input value=model.name }}
       description:{{input value=model.description }}
+      External: {{input type="checkbox" name=model.external checked=model.external}}
+      {{#if model.external}}
+        URL/Path: {{input value=model.url}}
+      {{/if}}
     </form>
 
     <div id="res">

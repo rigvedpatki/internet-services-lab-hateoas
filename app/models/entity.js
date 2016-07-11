@@ -6,6 +6,8 @@ export default Model.extend({
   name: attr('string'),
   description: attr('string'),
   properties: hasMany('property'),
+  external: attr('boolean'),
+  url: attr('string'),
   responses: hasMany('response'),
   format: attr(),
   isExpanded: attr('boolean'),
