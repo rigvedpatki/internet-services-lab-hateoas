@@ -194,8 +194,8 @@ h4 {
 }
 .outline {
     border: 2px solid #0099cc;
-    color: #0099cc;
-    background-color: black;
+    color: black;
+    background-color: white;
     width: 95px;
     margin-top: 5px;
     margin-left: 50px;
@@ -225,7 +225,7 @@ h4 {
 	border: 1px;
 }
 hr{
-  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-color: black -moz-use-text-color black;
   border-style: solid none;
   border-width: 1px 0;
   margin: 18px 0;
