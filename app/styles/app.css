@@ -73,7 +73,7 @@ h4 {
 
 }
 .panel-default{
-	width: 990px;
+	width: 950px;
 	background-color: #cecece;
 }
 @-ms-viewport{
@@ -194,8 +194,6 @@ h4 {
 }
 .outline {
     border: 2px solid #0099cc;
-    color: black;
-    background-color: white;
     width: 95px;
     margin-top: 5px;
     margin-left: 50px;
@@ -213,7 +211,7 @@ h4 {
 
 #sep{
 	    border: 2px solid #000000;
-	    width: 950px;
+	    width: 920px;
 	    background-color: #e8e7d5;
 
 
