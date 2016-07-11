@@ -108,6 +108,7 @@ h4 {
 }
 #ds{
 	margin-top: 20px;
+
 }
 
 .round{
@@ -191,8 +192,9 @@ h4 {
     color: #0099cc;
     background-color: black;
     width: 95px;
-    margin-top: 8px;
+    margin-top: 5px;
     margin-left: 50px;
+    margin-bottom: 10px;
 
 }
 
@@ -230,5 +232,4 @@ hr{
   margin-left: 165px;
  margin-bottom: -50px;
 }
-
 
