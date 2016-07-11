@@ -14,9 +14,36 @@
 
 
         <div id="navbar" class="collapse navbar-collapse">
+          <!--the add API button-->
+                 <div class="pull-right">
+                      {{#link-to "apiurls.new" tagName="button" class="btn btn-danger "}}Add API {{/link-to}}
+                 </div>
 
-          {{show-apiurls model=model.apiurls store=store}}
-
+                 <!--Input API-->
+                   <div id="right">
+                     <div class="input-group">
+                        <div class="input-group-btn">
+                          <!--Input API-->
+                            <div id="right">
+                               <div class="input-group">
+                                  <div class="input-group-btn">
+                                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                                               <span class="caret"></span>
+                                        </button>
+                                  </div>
+                            <input type="text" class="form-control" aria-label="Text input with segmented button dropdown" placeholder="API name...">
+                              </div>
+                            </div>
+                            <!--<div id="right">
+                              {{#x-select}}
+                               {{#each model.apiurls as |url|}}
+                                 {{#x-option}}{{url.endpoint_url}}{{/x-option}}
+                               {{/each}}
+                               {{/x-select}}
+                           </div>-->
+                        </div>
+                    </div>
+                  </div>
             <ul class="nav navbar-nav">
 
              {{#link-to 'application' class="navbar-brand"}}Graphical HATEOAS{{/link-to}}
