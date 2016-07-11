@@ -3,7 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     createProperty(entity) {
-      Ember.Logger.log("Creating property.");
+      entity.get('properties').forEach(function(object) {
+        object.set('visible', false);
+        object.save();
+      });
       var property = this.store.createRecord('property', {
         name: 'newProperty',
         entity: entity,

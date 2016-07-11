@@ -10,15 +10,19 @@ export default Ember.Route.extend({
   },
   actions: {
     createMethod(resource) {
-        var method = this.store.createRecord('method', {
-            method: 'GET',
-            name: 'myMethod',
-            description: 'This is my method.',
-            resource: resource,
-            visible: 'true'
-        });
-        method.save();
-        resource.save();
+      resource.get('methods').forEach( function(closableMethod) {
+        Ember.Logger.log("Closing method.");
+        closableMethod.set('visible', false);
+      })
+      var method = this.store.createRecord('method', {
+        method: 'GET',
+        name: 'myMethod',
+        description: 'This is my method.',
+        resource: resource,
+        visible: 'true'
+      });
+      method.save();
+      resource.save();
     },
     save(resource) {
       resource.save();
