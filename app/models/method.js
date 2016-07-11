@@ -5,7 +5,6 @@ import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
   method: attr('string'),
-  name: attr('string'),
   description: attr('string'),
   resource: belongsTo('resource'),
   linkRelations: hasMany('link-relation'),

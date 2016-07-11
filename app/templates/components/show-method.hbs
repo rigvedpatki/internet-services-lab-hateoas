@@ -11,10 +11,6 @@
           {{#x-option selected=(if (eq model.method method) "selected" "") value=method}}{{method}}{{/x-option}}
         {{/each}}
       {{/x-select}}
-      Name a:{{input class=(if hasValidationError "inputError" "") value=model.name}}
-      {{#if hasValidationError}}
-        <span class="error">{{errorMessage}}</span>
-      {{/if}}
       Description:{{input value=model.description}}
     </form>
   </div>
@@ -42,7 +38,7 @@
 
     {{#if model.queryParams}}
       {{#each model.queryParams as |queryParam|}}
-        {{show-query-parameter model=queryParam}}
+        {{show-query-parameter model=queryParam entities=entities}}
       {{/each}}
     {{else}}
       <h4>QueryParameter</h4>

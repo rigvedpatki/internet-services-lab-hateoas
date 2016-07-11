@@ -4,7 +4,6 @@
     <div class="jumbotron">
       <form {{action "save" model.resource on="change"}}>
         path:{{input value=model.resource.path }}
-        name:{{input value=model.resource.name }}
         description:{{input value=model.resource.description }}
       </form>
       <div id="res1">
@@ -21,7 +20,9 @@
    
       {{#if model.resource.methods}}
         {{#each model.resource.methods as |method|}}
-          <div id="sep" class="panel panel-default">{{show-method model=method entities=model.entities store=store}}</div>
+          <div id="sep" class="panel panel-default">
+            {{show-method model=method entities=model.entities store=store}}
+          </div>
         {{/each}}
       {{else}}
         <p>No methods yet.</p>

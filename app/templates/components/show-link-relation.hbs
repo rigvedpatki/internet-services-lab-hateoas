@@ -12,6 +12,7 @@
           {{#x-option value=name}}{{name}}{{/x-option}}
         {{/each-in}}
       {{/x-select}}
+      Relations from: <a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml">http://www.iana.org/assignments/link-relations/link-relations.xhtml</a>. Last Updated: 2016-04-19.
       <div>
         {{#each-in hints as |name hint|}}
           {{#if (compareNames model.rel name)}}

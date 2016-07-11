@@ -5,12 +5,14 @@
       name:{{input value=model.name }}
       description:{{input value=model.description }}
     </form>
-    {{select-entity-formats model=model store=store}}
 
     <div id="res">
       {{#link-to "entities.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
     </div>
-  </div>
+
+    {{select-entity-formats model=model store=store}}
+
+    </div>
   
   {{create-property model=model store=store}}
   <div class="jumbotron">

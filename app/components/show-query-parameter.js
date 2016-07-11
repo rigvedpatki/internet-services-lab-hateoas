@@ -12,6 +12,14 @@ export default Ember.Component.extend({
     "Byte",
     "Timestamp"
   ],
+  didReceiveAttrs() {
+    Ember.Logger.log("Starting to push entities.");
+    var types = this.get('types');
+    this.get('entities').forEach(function(entity) {
+      Ember.Logger.log("Pushing entity.");
+      types.pushObject(entity.get('name'));
+    });
+  },
   actions: {
     save(model) {
       model.save();
