@@ -27,8 +27,8 @@
     {{create-link-relation model=model store=store}}
            
 
-    {{#if model.linkRelation}}
-      {{#each model.linkRelation as |linkRelation|}}
+    {{#if model.linkRelations}}
+      {{#each model.linkRelations as |linkRelation|}}
         {{show-link-relation model=linkRelation}}
       {{/each}}
     {{else}}

@@ -9,6 +9,9 @@ export default Ember.Route.extend({
     const flashMessages = Ember.get(this, 'flashMessages');
     let methodId = method.id;
 
+    method.get('linkRelations').forEach( function(linkRelation) {
+      linkRelation.destroyRecord();
+    });
     method.get('queryParams').forEach( function(queryParam) {
       queryParam.destroyRecord();
     });
@@ -17,9 +20,9 @@ export default Ember.Route.extend({
         entity.get('responses').then(function(entityResponses) {
           entityResponses.removeObject(response.id);
           entity.save();
-          response.destroyRecord();
         });
       });
+      response.destroyRecord();
     });
     
     method.get('resource').then(function(resource) {

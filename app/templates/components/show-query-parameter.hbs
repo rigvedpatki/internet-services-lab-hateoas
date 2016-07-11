@@ -10,12 +10,12 @@
 	    {{/x-select}}
 	    Description:{{input value=model.description}}
 	    <div id="dd">
-	    Example:{{input value=model.example}}
-	 	</div>
+        Example:{{input value=model.example}}
+      </div>
 	  </form>
-   </div>
- <hr>
+  </div>
+  <hr>
   <div id="ress">
-  {{#link-to "queryParameters.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
-</div>
+    {{#link-to "queryParameters.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
+  </div>
 {{/if}}
