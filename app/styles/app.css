@@ -97,6 +97,22 @@ h4 {
 	margin-left: 750px;
 }
 
+#res2{
+	position: absolute;
+	margin-top: -20px;
+	margin-left: 750px;
+}
+#res3{
+	position: absolute;
+	margin-top: -40px;
+	margin-left: 750px;
+}
+#res4{
+	position: absolute;
+	margin-top: -160px;
+	margin-left: 750px;
+}
+
 #ress{
 	position: absolute;
 	margin-top: -90px;
