@@ -276,3 +276,24 @@ padding-left: 10px;
 	margin-bottom: -20px;
 	margin-left: -30px;
 }
+.x-option{
+	min-width: 250px;
+	height: 30px;
+}
+#si{
+	color: green;
+	font-size:125%;
+	background-color: white;
+	width: 120px;
+	margin-left: 450px;
+}
+#pnl{
+	min-width: 600px;
+	max-width: 600px;
+	height: 250px;
+
+}
+#sps1{
+	margin-left: 450px;
+	margin-top: -150px;
+}
