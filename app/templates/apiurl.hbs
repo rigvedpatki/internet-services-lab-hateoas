@@ -3,21 +3,21 @@
     <h2>API URL</h2>
     <div class="jumbotron">
       <form {{action "save" model on="change" }}>
-        Protocol:
+        <h4 id="ff">Protocol:
         {{#x-select value=model.protocol action="saveSelection"}}
           {{#x-option value='' selected="selected"}}{{/x-option}}
           {{#x-option value='HTTP/1.1'}}HTTP/1.1{{/x-option}}
           {{#x-option value='HTTPS/1.1'}}HTTPS/1.1{{/x-option}}
-        {{/x-select}}<br>
-        Port: {{input value=model.port }}
+        {{/x-select}}<br></h4>
+       <h4 id="f1"> Port: {{input value=model.port}}</h4>
         <br>
-        Domain: {{input value=model.domain}}
+        <h4 id="f2">Domain: {{input value=model.domain}}</h4>
         <br>
-        Base Path: {{input value=model.base_path }}
+        <h4> Base Path: {{input value=model.base_path }}</h4>
         <br>
-        <button id="btnss"{{action "generateEndpoint" model}} class="btn btn-success btn-md round"> Generate Endpoint </button>
+        <button id="btnss2"{{action "generateEndpoint" model}} class="btn btn-success btn-md round"> Generate Endpoint </button>
         <br>
-        Endpoint URL: {{model.endpoint_url}}
+        <h4 id="f3">Endpoint URL: {{input model.endpoint_url}}</h4>
         <br>
       </form>
       <div id="res4">
