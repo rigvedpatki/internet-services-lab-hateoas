@@ -1,8 +1,82 @@
-<h2>Here there will be given a tutorial about how to work with our app</h2>
+<h2>Stepwise tutorial for using the App Graphical HATEOAS</h2>
 
-<p>step1:</p>
-<p>step2:</p>
-<p>step3:</p>
-<p>step4:</p>
-<p>step5:</p>
+<div class="panel panel-primary" id="pnlh">
+  <p>Step1: at first you need to create a resource, for that please click on "add" button on the left sidebar.</p> 
+  <br>
+  <p>----> 1.1 Click on the default name "/newPath" on the sidebar to open the resource you have added.</p>
+  <br>
+  <p>----> 1.2 On the top of the page which you have opened, you see the "path" and "description" tags, change the path of your resource and as soon as you doing so, the corresponding name(path) will be changed and shown on the sidebar.</p>
+ <br>
+  <p>----> 1.3 Write a meaningsful description for your resource.</p>
+ <br>
+  <p>----> 1.4 With the remove button, you can delete the entire resource (include it's methods).</p>
+ </div>
+
+ <div class="panel panel-primary" id="pnlh1">
+  <p>Step2: Now is the time to create a method for our resource, for that please click on the "add" button beside section "Methods" underneath Resource section.</p> 
+  <br>
+  <p>----> 2.1 As default you will create a GET method which can be changed by the dropdown list to 6 diverse method types.</p>
+  <br>
+  <p>----> 2.2 Write a meaningful description for your method.</p>
+ <br>
+  <p>----> 2.3 After creating a method you will realize that each method is shown with a different color and under the "path" in the sidebar, if you have 3 methods in different types, you might see them in three different colors.</p>
+ <br>
+  <p>----> 2.4 The number of methods you want to create depends on you and there isn't any limitation for that.</p>
+ <br>
+  <p>----> 2.4 With the remove button, you can delete every method you don't need anymore, however the related options to each method will be deleted with it.</p>
+ </div>
+
+ <div class="panel panel-primary" id="pnlh2">
+  <p>Step3: After creating a method, or selecting a method for changes, you will have the followings to add:</p> 
+  <br>
+  <p>----> <span class="boldi">3.1 Link Relation:</span> click on the "add" button beside the LinkRelation tag to craete a link relation for your method. You can also add many link relations to your method. here is important to select a link relation from the dropdown list or clicking on self-registered and enter your version. Remove button will delete "only" your currently opened link relation.</p>
+  <br>
+  <p>----> <span class="boldi">3.2 Query Parameter: </span> As default and like other components in this app, you don't have any query parameters, for creating one, please click on the "add" button beside of it's tag. Fill the textboxes like name and description up and select a format for your parameter from the given dropdown list. Remove button deletes your currently opened query parameter.</p>
+ <br>
+  <p>----> <span class="boldi">3.3 Responses: </span> As mentioned for other components above, you need to create a new response section, because as default you don't have any. For doing so, please click on the "add" button beside the Rsponses tag. After the section is  created, it is shown 4 options to you. Two of them should be filled up by you (name and description), the other two are to be selected by you(status and entity). This section is connected to the Entity part (in sidebar), i.e. if you select "create new entity" from entity's dropdown list, you will be jumped into the Entity page. Remove button will delete only your currently opened response window.</p>
+ <br>
+ </div>
+
+ <div class="panel panel-primary" id="pnlh3">
+  <p>Step4: Now after all we come to the entity, entity is another section that as mentioned is connected to the responses part of each method, for creating and managing an entity you need:</p> 
+  <br>
+  <p>----> 4.1 Either click on the "add" button in section Entities on the sidebar, or select the option "create a new entity" from response section of any method.</p>
+  <br>
+  <p>----> 4.2 After creating an entity, you should open the corresponding page, in case you don't create it from method/responses, you need to do the same action as you did for the resources. Click on the name of the entity you have recently created, as default the entity named as "sample".</p>
+ <br>
+  <p>----> 4.3 In the upper section of corresponding page (entity's page), you can change the name of your entity to a meaningfull one. Write a description for it, so that any other user understand why this name? .</p>
+ <br>
+  <p>----> 4.4 In the "Formats" section, you see an option list with many options, select one ore many formats which you need, for doing so you can hold cntl key and click on your desired formats. According to your selection, a list of selected formats will be shown on the right side on this section. In case you want to enter an external URL or path, you can click on the check box "external" and then enter yours. </p>
+ <br>
+  <p>----> 4.5 Remove button can remove your entity (include it's properties).</p>
+ <br>
+  <p>----> 4.6 On the bottom of the Entities page, you see the section "properties", as default you don't have any properties, therefore you need to click on the "add" button beside the Properties tag for creating one (or many, depending on you).</p>
+  <br>
+  <p>----> 4.7 After creating your first property, you will see a section "newProperty", it is the default name for each property. You will also see this name with a blue color underneath your entities in sidebar menu.</p>
+  <br>
+  <p>----> 4.5 Change the name of your property, write a description and then choose a type for it (i.e. URL).</p>
+  <br>
+  <p>----> 4.5 Remove button can remove your currently opened property.</p>
+ </div>
+
+ <div class="panel panel-primary" id="pnlh4">
+  <p>Some other Guides: </p> 
+  <br>
+  <p>----> * Add API: for creating/generating your API at the end, you need to click on the red button on top-right of the screen, fill then the appeared form up and click on generate endpoint.</p>
+  <br>
+  <p>----> * If you have any question regarding to this app, we would be glad to answer your questions per email. You will find our contacts in the menubar/contact.</p>
+ <br>
+  <p>----> * .</p>
+ <br>
+  <p>----> * .</p>
+ <br>
+  <p>----> * .</p>
+ <br>
+  <p>----> * .</p>
+ </div>
+
+
+
+
+
 {{outlet}}

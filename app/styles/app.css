@@ -99,7 +99,7 @@ h4 {
 
 #res2{
 	position: absolute;
-	margin-top: -20px;
+	margin-top: -1px;
 	margin-left: 750px;
 }
 #res3{
@@ -296,4 +296,26 @@ padding-left: 10px;
 #sps1{
 	margin-left: 450px;
 	margin-top: -150px;
+}
+.boldi{
+	font-weight: bold;
+}
+#pnlh{
+	border: 2px solid blue;
+	margin-top: 40px;
+}
+#pnlh1{
+	border: 2px solid green;
+	margin-top: 40px;
+}#pnlh2{
+	border: 2px solid red;
+	margin-top: 40px;
+}
+#pnlh3{
+	border: 2px solid black;
+	margin-top: 40px;
+}
+#pnlh4{
+	border: 2px solid orange;
+	margin-top: 40px;
 }
