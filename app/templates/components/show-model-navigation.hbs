@@ -4,10 +4,10 @@
     <ul class="nav nav-list">
   {{#each models as |model|}}
     {{#if model.id}}
-    <li>
+    <li {{action "toggleModel" model }}>
       {{#link-to linkToModel model.id}}
      
-      <label id="lbl" {{action "toggleModel" model }} >
+      <label id="lbl"  >
       < span class="caret {{if model.isExpanded "caret-down" "caret-right"}}"> </span>
         
         {{#if model.path}}

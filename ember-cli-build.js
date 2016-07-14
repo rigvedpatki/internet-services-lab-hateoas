@@ -7,7 +7,7 @@ module.exports = function(defaults) {
     // Add options here
   });
 
-  app.import('bower_components/bootstrap/dist/css/bootstrap.css')
-
+  app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+  app.import('bower_components/file-saver/FileSaver.js');
   return app.toTree();
 };
