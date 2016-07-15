@@ -15,9 +15,7 @@
         <br>
         <h4> Base Path: {{input value=model.base_path }}</h4>
         <br>
-        <button id="btnss2"{{action "generateEndpoint" model}} class="btn btn-success btn-md round"> Generate Endpoint </button>
-        <br>
-        <h4 id="f3">Endpoint URL: {{input model.endpoint_url}}</h4>
+        <h4 id="f3">Endpoint URL: {{input value=model.endpoint_url readonly=true}}</h4>
         <br>
       </form>
       <div id="res4">

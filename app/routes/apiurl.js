@@ -9,19 +9,21 @@ export default Ember.Route.extend({
     saveSelection(selection,componenet){
       this.set('protocol',selection);
     },
-    generateEndpoint(apiurl){
-        Ember.Logger.log("log: " + apiurl.get('protocol'));
-      var endpoint_url = null;
-        if (apiurl.get('protocol') == "HTTP/1.1"){
-          Ember.Logger.log("log: " + apiurl.id);
-          endpoint_url = "http://"+apiurl.get('domain')+apiurl.get('base_path');
-        }else if (apiurl.get('protocol') == "HTTPS/1.1") {
-          Ember.Logger.log("log: " + apiurl.id);
-          endpoint_url = "http://"+apiurl.get('domain')+apiurl.get('base_path');
-        }
-        apiurl.set('endpoint_url',endpoint_url);
-    },
       save(apiurl) {
+          Ember.Logger.log("log: " + apiurl.get('protocol'));
+        var endpoint_url = null;
+        var port = null;
+          if (apiurl.get('protocol') == "HTTP/1.1"){
+            Ember.Logger.log("log: " + apiurl.id);
+            endpoint_url = "http://"+apiurl.get('domain')+apiurl.get('base_path');
+            port = 88;
+          }else if (apiurl.get('protocol') == "HTTPS/1.1") {
+            Ember.Logger.log("log: " + apiurl.id);
+            endpoint_url = "https://"+apiurl.get('domain')+apiurl.get('base_path');
+            port = 443;
+          }
+          apiurl.set('port',port);
+          apiurl.set('endpoint_url',endpoint_url);
           apiurl.save();
           Ember.Logger.log("Data is saved for API URL id: " + apiurl.id);
           Ember.get(this, 'flashMessages').success('Saved!');
