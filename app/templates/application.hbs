@@ -18,10 +18,9 @@
                  <div class="pull-right">
                       {{#link-to "apiurls.new" tagName="button" class="btn btn-danger "}}Add API {{/link-to}}
                  </div>
-                 <div id="dln">
-                  {{download-swagger}}
-                 </div>
+               
                  <!--Input API-->
+
                    <div id="right">
                      <div class="input-group">
                         <div class="input-group-btn">
@@ -47,12 +46,27 @@
                     </div>
                   </div>
             <ul class="nav navbar-nav">
+                 <div id="dln">
+                  {{download-swagger}}
+                 </div>
 
+
+            <ul class="nav navbar-nav">
              {{#link-to 'application' class="navbar-brand"}}Graphical HATEOAS{{/link-to}}
                 <li>{{#link-to 'application'}}Home{{/link-to}}</li>
                 <li>{{#link-to 'about'}}About{{/link-to}}</li>
                 <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
                 <li>{{#link-to 'help'}}Help{{/link-to}}</li>
+                  {{#bs-dropdown tagName="li"}}
+                          {{#bs-dropdown-toggle}}Your APIs <span class="caret"></span>{{/bs-dropdown-toggle}}
+                          {{#bs-dropdown-menu}}
+                            {{#each model.apiurls as |url|}}
+                            <li>{{#link-to "apiurl" url.id}}{{url.endpoint_url}}{{/link-to}}</li>
+                            {{else}}
+                            <li>No APIs available</li>
+                            {{/each}}
+                          {{/bs-dropdown-menu}}
+                 {{/bs-dropdown}}
             </ul>
 
         </div><!--/.nav-collapse -->
