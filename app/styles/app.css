@@ -56,16 +56,16 @@ h4 {
 .dropdown-toggle{
 }
 .from-control{
-	margin-left: 750px;
+	margin-left: 850px;
 	background-color: blue;
 }
 .input-group{
-	margin-left: 750px;
+	margin-left: 1050px;
 }
 
-#download {
-  margin: 0px;
-  position:relative;
+#dln {
+	margin-left: 50px;
+ 	margin-bottom: -40px;
 }
 #right
 {
