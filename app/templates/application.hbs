@@ -10,7 +10,7 @@
             </button>
 
 
-		 </div> <!-- col-lg-->
+     </div> <!-- col-lg-->
 
 
         <div id="navbar" class="collapse navbar-collapse">
@@ -18,38 +18,13 @@
                  <div class="pull-right">
                       {{#link-to "apiurls.new" tagName="button" class="btn btn-danger "}}Add API {{/link-to}}
                  </div>
-               
+
                  <!--Input API-->
 
-                   <div id="right">
-                     <div class="input-group">
-                        <div class="input-group-btn">
-                          <!--Input API-->
-                            <div id="right">
-                               <div class="input-group">
-                                  <div class="input-group-btn">
-                                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                                               <span class="caret"></span>
-                                        </button>
-                                  </div>
-                            <input type="text" class="form-control" placeholder="API name...">
-                              </div>
-                            </div>
-                            <!--<div id="right">
-                              {{#x-select}}
-                               {{#each model.apiurls as |url|}}
-                                 {{#x-option}}{{url.endpoint_url}}{{/x-option}}
-                               {{/each}}
-                               {{/x-select}}
-                           </div>-->
-                        </div>
-                    </div>
-                  </div>
-            <ul class="nav navbar-nav">
-                 <div id="dln">
+                 <div id="right">
                   {{download-swagger}}
                  </div>
-
+                  
 
             <ul class="nav navbar-nav">
              {{#link-to 'application' class="navbar-brand"}}Graphical HATEOAS{{/link-to}}
@@ -71,14 +46,15 @@
 
         </div><!--/.nav-collapse -->
     </div>
-
+                  
 </nav>
+                
 
 <div class="container-fluid">  <!-- container-fluid begin-->
     <div class="row">
 
         <div class="col-sm-2 col-md-3 col-lg-3">
-    	<div class="row">
+      <div class="row">
         <div class="cls">
             {{api-resources model=model.resources store=store}}
         </div>
