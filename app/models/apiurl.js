@@ -9,6 +9,11 @@ export default Model.extend({
   port: attr('string'),
   domain: attr('string'),
   base_path: attr('string'),
-  endpoint_url: attr('string')
-
+  endpoint_url: attr('string'),
+  genelarInfoName: attr('string'),
+  generalInfoDescription: attr('string'),
+  generalInfoLicenseName: attr('string'),
+  generalInfoLicenseURL: attr('string'),
+  authProtoName: attr('string'),
+  authProtoCode: attr('string')
 });

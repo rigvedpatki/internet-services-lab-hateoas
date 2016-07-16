@@ -6,18 +6,24 @@ export default Ember.Route.extend({
       return this.store.findRecord('apiurl', params.apiurl_id);
   },
   actions: {
-    saveSelection(selection,component){
+    saveSelectionProtocol(selection,component){
+      Ember.Logger.log("entered saveSelectionProtocol");
       this.set('protocol',selection);
     },
+    saveSelectionAuthProtocol(selection,component){
+      Ember.Logger.log("entered saveSelectionAuthProtocol");
+      this.set('authProtoName', selection);
+
+    },
       save(apiurl) {
-          Ember.Logger.log("log: " + apiurl.get('protocol'));
+        Ember.Logger.log("log: " + apiurl.get('protocol'));
         var endpoint_url = null;
         var port = null;
-          if (apiurl.get('protocol') == "HTTP/1.1"){
+          if (apiurl.get('protocol') === "HTTP/1.1"){
             Ember.Logger.log("log: " + apiurl.id);
             endpoint_url = "http://"+apiurl.get('domain')+apiurl.get('base_path');
             port = 88;
-          }else if (apiurl.get('protocol') == "HTTPS/1.1") {
+          }else if (apiurl.get('protocol') === "HTTPS/1.1") {
             Ember.Logger.log("log: " + apiurl.id);
             endpoint_url = "https://"+apiurl.get('domain')+apiurl.get('base_path');
             port = 443;
@@ -29,6 +35,5 @@ export default Ember.Route.extend({
           Ember.Logger.log("Data is saved for API URL id: " + apiurl.id);
           Ember.get(this, 'flashMessages').success('Saved!');
       }
-
   }
 });

@@ -3,9 +3,9 @@
   <div>
     <h3>API URL</h3>
     <div class="jumbotron">
-      <form {{action "save" model on="change" }}>
+      <form {{action "save" model on="change"}}>
         <h4 id="ff">Protocol:
-        {{#x-select value=model.protocol action="saveSelection"}}
+        {{#x-select value=model.protocol action="saveSelectionProtocol"}}
         {{#x-option value='' selected="selected"}}{{/x-option}}
         {{#each protos as |proto|}}
         {{#x-option value=proto}}{{proto}}{{/x-option}}
@@ -27,11 +27,34 @@
   </div>
   <div>
     <h3> General Information </h3>
-
+    <div class="jumbotron">
+      <form {{action "save" model on="change"}}>
+        <h4> Name: {{input value=model.genelarInfoName}}</h4>
+        <br>
+        <h4> Descripton: {{textarea value=model.generalInfoDescription}}</h4>
+        <br>
+        <h4> License Name: {{input value=model.generalInfoLicenseName}}</h4>
+        <br>
+        <h4> License URL: {{input value=model.generalInfoLicenseURL}}</h4>
+      </form>
+    </div>
   </div>
   <div>
     <h3> Authentication Protocol</h3>
+    <div class="jumbotron">
+      <form {{action "saveAuth" model on="change"}}>
+        <h4> Name:
+          {{#x-select value=model.authProtoName action="saveSelectionAuthProtocol"}}
+          {{#x-option value='' selected="selected"}}{{/x-option}}
+          {{#each auths as |auth|}}
+          {{#x-option value=auth.name}}{{auth.name}}{{/x-option}}
+          {{/each}}
+          {{/x-select}}</h4>
+          <br>
+          <h4> Code: {{input value=model.authProtoCode readonly="true"}}</h4>
+      </form>
 
+    </div>
   </div>
 </div>
 
