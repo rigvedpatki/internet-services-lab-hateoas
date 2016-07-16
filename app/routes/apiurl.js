@@ -6,7 +6,7 @@ export default Ember.Route.extend({
       return this.store.findRecord('apiurl', params.apiurl_id);
   },
   actions: {
-    saveSelection(selection,componenet){
+    saveSelection(selection,component){
       this.set('protocol',selection);
     },
       save(apiurl) {
@@ -25,6 +25,7 @@ export default Ember.Route.extend({
           apiurl.set('port',port);
           apiurl.set('endpoint_url',endpoint_url);
           apiurl.save();
+          this.controllerFor('application').send('saveSelection', apiurl);
           Ember.Logger.log("Data is saved for API URL id: " + apiurl.id);
           Ember.get(this, 'flashMessages').success('Saved!');
       }

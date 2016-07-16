@@ -21,10 +21,10 @@
 
                  <!--Input API-->
 
-                 <div id="right">
+                 <!--<div id="right">
                   {{download-swagger}}
-                 </div>
-                  
+                </div>-->
+
 
             <ul class="nav navbar-nav">
              {{#link-to 'application' class="navbar-brand"}}Graphical HATEOAS{{/link-to}}
@@ -36,19 +36,22 @@
                           {{#bs-dropdown-toggle}}Your APIs <span class="caret"></span>{{/bs-dropdown-toggle}}
                           {{#bs-dropdown-menu}}
                             {{#each model.apiurls as |url|}}
-                            <li>{{#link-to "apiurl" url.id}}{{url.endpoint_url}}{{/link-to}}</li>
+                            <li {{action "saveSelection" url}}> {{#link-to 'apiurl' url.id}}{{url.endpoint_url}}{{/link-to}}</li>
                             {{else}}
                             <li>No APIs available</li>
                             {{/each}}
                           {{/bs-dropdown-menu}}
                  {{/bs-dropdown}}
+                 {{#if selectedEndpointId}}
+                 <li>{{#link-to 'apiurl' selectedEndpointId}}{{selectedEndpoint}}{{/link-to}}</li>
+                 {{/if}}
             </ul>
 
         </div><!--/.nav-collapse -->
     </div>
-                  
+
 </nav>
-                
+
 
 <div class="container-fluid">  <!-- container-fluid begin-->
     <div class="row">

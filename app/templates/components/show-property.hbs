@@ -1,9 +1,9 @@
 <h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{model.name}}</h4>
 {{#if model.visible}}
-	<div id="margine">  
+	<div id="margine">
 	  <form {{action "save" model on="change"}}>
-	    name:{{input value=model.name }}
-	    description:{{input value=model.description }}
+	    Name:{{input value=model.name }}
+	    Description:{{input value=model.description }}
 	    Type:{{#x-select value=model.type}}
         {{#x-option}}{{/x-option}}
 	      {{#each types as |type|}}
@@ -11,7 +11,7 @@
 	      {{/each}}
 	    {{/x-select}}
 	  </form>
-	</div>  
+	</div>
   <div id="res3">
     {{#link-to "properties.delete" model.id tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
   </div>

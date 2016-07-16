@@ -1,8 +1,8 @@
 {{#if model.id}}
     <form {{action "save" model on="change"}}>
-      property:{{input value=model.property }}
-      name:{{input value=model.name }}
-      description:{{input value=model.description }}
+      Property:{{input value=model.property }}
+      Name:{{input value=model.name }}
+      Description:{{input value=model.description }}
     </form>
 
     {{#link-to "properties.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}

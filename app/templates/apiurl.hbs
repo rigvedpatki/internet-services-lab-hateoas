@@ -1,13 +1,15 @@
 {{#if model.id}}
+<div>
   <div>
-    <h2>API URL</h2>
+    <h3>API URL</h3>
     <div class="jumbotron">
       <form {{action "save" model on="change" }}>
         <h4 id="ff">Protocol:
         {{#x-select value=model.protocol action="saveSelection"}}
-          {{#x-option value='' selected="selected"}}{{/x-option}}
-          {{#x-option value='HTTP/1.1'}}HTTP/1.1{{/x-option}}
-          {{#x-option value='HTTPS/1.1'}}HTTPS/1.1{{/x-option}}
+        {{#x-option value='' selected="selected"}}{{/x-option}}
+        {{#each protos as |proto|}}
+        {{#x-option value=proto}}{{proto}}{{/x-option}}
+        {{/each}}
         {{/x-select}}<br></h4>
        <h4 id="f1"> Port: {{input value=model.port}}</h4>
         <br>
@@ -23,4 +25,14 @@
       </div>
     </div>
   </div>
+  <div>
+    <h3> General Information </h3>
+
+  </div>
+  <div>
+    <h3> Authentication Protocol</h3>
+
+  </div>
+</div>
+
 {{/if}}

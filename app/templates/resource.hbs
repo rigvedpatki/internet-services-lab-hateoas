@@ -3,8 +3,8 @@
     <h2>Resource</h2>
     <div class="jumbotron">
       <form {{action "save" model.resource on="change"}}>
-        path:{{input value=model.resource.path }}
-        description:{{input value=model.resource.description }}
+        Path:{{input value=model.resource.path }}
+        Description:{{input value=model.resource.description }}
       </form>
       <div id="res1">
         {{#link-to "resources.delete" model.resource tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
@@ -13,11 +13,9 @@
   </div>
 
   <div>
-  
+
     <h3>Methods<button id="mtd" class="btn btn-success btn-md round "{{action "createMethod" model.resource}}>Add </button>
-    </h3> 
-          
-   
+    </h3>
       {{#if model.resource.methods}}
         {{#each model.resource.methods as |method|}}
           <div id="sep" class="panel panel-default">

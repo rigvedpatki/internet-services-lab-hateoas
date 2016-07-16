@@ -32,6 +32,7 @@ export default Ember.Route.extend({
       entity.destroyRecord();
     });
     apiurl.destroyRecord();
+    this.controllerFor('application').send('clearSelection');
     Ember.Logger.log("Data is destroyed for id: " + apiurl.id);
     Ember.get(this, 'flashMessages').success('API URL was deleted!');
     this.transitionTo('application');
