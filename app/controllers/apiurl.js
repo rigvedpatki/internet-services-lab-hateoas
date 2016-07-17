@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
       if (auths[i].name === authName) {
         return auths[i].code;
       }
-  }
+    }
   },
   actions:{
     saveAuth: function(apiurl){

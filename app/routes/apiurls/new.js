@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   model() {
     var var_apiurl = this.store.createRecord('apiurl', {
       protocol: '',
-      port: '443',
+      port: '',
       domain: '',
       base_path:'',
       endpoint_url: ''

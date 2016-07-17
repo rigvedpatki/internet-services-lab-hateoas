@@ -25,9 +25,15 @@ export default Ember.Route.extend({
       });
       method.destroyRecord();
     });
-    resource.destroyRecord();
-    Ember.Logger.log("Data is destroyed for id: " + resId);
-    Ember.get(this, 'flashMessages').success('Resource was deleted!');
-    this.transitionTo('application');
+    resource.get('api').then(function(api) {
+      api.get('resources').then( function(resources) {
+        resources.removeObject(resource.id);
+        api.save();
+        resource.destroyRecord();
+        Ember.Logger.log("Data is destroyed for id: " + resId);
+        Ember.get(this, 'flashMessages').success('Resource was deleted!');
+        this.transitionTo('application');
+      });
+    });
   }
 });

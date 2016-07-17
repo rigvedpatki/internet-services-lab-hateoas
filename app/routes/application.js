@@ -7,5 +7,11 @@ export default Ember.Route.extend({
       entities: this.store.findAll('entity'),
       apiurls: this.store.findAll('apiurl')
     });
+  },
+  actions: {
+    reroute(route, objectId) {
+      Ember.Logger.log("Rerouting.");
+      this.transitionTo(route, objectId);
+    }
   }
 });

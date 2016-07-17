@@ -1,87 +1,79 @@
 <nav class="navbar navbar-inverse">
 
-       <div class="col-sm-12 col-md-12 col-lg-12">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div> 
 
+    <div id="navbar" class="collapse navbar-collapse">
+      <!--the add API button-->
+      <div class="pull-right">
+        {{#link-to "apiurls.new" tagName="button" class="btn btn-danger "}}Add API {{/link-to}}
+      </div>
 
-     </div> <!-- col-lg-->
+      <!--Input API-->
+      <div class="pull-right">
+        {{download-swagger}}
+      </div>
 
-
-        <div id="navbar" class="collapse navbar-collapse">
-          <!--the add API button-->
-                 <div class="pull-right">
-                      {{#link-to "apiurls.new" tagName="button" class="btn btn-danger "}}Add API {{/link-to}}
-                 </div>
-
-                 <!--Input API-->
-
-                 <div id="right">
-                  {{download-swagger}}
-                </div>
-
-
-
-                              
-
-            <ul class="nav navbar-nav">
-             {{#link-to 'application' class="navbar-brand"}}Graphical HATEOAS{{/link-to}}
-                <li>{{#link-to 'application'}}Home{{/link-to}}</li>
-                <li>{{#link-to 'about'}}About{{/link-to}}</li>
-                <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
-                <li>{{#link-to 'help'}}Help{{/link-to}}</li>
-                  {{#bs-dropdown tagName="li"}}
-                          {{#bs-dropdown-toggle}}Your APIs <span class="caret"></span>{{/bs-dropdown-toggle}}
-                          {{#bs-dropdown-menu}}
-                            {{#each model.apiurls as |url|}}
-                            <li {{action "saveSelection" url}}> {{#link-to 'apiurl' url.id}}{{url.endpoint_url}}{{/link-to}}</li>
-                            {{else}}
-                            <li>No APIs available</li>
-                            {{/each}}
-                          {{/bs-dropdown-menu}}
-                 {{/bs-dropdown}}
-                 {{#if selectedEndpointId}}
-                 <li>{{#link-to 'apiurl' selectedEndpointId}}{{selectedEndpoint}}{{/link-to}}</li>
-                 {{/if}}
-            </ul>
-
-        </div><!--/.nav-collapse -->
-    </div>
+      <ul class="nav navbar-nav">
+        {{#link-to 'application' class="navbar-brand"}}Graphical HATEOAS{{/link-to}}
+        <li>{{#link-to 'application'}}Home{{/link-to}}</li>
+        <li>{{#link-to 'about'}}About{{/link-to}}</li>
+        <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+        <li>{{#link-to 'help'}}Help{{/link-to}}</li>
+        {{#bs-dropdown tagName="li"}}
+          {{#bs-dropdown-toggle}}Your APIs <span class="caret"></span>{{/bs-dropdown-toggle}}
+          {{#bs-dropdown-menu}}
+            {{#each model.apiurls as |url|}}
+              <li {{action "saveSelection" url}}> {{#link-to 'apiurl' url.id}}{{url.endpoint_url}}{{/link-to}}</li>
+            {{else}}
+              <li>No APIs available</li>
+            {{/each}}
+          {{/bs-dropdown-menu}}
+        {{/bs-dropdown}}
+        {{#if selectedAPI}}
+          <li>{{#link-to 'apiurl' selectedAPI}}{{selectedEndpoint}}{{/link-to}}</li>
+        {{/if}}
+      </ul>
+    </div> <!--/.nav-collapse -->
+  </div> <!-- col-lg-->
 
 </nav>
 
 
 <div class="container-fluid">  <!-- container-fluid begin-->
-    <div class="row">
-
-        <div class="col-sm-2 col-md-3 col-lg-3">
-      <div class="row">
-        <div class="cls">
-            {{api-resources model=model.resources store=store}}
+  <div class="row">
+    {{#if selectedAPI}}
+      <div class="col-sm-2 col-md-3 col-lg-3">
+        <div class="row">
+          <div class="cls">
+            {{api-resources model=model.resources api=selectedAPI store=store reroute='reroute'}}
+          </div>
         </div>
-    </div>
-    <div class="row">
-      <div class="cls">
-          {{api-entities model=model.entities store=store}}
+        <div class="row">
+          <div class="cls">
+            {{api-entities model=model.entities api=selectedAPI store=store reroute='reroute'}}
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
-            <!-- Panel begin-->
-            <div class="col-sm-9 col-md-8 col-lg-8">
-    <div class="panel panel-default">
+    {{else}}
+      <div class="col-sm-2 col-md-3 col-lg-3">
+        <p>Please start by creating or selecting an API.</p>
+      </div>
+    {{/if}}
+    <!-- Panel begin-->
+    <div class="col-sm-9 col-md-8 col-lg-8">
+      <div class="panel panel-default">
         <div class="panel-body">
-
-
-            {{outlet}}
-
+          {{outlet}}
         </div>
-        </div>
-      </div><!-- Panel end-->
-    </div> <!-- body end-->
-
+      </div>
+    </div> <!-- Panel end-->
+  </div> <!-- Row end-->
 </div><!-- /.container-fluid-end -->

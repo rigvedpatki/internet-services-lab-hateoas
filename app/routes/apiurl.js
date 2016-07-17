@@ -22,7 +22,7 @@ export default Ember.Route.extend({
           if (apiurl.get('protocol') === "HTTP/1.1"){
             Ember.Logger.log("log: " + apiurl.id);
             endpoint_url = "http://"+apiurl.get('domain')+apiurl.get('base_path');
-            port = 88;
+            port = 80;
           }else if (apiurl.get('protocol') === "HTTPS/1.1") {
             Ember.Logger.log("log: " + apiurl.id);
             endpoint_url = "https://"+apiurl.get('domain')+apiurl.get('base_path');
