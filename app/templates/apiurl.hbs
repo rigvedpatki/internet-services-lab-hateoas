@@ -29,13 +29,13 @@
     <h3> General Information </h3>
     <div class="jumbotron">
       <form {{action "save" model on="change"}}>
-        <h4> Name: {{input value=model.genelarInfoName}}</h4>
+        <h4 id="f5"> Name: {{input value=model.genelarInfoName}}</h4>
         <br>
-        <h4> Descripton: {{textarea value=model.generalInfoDescription}}</h4>
+        <h4 id="f6"> Descripton: </h4><span id="ff2">{{textarea value=model.generalInfoDescription}}</span>
         <br>
-        <h4> License Name: {{input value=model.generalInfoLicenseName}}</h4>
+        <h4 id="f7"> License Name: {{input value=model.generalInfoLicenseName}}</h4>
         <br>
-        <h4> License URL: {{input value=model.generalInfoLicenseURL}}</h4>
+        <h4 id="f8"> License URL: {{input value=model.generalInfoLicenseURL}}</h4>
       </form>
     </div>
   </div>
