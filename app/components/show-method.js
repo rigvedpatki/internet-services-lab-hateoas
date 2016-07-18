@@ -18,7 +18,11 @@ export default Ember.Component.extend({
       flashMessage.success('Saved!');
     },
     toggleVisibility(method) {
-      method.get('visible') == true ? method.set('visible', false) : method.set('visible', true);
+      if (method.get('visible') === true ) {
+        method.set('visible', false);
+      }else {
+        method.set('visible', true);
+      }
       method.save();
     }
   }

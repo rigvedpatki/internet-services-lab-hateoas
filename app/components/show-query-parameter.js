@@ -27,7 +27,11 @@ export default Ember.Component.extend({
       Ember.get(this, 'flashMessages').success('Saved!');
     },
     toggleVisibility(qParam) {
-      qParam.get('visible') == true ? qParam.set('visible', false) : qParam.set('visible', true);
+      if (qParam.get('visible') === true) {
+        qParam.set('visible', false);
+      }else {
+        qParam.set('visible', true);
+      }
       qParam.save();
     }
   }

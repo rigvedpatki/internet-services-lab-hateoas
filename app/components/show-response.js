@@ -93,7 +93,11 @@ export default Ember.Component.extend({
       Ember.Logger.log("Entity saved.");
     },
     toggleVisibility(response) {
-      response.get('visible') == true ? response.set('visible', false) : response.set('visible', true);
+      if (response.get('visible') === true) {
+        response.set('visible', false); 
+      }else {
+        response.set('visible', true);
+      }
       response.save();
     }
   }

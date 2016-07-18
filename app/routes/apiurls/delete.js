@@ -6,7 +6,6 @@ export default Ember.Route.extend({
     return this.store.findRecord('apiurl', params.apiurl_id);
   },
   afterModel(apiurl, transition) {
-    let apiurlId = apiurl.id;
     apiurl.get('resources').forEach( function(resource) {
       resource.get('methods').forEach( function(method) {
         method.get('queryParams').forEach( function(queryParam) {

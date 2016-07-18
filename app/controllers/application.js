@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
     clearSelection: function(){
       Ember.Logger.log("entered clearSelection");
       this.set('selectedEndpoint', null);
-      this.set('selectedEndpoint', null);
+      this.set('selectedAPI', null);
     }
   }
 });
