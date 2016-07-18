@@ -339,30 +339,27 @@ padding-left: 10px;
 }
 
 
-#download {
-   background: transparent;	
-   padding: 12px 22px;
-   border: 2px solid #0099cc;
-   color: #0099cc;
-   width: 75%;
-   margin-top: 1px;
 
+#mme{
+    background: transparent;
+    padding: 9px 18px;
+    position: absolute;
+    width: 13%;
+    color: #0099cc;
+    margin-left: 75%;
+    margin-top: 0.3%;
+    border: white solid white;
+    border: 2px solid #0099cc;
+    margin-bottom: 1%;
+       
 }
-#download:hover {
+#mme:hover {
     border-color: white;
     color: white;
 }
-#download:active {
+.mme:active {
     border-color: white;
     color:white;
-}
-#mme{
-    position: absolute;
-    margin-left: 75%;
-    margin-bottom: 1%;
-    border: white solid white;
-    
-   
 }
 
 #mm{
@@ -387,7 +384,7 @@ padding-left: 10px;
     border-color: white;
     color: white;
 }
-.nn:active {
-    border-color: green;
-    color:green;
+#nn:active {
+    border-color: white;
+    color:white;
 }
