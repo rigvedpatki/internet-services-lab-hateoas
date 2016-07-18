@@ -2,8 +2,8 @@
   <h2>Entity</h2>
   <div class="jumbotron">
     <form {{action "save" model on="change"}}>
-      name:{{input value=model.name placeholder="e.g. Pet"}}
-      description:{{input value=model.description}}
+      Name:{{input value=model.name placeholder="e.g. Pet"}}
+      Description:{{input value=model.description}}
       External: {{input type="checkbox" name=model.external checked=model.external}}
       {{#if model.external}}
         URL/Path: {{input value=model.url}}
@@ -17,7 +17,7 @@
     {{select-entity-formats model=model store=store}}
 
   </div>
-  
+
   {{create-property model=model store=store}}
   <div class="jumbotron">
     {{#if model.properties}}

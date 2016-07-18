@@ -7,7 +7,13 @@ export default Ember.Route.extend({
       port: '',
       domain: '',
       base_path:'',
-      endpoint_url: ''
+      endpoint_url: '',
+      generalInfoName: '',
+      generalInfoDescription: '',
+      generalInfoLicenseName: '',
+      generalInfoLicenseURL:'',
+      authProtoName: '',
+      authProtoCode: ''
     });
     var_apiurl.save();
     return var_apiurl;

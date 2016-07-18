@@ -1,4 +1,4 @@
-<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"></span>{{if model.name model.name "New Queryparameter"}}</h4>
+<h4 {{action "toggleVisibility" model}}><span class="caret {{if model.visible "caret-down" "caret-right"}}"></span>{{if model.name model.name "New Queryparameter"}}</h4>
 {{#if model.visible}}
   <div id="margine">
 	  <form {{action "save" model on="change"}}>

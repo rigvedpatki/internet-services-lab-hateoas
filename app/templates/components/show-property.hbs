@@ -1,9 +1,9 @@
-<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{model.name}}</h4>
+<h4 {{action "toggleVisibility" model}}><span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{if model.name model.name "New Property"}}</h4>
 {{#if model.visible}}
 	<div id="margine">
 	  <form {{action "save" model on="change"}}>
-	    Name:{{input value=model.name }}
-	    Description:{{input value=model.description }}
+	    Name:{{input value=model.name placeholder="e.g. id"}}
+	    Description:{{input value=model.description placeholder="e.g. unique identifier" }}
 	    Type:{{#x-select value=model.type}}
         {{#x-option}}{{/x-option}}
 	      {{#each types as |type|}}

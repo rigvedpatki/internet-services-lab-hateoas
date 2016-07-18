@@ -8,7 +8,9 @@ export default Ember.Component.extend({
         object.save();
       });
       var property = this.store.createRecord('property', {
-        name: 'newProperty',
+        name: '',
+        description: '',
+        type: '',
         entity: entity,
         visible: 'true'
       });

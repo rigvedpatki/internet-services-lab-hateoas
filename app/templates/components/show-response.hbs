@@ -1,6 +1,6 @@
-<h4 {{action "toggleVisibility" model}}> < span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>{{if model.status model.status "New Response"}} </h4>
+<h4 {{action "toggleVisibility" model}}> <span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>{{if model.status model.status "New Response"}} </h4>
 {{#if model.visible}}
-  <div id="margine"> 
+  <div id="margine">
     <form {{action "save" model on="change"}}>
       Status:{{#x-select value=model.status}}
         {{#each statusCodes as |code|}}

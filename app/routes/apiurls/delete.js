@@ -25,7 +25,7 @@ export default Ember.Route.extend({
       });
       resource.destroyRecord();
     });
-    
+
     apiurl.get('entities').forEach( function(entity) {
       entity.get('properties').forEach( function(property) {
           property.destroyRecord();
@@ -33,7 +33,6 @@ export default Ember.Route.extend({
       entity.destroyRecord();
     });
     apiurl.destroyRecord();
-    
     this.controllerFor('application').send('clearSelection');
     Ember.Logger.log("Data is destroyed for id: " + apiurl.id);
     Ember.get(this, 'flashMessages').success('API URL was deleted!');

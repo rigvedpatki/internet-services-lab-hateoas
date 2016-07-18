@@ -1,10 +1,10 @@
 {{#if model.id}}
 
-<h4  {{action "toggleVisibility" model}}>  < span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>
+<h4  {{action "toggleVisibility" model}}>  <span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>
 {{model.method}}</h4>
 
   {{#if model.visible}}
-   <div id="margine"> 
+   <div id="margine">
     <form {{action "save" model on="change"}}>
       Method:{{#x-select value=model.method}}
         {{#each methods as |method|}}
@@ -14,13 +14,13 @@
       Description:{{input value=model.description}}
     </form>
   </div>
-  <hr>  
+  <hr>
     <div id="res">
       {{#link-to "methods.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
     </div>
-	
+
     {{create-link-relation model=model store=store}}
-           
+
 
     {{#if model.linkRelations}}
       {{#each model.linkRelations as |linkRelation|}}
@@ -29,10 +29,10 @@
     {{else}}
       <p>No Link Relations yet.</p>
     {{/if}}
-	
-	
+
+
     {{create-query-parameter model=model store=store}}
-           
+
 
     {{#if model.queryParams}}
       {{#each model.queryParams as |queryParam|}}
