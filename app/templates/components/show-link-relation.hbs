@@ -1,28 +1,30 @@
-<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{if model.rel model.rel "-"}}</h4>
+<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span> {{if model.rel model.rel "New Link Relation"}}</h4>
 {{#if model.visible}}
   <div id="margine">
-    <form {{action "save" model on="change"}}>
-      Link Relation Type:{{#radio-button value=true groupValue=model.registered}}Registered <span class="break">(IANA-REL, MF-REL)</span>{{/radio-button}}
-      {{#radio-button value=false groupValue=model.registered}}Self-registered{{/radio-button}}<br/>
-    </form>
-    {{#if model.registered}}
-      Rel:{{#x-select value=model.rel action="saveRel"}}
-        {{#x-option value=""}}{{/x-option}}
+    Rel:{{#x-select value=model.rel action="saveRel"}}
+      {{#x-option value=""}}{{/x-option}}
+      <optgroup label="Self-Registered">
+        {{#each selfRegisteredTypes as |type|}}
+          {{#x-option value=type}}{{type}}{{/x-option}}
+        {{/each}}
+      </optgroup>
+      <optgroup label="IANA-REL">
         {{#each-in hints as |name hint|}}
           {{#x-option value=name}}{{name}}{{/x-option}}
         {{/each-in}}
-      {{/x-select}}
-      <div>
-        {{#each-in hints as |name hint|}}
-          {{#if (compareNames model.rel name)}}
-            <p><span class="bold">{{name}}: </span>{{hint}}</p>
-          {{/if}}
-        {{/each-in}}
-      </div>
-      Relations from: <a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml">iana.org</a>. Last Updated: 2016-04-19.
-    {{else}}
+      </optgroup>
+    {{/x-select}}
+    <div>
+      {{#each-in hints as |name hint|}}
+        {{#if (compareNames model.rel name)}}
+          <p><span class="bold">{{name}}: </span>{{hint}}</p>
+        {{/if}}
+      {{/each-in}}
+    </div>
+    Relations from: <a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml">iana.org</a>. Last Updated: 2016-04-19.
+    {{#if (eq model.rel "profile")}}
       <form {{action "save" model on="change"}}>
-        Rel:{{input class=(if validationError "inputError" "") value=model.rel placeholder="Type a URL (e.g. 'http://example.org/rels/todo')"}}<br/>
+        URL:{{input class=(if validationError "inputError" "") value=model.url placeholder="e.g. http://example.org/rels/todo"}}<br/>
         {{#if validationError}}
           <span class="error">{{errorMessage}}</span>
         {{/if}}

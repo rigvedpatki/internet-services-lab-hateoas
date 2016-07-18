@@ -4,8 +4,8 @@ import { belongsTo } from 'ember-data/relationships';
 
 
 export default Model.extend({
-  registered: attr('boolean'),
   rel: attr('string'),
+  url: attr('string'),
   method: belongsTo('method'),
   visible: attr('boolean')
 });
