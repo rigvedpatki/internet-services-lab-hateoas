@@ -1,82 +1,133 @@
-<h2>Stepwise tutorial for using the App Graphical HATEOAS</h2>
+<h2>Stepwise tutorial for using the Graphical HATEOAS API Creator</h2>
 
 <div class="panel panel-primary" id="pnlh">
-  <p>Step1: at first you need to create a resource, for that please click on "add" button on the left sidebar.</p> 
-  <br>
-  <p>----> 1.1 Click on the default name "/newPath" on the sidebar to open the resource you have added.</p>
-  <br>
-  <p>----> 1.2 On the top of the page which you have opened, you see the "path" and "description" tags, change the path of your resource and as soon as you doing so, the corresponding name(path) will be changed and shown on the sidebar.</p>
- <br>
-  <p>----> 1.3 Write a meaningsful description for your resource.</p>
- <br>
-  <p>----> 1.4 With the remove button, you can delete the entire resource (include it's methods).</p>
+  <h3>APIs</h3>
+  <ol>
+    <li>Start by creating a new API</li>
+    <ol>
+      <li>Click the "Add API"- button in the top bar</li>
+      <li>Select the Protocol for the API (http/https) and write the domain and optional Base path</li>
+      <li>Give the API a name, description and License information, if needed</li>
+      <li>Finally, select the Authentication Protocol</li>
+      <li>The API information can be accessed by clicking the Endpoint URL in top navigation bar</li>
+      <li>You can switch between APIs through the "Your APIs"- link in the top navigation bar</li>
+      <li>The API can be deleted by clicking the "Remove"- button to the right of Protocol. This will remove all resources and Entities related to this API.</li>
+    </ol>
+  </ol>
+</div>
+
+<div class="panel panel-primary" id="pnlh1">
+  <h3>Resources & Methods</h3>
+  <ol start="2">
+    <li>To continue, create a new Resource</li>
+    <ol>
+      <li>Click the "Add"- button on the left Sidebar</li>
+      <li>Define the path and description for the Resource</li>
+      <li>Deleting the Resource will also permanently delete all Methods</li>
+      <li>All the Resources for the current API can be seen on the left sidebar. Clicking one will open that Resource in the Main view</li>
+    </ol>
+    <li>Create a new Method for the newly-created Resource</li>
+    <ol>
+      <li>Open a Resource</li>
+      <li>Click the "Add Method"- button to create a new Method</li>
+      <li>Select the HTTP-method and give a description</li>
+      <li>Removing a method will remove all Link Relations, Query Parameters and Responses associated to that Method</li>
+      <li>Method can be hidden by clicking its name in the Main view. Another click will show the Method again</li>
+      <li>Each method is shown under "Method"- header in the main view for the opened Resource</li>
+      <li>Methods are also shown under the Resource it belongs to in the left Sidebar</li>
+    </ol>
+  </ol>
+</div>
+
+<div class="panel panel-primary" id="pnlh2">
+  <h3>Link Relations, Query Parameters & Responses</h3>
+  <ol start="4">
+    <li>Create a Link Relation</li>
+    <ol>
+      <li>Open the newly-created Method</li>
+      <li>Click the "Add"- button under "Link Relations"- header</li>,
+      <li>Select the Link Relation Type</li>
+      <ul>
+        <li>Registered is defined by IANA-REL or MF-REL</li>
+        <li>Self-Registered allows the creation of own Link Relation types, but they may not be recognized by others</li>
+      </ul>
+      <li>Select the rel- attribute</li>
+      <ul>
+        <li>If Link Relation Type is Registered, this can be selected from a list. A short description of the Rel-attribute is shown under the dropdown list</li>
+        <li>If Link Relation Type is Self-Registered, a URL to the definition of that type can be added</li>
+      </ul>
+      <li>Clicking the "Remove"- button will delete only the current Link Relation</li>
+    </ol>
+    <li>Create a Query Parameter</li>
+    <ol>
+      <li>Click the "Add"- button under "Query Parameters"- header</li>
+      <ul>
+        <li>This will close all open Link Relations, Query Parameters or Responses for that Method</li>
+      </ul>
+      <li>Give the Query Parameter a Name, Description and an Example</li>
+      <li>Select the Type of the Query Parameter from the dropdown list</li>
+      <li>Just like Link Relations, single Query Parameters can be removed with the "Remove"- button</li>
+    </ol>
+    <li>Create a Response</li>
+    <ol>
+      <li>Click the "Add"- button below the "Responses"- header</li>
+      <ol>
+        <li>Select the Status Code for the Response</li>
+        <li>Give the Response a Name and Description</li>
+        <li>Entity lets you connect the Response- object to an Entity</li>
+        <ul>
+          <li>Selecting "Create new Entity" in the dropdown box will let you create a new Entity</li>
+          <li>When you have formerly created Entities, they will all show in the dropdown box, and any of them can be linked to the Response</li>
+        </ul>
+        <li>Also individual Responses can be deleted with the "Remove"- button</li>
+      </ol>
+    </ol>
+  </ol>
+</div>
+
+<div class="panel panel-primary" id="pnlh3">
+  <h3>Entities & Properties</h3>
+  <ol start="7">
+    <li>To create a new Entity, click the "Add"- button next to Entities in the Sidebar</li>
+    <ul>
+      <li>Entities can also be created through a Response, as explained above</li>
+    </ul>
+    <ol>
+      <li>Give the Entity a name and description</li>
+      <li>If the Entity is defined outside of this application, check the checkbox "External" and fill in the URL where the definition can be found</li>
+      <li>Select the Formats that this Entity supports</li>
+      <ul>
+        <li>More than one Format can be chosen</li>
+        <li>In order to choose more than one, please hold down the Ctrl- or Shift- keys while clicking the Format</li>
+      </ul>
+      <li>Removing an Entity will also remove all of its Properties and linking to Responses</li>
+    </ol>
+    <li>Create a Property</li>
+    <ol>
+      <li>Click the "Add"- button next to Properties- header in Entity</li>
+      <li>Give the Property a Name and Description</li>
+      <li>Finally, select the Type from a dropdown- list</li>
+      <li>Single Properties can be removed with the "Remove"- button</li>
+    </ol>
+  </ol>
  </div>
 
- <div class="panel panel-primary" id="pnlh1">
-  <p>Step2: Now is the time to create a method for our resource, for that please click on the "add" button beside section "Methods" underneath Resource section.</p> 
-  <br>
-  <p>----> 2.1 As default you will create a GET method which can be changed by the dropdown list to 6 diverse method types.</p>
-  <br>
-  <p>----> 2.2 Write a meaningful description for your method.</p>
- <br>
-  <p>----> 2.3 After creating a method you will realize that each method is shown with a different color and under the "path" in the sidebar, if you have 3 methods in different types, you might see them in three different colors.</p>
- <br>
-  <p>----> 2.4 The number of methods you want to create depends on you and there isn't any limitation for that.</p>
- <br>
-  <p>----> 2.4 With the remove button, you can delete every method you don't need anymore, however the related options to each method will be deleted with it.</p>
- </div>
-
- <div class="panel panel-primary" id="pnlh2">
-  <p>Step3: After creating a method, or selecting a method for changes, you will have the followings to add:</p> 
-  <br>
-  <p>----> <span class="boldi">3.1 Link Relation:</span> click on the "add" button beside the LinkRelation tag to craete a link relation for your method. You can also add many link relations to your method. here is important to select a link relation from the dropdown list or clicking on self-registered and enter your version. Remove button will delete "only" your currently opened link relation.</p>
-  <br>
-  <p>----> <span class="boldi">3.2 Query Parameter: </span> As default and like other components in this app, you don't have any query parameters, for creating one, please click on the "add" button beside of it's tag. Fill the textboxes like name and description up and select a format for your parameter from the given dropdown list. Remove button deletes your currently opened query parameter.</p>
- <br>
-  <p>----> <span class="boldi">3.3 Responses: </span> As mentioned for other components above, you need to create a new response section, because as default you don't have any. For doing so, please click on the "add" button beside the Rsponses tag. After the section is  created, it is shown 4 options to you. Two of them should be filled up by you (name and description), the other two are to be selected by you(status and entity). This section is connected to the Entity part (in sidebar), i.e. if you select "create new entity" from entity's dropdown list, you will be jumped into the Entity page. Remove button will delete only your currently opened response window.</p>
- <br>
- </div>
-
- <div class="panel panel-primary" id="pnlh3">
-  <p>Step4: Now after all we come to the entity, entity is another section that as mentioned is connected to the responses part of each method, for creating and managing an entity you need:</p> 
-  <br>
-  <p>----> 4.1 Either click on the "add" button in section Entities on the sidebar, or select the option "create a new entity" from response section of any method.</p>
-  <br>
-  <p>----> 4.2 After creating an entity, you should open the corresponding page, in case you don't create it from method/responses, you need to do the same action as you did for the resources. Click on the name of the entity you have recently created, as default the entity named as "sample".</p>
- <br>
-  <p>----> 4.3 In the upper section of corresponding page (entity's page), you can change the name of your entity to a meaningfull one. Write a description for it, so that any other user understand why this name? .</p>
- <br>
-  <p>----> 4.4 In the "Formats" section, you see an option list with many options, select one ore many formats which you need, for doing so you can hold cntl key and click on your desired formats. According to your selection, a list of selected formats will be shown on the right side on this section. In case you want to enter an external URL or path, you can click on the check box "external" and then enter yours. </p>
- <br>
-  <p>----> 4.5 Remove button can remove your entity (include it's properties).</p>
- <br>
-  <p>----> 4.6 On the bottom of the Entities page, you see the section "properties", as default you don't have any properties, therefore you need to click on the "add" button beside the Properties tag for creating one (or many, depending on you).</p>
-  <br>
-  <p>----> 4.7 After creating your first property, you will see a section "newProperty", it is the default name for each property. You will also see this name with a blue color underneath your entities in sidebar menu.</p>
-  <br>
-  <p>----> 4.5 Change the name of your property, write a description and then choose a type for it (i.e. URL).</p>
-  <br>
-  <p>----> 4.5 Remove button can remove your currently opened property.</p>
- </div>
-
- <div class="panel panel-primary" id="pnlh4">
-  <p>Some other Guides: </p> 
-  <br>
-  <p>----> * Add API: for creating/generating your API at the end, you need to click on the red button on top-right of the screen, fill then the appeared form up and click on generate endpoint.</p>
-  <br>
-  <p>----> * If you have any question regarding to this app, we would be glad to answer your questions per email. You will find our contacts in the menubar/contact.</p>
- <br>
-  <p>----> * .</p>
- <br>
-  <p>----> * .</p>
- <br>
-  <p>----> * .</p>
- <br>
-  <p>----> * .</p>
- </div>
-
-
-
-
-
-{{outlet}}
+<div class="panel panel-primary" id="pnlh4">
+  <h3>Downloading a Swagger File & Some Tips</h3>
+  <ol start="9">
+    <li>Once the API is finished, you can export it by downloading a Swagger- file</li>
+    <ol>
+      <li>Click the "Download Swagger File"- button in the top Navigation bar</li>
+      <li>Save the file on your computer</li>
+    </ol>
+    <li>Tips</li>
+    <ul>
+      <li>All the data is saved in LocalStorage on your browser</li>
+      <ul>
+        <li>Everything is automatically saved whenever something changes. You will see a green icon with the text "Saved" at the bottom of the page after each save</li>
+        <li>Therefore, you can close the application at any time, and continue later from where you were</li>
+      </ul>
+      <li>A single API can contain several Resources, Methods, Responses, Entities, and so on</li>
+    </ul>
+  </ol>
+</div>

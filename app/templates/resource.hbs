@@ -3,8 +3,8 @@
     <h2>Resource</h2>
     <div class="jumbotron">
       <form {{action "save" model.resource on="change"}}>
-        Path:{{input value=model.resource.path }}
-        Description:{{input value=model.resource.description }}
+        Path:{{input value=model.resource.path placeholder="e.g. /pet"}}
+        Description:{{input value=model.resource.description}}
       </form>
       <div id="res1">
         {{#link-to "resources.delete" model.resource tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}

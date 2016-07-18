@@ -4,8 +4,8 @@ export default Ember.Route.extend({
     model() {
         var response = this.store.createRecord('response', {
             status: '200 - OK',
-            name: 'myResponse',
-            description: 'My OK Response'
+            name: '',
+            description: ''
         });
         response.save();
         return response;

@@ -5,20 +5,19 @@ export default Ember.Component.extend({
   actions: {
     createResource(api) {
       var resource = this.store.createRecord('resource', {
-        path: '/newPath',
+        path: '',
         description: '',
         api: api
       });
       resource.save();
       api.save();
-      Ember.Logger.log("Starting to reroute.");
       this.sendAction('reroute', 'resource', resource.id);
     },
     createMethod(resource) {
       var method = this.store.createRecord('method', {
         method: 'GET',
-        name: 'myMethod',
-        description: 'This is my method.',
+        name: '',
+        description: '',
         resource: resource
       });
       method.save();

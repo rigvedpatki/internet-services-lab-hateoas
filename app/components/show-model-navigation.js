@@ -1,12 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  isExpanded: true,
   actions: {
     toggleModel(item){
-      if (! item) {
-        return;
-      }
-      item.toggleProperty('isExpanded', true);
+      item.toggleProperty('isExpanded');
+    },
+    showMethod(method) {
+      method.set('visible', true);
     }
   }
 });

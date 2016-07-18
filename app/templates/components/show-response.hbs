@@ -1,4 +1,4 @@
-<h4 {{action "toggleVisibility" model}}> < span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>{{model.status}} </h4>
+<h4 {{action "toggleVisibility" model}}> < span class="caret {{if model.visible "caret-down" "caret-right"}}"> </span>{{if model.status model.status "New Response"}} </h4>
 {{#if model.visible}}
   <div id="margine"> 
     <form {{action "save" model on="change"}}>
@@ -7,9 +7,9 @@
           {{#x-option selected=(if (eq model.status code) "selected" "") value=code}}{{code}}{{/x-option}}
         {{/each}}
       {{/x-select}}
-      Name:{{input value=model.name}}
+      Name:{{input value=model.name placeholder="e.g. OK-status"}}
       <div id="en">
-        Description:{{input value=model.description}}
+        Description:{{input value=model.description placeholder="e.g. Successful response."}}
         Entity:
         {{#x-select value=model.entity action="saveEntity" response=model}}
           {{#unless model.entity}}

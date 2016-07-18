@@ -12,14 +12,14 @@
           {{#x-option value=name}}{{name}}{{/x-option}}
         {{/each-in}}
       {{/x-select}}
-      Relations from: <a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml">http://www.iana.org/assignments/link-relations/link-relations.xhtml</a>. Last Updated: 2016-04-19.
       <div>
         {{#each-in hints as |name hint|}}
           {{#if (compareNames model.rel name)}}
-            <span class="bold">{{name}}: </span>{{hint}}
+            <p><span class="bold">{{name}}: </span>{{hint}}</p>
           {{/if}}
         {{/each-in}}
       </div>
+      Relations from: <a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml">iana.org</a>. Last Updated: 2016-04-19.
     {{else}}
       <form {{action "save" model on="change"}}>
         Rel:{{input class=(if validationError "inputError" "") value=model.rel placeholder="Type a URL (e.g. 'http://example.org/rels/todo')"}}<br/>

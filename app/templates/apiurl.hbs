@@ -13,11 +13,11 @@
         {{/x-select}}<br></h4>
        <h4 id="f1"> Port: {{input value=model.port}}</h4>
         <br>
-        <h4 id="f2">Domain: {{input value=model.domain}}</h4>
+        <h4 id="f2">Domain: {{input value=model.domain placeholder="e.g. www.example.com"}}</h4>
         <br>
-        <h4> Base Path: {{input value=model.base_path }}</h4>
+        <h4> Base Path: {{input value=model.base_path placeholder="e.g. /develop"}}</h4>
         <br>
-        <h4 id="f3">Endpoint URL: {{input value=model.endpoint_url readonly=true}}</h4>
+        <h4 id="f3">Endpoint URL: {{model.endpoint_url}}</h4>
         <br>
       </form>
       <div id="res4">
@@ -29,13 +29,13 @@
     <h3> General Information </h3>
     <div class="jumbotron">
       <form {{action "save" model on="change"}}>
-        <h4 id="f5"> Name: {{input value=model.genelarInfoName}}</h4>
+        <h4 id="f5"> Name: {{input value=model.generalInfoName  placeholder="e.g. API for project"}}</h4>
         <br>
-        <h4 id="f6"> Descripton: </h4><span id="ff2">{{textarea value=model.generalInfoDescription}}</span>
+        <h4 id="f6"> Description: </h4><span id="ff2">{{textarea value=model.generalInfoDescription}}</span>
         <br>
-        <h4 id="f7"> License Name: {{input value=model.generalInfoLicenseName}}</h4>
+        <h4 id="f7"> License Name: {{input value=model.generalInfoLicenseName  placeholder="e.g. MIT"}}</h4>
         <br>
-        <h4 id="f8"> License URL: {{input value=model.generalInfoLicenseURL}}</h4>
+        <h4 id="f8"> License URL: {{input value=model.generalInfoLicenseURL placeholder="e.g. https://opensource.org/licenses/MIT"}}</h4>
       </form>
     </div>
   </div>
@@ -53,9 +53,11 @@
           <br>
           <h4> Code: {{input value=model.authProtoCode readonly="true"}}</h4>
       </form>
-
     </div>
   </div>
+  {{#each flashMessages.queue as |flash|}}
+    {{flash-message flash=flash}}
+  {{/each}}
 </div>
 
 {{/if}}

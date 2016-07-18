@@ -5,18 +5,17 @@ export default Ember.Component.extend({
   actions: {
     createEntity(api) {
       var entity = this.store.createRecord('entity', {
-        name: 'New Entity',
+        name: '',
         description: '',
         api: api
       });
       entity.save();
       api.save();
-      Ember.Logger.log("Starting to reroute.");
       this.sendAction('reroute', 'entity', entity.id);
     },
     createProperty(entity) {
       var property = this.store.createRecord('property', {
-        name: 'newProperty',
+        name: '',
         entity: entity
       });
       property.save();

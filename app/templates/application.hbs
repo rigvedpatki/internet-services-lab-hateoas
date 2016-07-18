@@ -31,7 +31,7 @@
           {{#bs-dropdown-toggle}}Your APIs <span class="caret"></span>{{/bs-dropdown-toggle}}
           {{#bs-dropdown-menu}}
             {{#each model.apiurls as |url|}}
-              <li {{action "saveSelection" url}}> {{#link-to 'apiurl' url.id}}{{url.endpoint_url}}{{/link-to}}</li>
+              <li {{action "saveSelection" url}}> {{#link-to 'apiurl' url.id}}{{if url.endpoint_url url.endpoint_url "New API"}}{{/link-to}}</li>
             {{else}}
               <li>No APIs available</li>
             {{/each}}
@@ -72,6 +72,9 @@
       <div class="panel panel-default">
         <div class="panel-body">
           {{outlet}}
+          {{#unless selectedAPI}}  
+            <p><b>Please start by creating or selecting an API.</b><br/>You can find instructions for using the Application in the {{#link-to "help"}}Help-section{{/link-to}}</p>
+          {{/unless}}
         </div>
       </div>
     </div> <!-- Panel end-->

@@ -15,25 +15,25 @@ export default Ember.Route.extend({
       this.set('authProtoName', selection);
 
     },
-      save(apiurl) {
-        Ember.Logger.log("log: " + apiurl.get('protocol'));
-        var endpoint_url = null;
-        var port = null;
-          if (apiurl.get('protocol') === "HTTP/1.1"){
-            Ember.Logger.log("log: " + apiurl.id);
-            endpoint_url = "http://"+apiurl.get('domain')+apiurl.get('base_path');
-            port = 80;
-          }else if (apiurl.get('protocol') === "HTTPS/1.1") {
-            Ember.Logger.log("log: " + apiurl.id);
-            endpoint_url = "https://"+apiurl.get('domain')+apiurl.get('base_path');
-            port = 443;
-          }
-          apiurl.set('port',port);
-          apiurl.set('endpoint_url',endpoint_url);
-          apiurl.save();
-          this.controllerFor('application').send('saveSelection', apiurl);
-          Ember.Logger.log("Data is saved for API URL id: " + apiurl.id);
-          Ember.get(this, 'flashMessages').success('Saved!');
+    save(apiurl) {
+      Ember.Logger.log("log: " + apiurl.get('protocol'));
+      var endpoint_url = null;
+      var port = null;
+        if (apiurl.get('protocol') === "HTTP/1.1"){
+          Ember.Logger.log("log: " + apiurl.id);
+          endpoint_url = "http://"+apiurl.get('domain')+apiurl.get('base_path');
+          port = 80;
+        }else if (apiurl.get('protocol') === "HTTPS/1.1") {
+          Ember.Logger.log("log: " + apiurl.id);
+          endpoint_url = "https://"+apiurl.get('domain')+apiurl.get('base_path');
+          port = 443;
+        }
+        apiurl.set('port',port);
+        apiurl.set('endpoint_url',endpoint_url);
+        apiurl.save();
+        this.controllerFor('application').send('saveSelection', apiurl);
+        Ember.Logger.log("Data is saved for API URL id: " + apiurl.id);
+        Ember.get(this, 'flashMessages').success('Saved!');
       }
   }
 });

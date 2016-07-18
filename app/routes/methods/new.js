@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
     model() {
         var method = this.store.createRecord('method', {
-            method: 'newMethod',
+            method: '',
             description: '',
             resource: '',
             queryparams: '',

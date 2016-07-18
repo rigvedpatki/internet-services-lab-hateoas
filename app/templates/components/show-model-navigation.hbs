@@ -7,12 +7,14 @@
         <li {{action "toggleModel" model }}>
           {{#link-to linkToModel model.id}}
          
-            <label id="lbl"  >
+            <label id="lbl" >
               < span class="caret {{if model.isExpanded "caret-down" "caret-right"}}"> </span>
               {{#if model.path}}
                 {{model.path}}
-                {{else if model.name}}
+              {{else if model.name}}
                 {{model.name}}
+              {{else}}
+                New {{modelNameSingular}}
               {{/if}}
             </label>
          
@@ -23,29 +25,33 @@
             {{#if submodelIsMethod}}
               {{#each model.methods as |method|}}
                 {{#if method.id}}
-                  <li>
-                    {{#if method.method}}
-                     {{#if (eq method.method "PATCH")}}
-                       <button id=btnmm" class="btn btn-warning btn-sm raised">{{method.method}}</button>
-                     {{/if}}
-                      {{#if (eq method.method "POST")}}
-                       <button id=btnmm" class="btn btn-warning btn-sm raised">{{method.method}}</button>
-                     {{/if}}
-                     {{#if (eq method.method "GET")}}
-                       <button id=btnmm" class="btn btn-success btn-sm raised">{{method.method}}</button>
-                     {{/if}}
-                     {{#if (eq method.method "OPTIONS")}}
-                       <button id=btnmm" class="btn btn-success btn-sm raised">{{method.method}}</button>
-                     {{/if}}
-                     {{#if (eq method.method "PUT")}}
-                       <button id=btnmm" class="btn btn-info btn-sm raised">{{method.method}}</button>
-                     {{/if}}
-                     {{#if (eq method.method "DELETE")}}
-                       <button id=btnmm" class="btn btn-danger btn-sm raised">{{method.method}}</button>
-                     {{/if}}
-                    {{else if method.name}}
-                      {{method.name}}
-                    {{/if}}
+                  <li {{action "showMethod" method}}>
+                    {{#link-to linkToModel model.id}}
+                      {{#if method.method}}
+                       {{#if (eq method.method "PATCH")}}
+                         <button id=btnmm" class="btn btn-warning btn-sm raised">{{method.method}}</button>
+                       {{/if}}
+                        {{#if (eq method.method "POST")}}
+                         <button id=btnmm" class="btn btn-warning btn-sm raised">{{method.method}}</button>
+                       {{/if}}
+                       {{#if (eq method.method "GET")}}
+                         <button id=btnmm" class="btn btn-success btn-sm raised">{{method.method}}</button>
+                       {{/if}}
+                       {{#if (eq method.method "OPTIONS")}}
+                         <button id=btnmm" class="btn btn-success btn-sm raised">{{method.method}}</button>
+                       {{/if}}
+                       {{#if (eq method.method "PUT")}}
+                         <button id=btnmm" class="btn btn-info btn-sm raised">{{method.method}}</button>
+                       {{/if}}
+                       {{#if (eq method.method "DELETE")}}
+                         <button id=btnmm" class="btn btn-danger btn-sm raised">{{method.method}}</button>
+                       {{/if}}
+                      {{else if method.name}}
+                        {{method.name}}
+                      {{else}}
+                        New Method
+                      {{/if}}
+                    {{/link-to}}
                   </li>
                 {{/if}}
               {{/each}}
@@ -53,10 +59,14 @@
               {{#each model.properties as |property|}}
                 {{#if property.id}}
                   <li>
-                    {{#if property.name}}
-                       <button  class="btn btn-primary btn-sm outline">{{property.name}}</button>
-                    {{/if}}
+                    {{#link-to linkToFirstSubModel property.id}}
+                      {{#if property.name}}
+                         <button  class="btn btn-primary btn-sm outline">{{property.name}}</button>
+                      {{/if}}
+                    {{/link-to}}
                   </li>
+                {{else}}
+                  New Property
                 {{/if}}
               {{/each}}
             {{/if}}

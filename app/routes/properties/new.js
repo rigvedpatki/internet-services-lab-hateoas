@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
       var property = this.store.createRecord('property', {
-          property: 'newProperty',
+          property: '',
           name: '',
           description: '',
           queryparams: '',

@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     var var_entity = this.store.createRecord('entity', {
-      name: 'New Entity',
+      name: '',
       description: ''
     });
     var_entity.save();
@@ -11,7 +11,7 @@ export default Ember.Route.extend({
   },
   afterModel(apiModel) {
     var var_entity = this.store.createRecord('entity', {
-      name: 'New Entity',
+      name: '',
       description: '',
       api: apiModel
     });

@@ -8,7 +8,6 @@ export default Ember.Component.extend({
         object.set('visible', false);
         object.save();
       });
-      Ember.Logger.log("Starting to close Qury Parameter.");
       method.get('queryParams').forEach(function(object) {
         object.set('visible', false);
         object.save();
@@ -19,9 +18,9 @@ export default Ember.Component.extend({
       });
 
       var queryParam = this.store.createRecord('query-parameter', {
-        name: 'QueryParameter',
+        name: '',
         type: 'String',
-        description: 'This is my query parameter.',
+        description: '',
         example: '',
         method: method,
         visible: 'true'

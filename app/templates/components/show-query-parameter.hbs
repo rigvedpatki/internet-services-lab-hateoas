@@ -1,16 +1,16 @@
-<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"></span>QueryParameter</h4>
+<h4 {{action "toggleVisibility" model}}>< span class="caret {{if model.visible "caret-down" "caret-right"}}"></span>{{if model.name model.name "New Queryparameter"}}</h4>
 {{#if model.visible}}
   <div id="margine">
 	  <form {{action "save" model on="change"}}>
-	    Name:{{input value=model.name}}
+	    Name:{{input value=model.name placeholder="e.g. Pet"}}
 	    Type:{{#x-select value=model.type}}
 	      {{#each types as |type|}}
 	        {{#x-option selected=(if (eq model.type type) "selected" "") value=type}}{{type}}{{/x-option}}
 	      {{/each}}
 	    {{/x-select}}
-	    Description:{{input value=model.description}}
+	    Description:{{input value=model.description placeholder="e.g. Type of the pet."}}
 	    <div id="dd">
-        Example:{{input value=model.example}}
+        Example:{{input value=model.example placeholder="cat"}}
       </div>
 	  </form>
   </div>

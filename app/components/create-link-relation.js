@@ -8,7 +8,6 @@ actions: {
         object.set('visible', false);
         object.save();
       });
-      Ember.Logger.log("Starting to close Qury Parameter.");
       method.get('queryParams').forEach(function(object) {
         object.set('visible', false);
         object.save();

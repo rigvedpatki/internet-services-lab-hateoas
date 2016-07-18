@@ -84,7 +84,7 @@ export default Ember.Component.extend({
     });
   },
   validationError: false,
-  errorMessage: "Rel must be a URI starting with 'http' or 'coap' and have a trailing '/' after domain (e.g. 'http://example.org/' or 'http://example.org/rels/todo')",
+  errorMessage: "Rel must be a URL starting with 'http' or 'coap' and have a trailing '/' after domain (e.g. 'http://example.org/' or 'http://example.org/rels/todo')",
   actions: {
     save(model) {
       if( !this.get('model').get('registered')) {

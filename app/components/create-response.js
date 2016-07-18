@@ -20,8 +20,8 @@ export default Ember.Component.extend({
 
       var response = this.store.createRecord('response', {
         status: '200 - OK',
-        name: 'myOKResponse',
-        description: 'This is my OK response.',
+        name: '',
+        description: '',
         method: method,
         visible: 'true'
       });
