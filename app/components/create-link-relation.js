@@ -18,8 +18,7 @@ actions: {
       });
 
       var linkrelation = this.store.createRecord('link-relation', {
-        registered: 'true',
-        rel: 'next',
+        rel: '',
         method: method,
         visible: 'true'
       });

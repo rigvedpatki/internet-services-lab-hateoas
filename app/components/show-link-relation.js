@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  selfRegisteredTypes: [
+    "profile"
+  ],
   willRender() {
     this.set('hints', {
       "about": "Refers to a resource that is the subject of the link's context.",
