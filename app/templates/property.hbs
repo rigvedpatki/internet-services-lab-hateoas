@@ -4,9 +4,9 @@
       Name:{{input value=model.name }}
       Description:{{input value=model.description }}
     </form>
-
+    <div id="res1">
     {{#link-to "properties.delete" model tagName="button" class="btn btn-danger btn-xs"}}Remove{{/link-to}}
-
+    </div>
     {{#each flashMessages.queue as |flash|}}
       {{flash-message flash=flash}}
     {{/each}}

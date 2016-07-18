@@ -12,12 +12,12 @@
 
     <div id="navbar" class="collapse navbar-collapse">
       <!--the add API button-->
-      <div class="pull-right">
-        {{#link-to "apiurls.new" tagName="button" class="btn btn-danger "}}Add API {{/link-to}}
-      </div>
+      
+        {{#link-to "apiurls.new" id="nn" tagName="button" class="btn btn-success btn-xs round outline "}}Add API {{/link-to}}
+      
 
       <!--Input API-->
-      <div class="pull-right">
+      <div id="mme">
         {{download-swagger}}
       </div>
 
@@ -31,15 +31,16 @@
           {{#bs-dropdown-toggle}}Your APIs <span class="caret"></span>{{/bs-dropdown-toggle}}
           {{#bs-dropdown-menu}}
             {{#each model.apiurls as |url|}}
-              <li {{action "saveSelection" url}}> {{#link-to 'apiurl' url.id}}{{if url.endpoint_url url.endpoint_url "New API"}}{{/link-to}}</li>
+           <li{{action "saveSelection" url}}> {{#link-to 'apiurl' url.id}}{{if url.endpoint_url url.endpoint_url "New API"}}{{/link-to}}</li>
             {{else}}
               <li>No APIs available</li>
             {{/each}}
           {{/bs-dropdown-menu}}
         {{/bs-dropdown}}
         {{#if selectedAPI}}
-          <li>{{#link-to 'apiurl' selectedAPI}}{{selectedEndpoint}}{{/link-to}}</li>
+          <li id="mm">{{#link-to 'apiurl' selectedAPI}}{{selectedEndpoint}}{{/link-to}}</li>
         {{/if}}
+           
       </ul>
     </div> <!--/.nav-collapse -->
   </div> <!-- col-lg-->

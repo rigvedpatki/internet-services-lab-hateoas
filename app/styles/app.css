@@ -116,7 +116,7 @@ h4 {
 }
 #ressa{
 	position: absolute;
-	margin-top: -90px;
+	margin-top: -120px;
 	margin-left: 750px;
 }
 .jumbotron{
@@ -137,6 +137,7 @@ h4 {
 .pull-right {
   float: right !important;
 }
+
 #dd{
 	margin-top: 5px;
 	margin-left: -16px;
@@ -192,6 +193,8 @@ h4 {
 	cursor: pointer;
 }
 #btnmm{
+    margin-bottom: 1%;
+    margin-top: -2%;
 }
 .raised {
     box-shadow: 0 3px 0 0 #007299;
@@ -349,7 +352,42 @@ padding-left: 10px;
     border-color: white;
     color: white;
 }
-.download:active {
+#download:active {
     border-color: white;
     color:white;
+}
+#mme{
+    position: absolute;
+    margin-left: 75%;
+    margin-bottom: 1%;
+    border: white solid white;
+    
+   
+}
+
+#mm{
+    position: absolute;
+    margin-left: 55%;
+    margin-bottom: 1%;
+    
+   
+}
+
+#nn{
+   background: transparent;	
+   padding: 8px 8px;
+   border: 2px solid #1fcc00;
+   color: #1fcc00;
+   margin-top: 0.5%;
+   position: absolute;
+    margin-left: 45%;
+}
+    
+#nn:hover {
+    border-color: white;
+    color: white;
+}
+.nn:active {
+    border-color: green;
+    color:green;
 }
