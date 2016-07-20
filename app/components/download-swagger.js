@@ -34,21 +34,27 @@ export default Ember.Component.extend({
         resource.get('methods').forEach(function(method) {
           if (typeof(method) !== 'undefined') {
             var methodObject = {
-              "description": method.get('description'),
+              "tags": [],
+              "summary": method.get('description'),
               "rel": method.get('rel'),
-              "linkRelations": {},
-              "queryParameters": {},
+              "parameters": {},
               "responses": {}
             };
+            var linkRelations = [], externalDocs = [];
             method.get('linkRelations').forEach(function(linkRelation) {
               var rel = linkRelation.get('rel');
               var url = linkRelation.get('url');
-              if( typeof(rel) !== 'undefined' && typeof(url) !== 'undefined') {
-                methodObject.linkRelations[rel] = {
-                  "url": url
-                };
+              if( typeof(rel) !== 'undefined') {
+                linkRelations.push(rel);
+                if( rel == 'profile' && typeof(url) !== 'undefined') {
+                  externalDocs.push(url);
+                }
               }
             });
+            methodObject.tags = linkRelations;
+            if( externalDocs.length > 0) {
+              methodObject.externalDocs = externalDocs;
+            }
 
             method.get('queryParams').forEach(function(queryParameter) {
               var queryParamObj = {};
@@ -66,7 +72,7 @@ export default Ember.Component.extend({
                 if (typeof(example) !== 'undefined') {
                   queryParamObj.example = example;
                 }
-                methodObject.queryParameters[name] = queryParamObj;
+                methodObject.parameters[name] = queryParamObj;
               }
             });
             

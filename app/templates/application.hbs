@@ -31,7 +31,7 @@
           {{#bs-dropdown-toggle}}Your APIs <span class="caret"></span>{{/bs-dropdown-toggle}}
           {{#bs-dropdown-menu}}
             {{#each model.apiurls as |url|}}
-           <li{{action "saveSelection" url}}> {{#link-to 'apiurl' url.id}}{{if url.endpoint_url url.endpoint_url "New API"}}{{/link-to}}</li>
+              <li{{action "saveSelection" url}}> {{#link-to 'apiurl' url.id}}{{if url.endpoint_url url.endpoint_url "New API"}}{{/link-to}}</li>
             {{else}}
               <li>No APIs available</li>
             {{/each}}
