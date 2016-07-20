@@ -20,6 +20,7 @@ actions: {
       var linkrelation = this.store.createRecord('link-relation', {
         rel: '',
         method: method,
+        entity: null,
         visible: 'true'
       });
       linkrelation.save();

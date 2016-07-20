@@ -13,4 +13,5 @@ export default Model.extend({
   responses: hasMany('response'),
   properties: hasMany('property'),
   isExpanded: attr('boolean'),
+  linkRelations: hasMany('link-relation')
 });

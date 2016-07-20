@@ -28,6 +28,18 @@
       <p>No Properties yet.</p>
     {{/if}}
   </div>
+
+  {{create-link-relation-entity model=model store=store}}
+  <div class="jumbotron">
+    {{#if model.linkRelations}}
+      {{#each model.linkRelations as |linkRelation|}}
+        {{show-link-relation-entity model=linkRelation}}
+      {{/each}}
+    {{else}}
+      <p>No Link Relations yet.</p>
+    {{/if}}
+  </div>
+
   {{#each flashMessages.queue as |flash|}}
     {{flash-message flash=flash}}
   {{/each}}

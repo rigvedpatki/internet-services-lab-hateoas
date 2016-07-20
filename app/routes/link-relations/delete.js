@@ -8,17 +8,24 @@ export default Ember.Route.extend({
   afterModel(linkRelation, transition) {
     const flashMessages = Ember.get(this, 'flashMessages');
     let linkRelationId = linkRelation.id;
-
-    linkRelation.get('method').then(function(method) {
-      method.get('linkRelations').then( function(linkRelations) {
-        linkRelations.removeObject(linkRelationId);
-        method.save();
-        linkRelation.destroyRecord();
-        
-        flashMessages.success('Link Relation deleted!');
-        Ember.Logger.log("Data is destroyed for link Relation with id: " + linkRelationId);
+      linkRelation.get('method').then(function(method) {
+        method.get('linkRelations').then( function(linkRelations) {
+          linkRelations.removeObject(linkRelationId);
+          method.save();
+          linkRelation.destroyRecord();
+          flashMessages.success('Link Relation deleted!');
+          Ember.Logger.log("Data is destroyed for link Relation with id: " + linkRelationId);
+        });
       });
-    });
+      linkRelation.get('entity').then(function(entity) {
+        entity.get('linkRelations').then( function(linkRelations) {
+          linkRelations.removeObject(linkRelationId);
+          entity.save();
+          linkRelation.destroyRecord();
+          flashMessages.success('Link Relation deleted!');
+          Ember.Logger.log("Data is destroyed for link Relation with id: " + linkRelationId);
+        });
+      });
     transition.abort();
   }
 });

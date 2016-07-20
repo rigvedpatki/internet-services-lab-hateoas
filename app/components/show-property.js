@@ -2,7 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   types: [
-    "URL"
+    "URL",
+    "String",
+    "Integer",
+    "Boolean",
+    "Double",
+    "Long",
+    "Float",
+    "Short",
+    "Byte",
+    "Timestamp"
   ],
   actions: {
     save(model) {
