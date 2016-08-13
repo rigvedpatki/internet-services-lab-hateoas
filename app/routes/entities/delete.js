@@ -6,6 +6,13 @@ export default Ember.Route.extend({
       return this.store.findRecord('entity', params.entity_id);
   },
   afterModel(entity, transition) {
+    /**
+     * Deletes the given entity and every Property linked to it.
+     * Once the objects are deleted, transitions to Application and
+     * sends a flash message that the deletion was successful.
+     * @ param entity: the entity object to be deleted
+     * @ param transition: Not used
+     */
     let entityId = entity.id;
     entity.get('properties').forEach( function(property) {
       property.destroyRecord();

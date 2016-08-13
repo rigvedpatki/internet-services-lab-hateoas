@@ -45,7 +45,7 @@
     {{create-response model=model store=store}}
     {{#if model.responses}}
       {{#each model.responses as |response|}}
-        {{show-response model=response entities=entities}}
+        {{show-response model=response entities=entities api=api resource=resource routeToNewEntity=routeToNewEntity}}
       {{/each}}
     {{else}}
       <p>No Responses yet.</p>

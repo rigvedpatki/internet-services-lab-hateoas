@@ -1,9 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  store: Ember.inject.service(),
   routing: Ember.inject.service('-routing'),
   statusCodes : [
-    // Source: http://www.restapitutorial.com/httpstatuscodes.html
+    /**
+     * All the possible HTTP-status codes
+     * Source: http://www.restapitutorial.com/httpstatuscodes.html
+     */
     "100 - Continue",
     "101 - Switching Protocols",
     "102 - Processing",
@@ -73,15 +77,54 @@ export default Ember.Component.extend({
   ],
   actions: {
     save(model) {
+      /**
+       * Saves the given Response.
+       * If the creation of a new Entity was selected from linked Entities,
+       * redirects to entity.new and passes the selected apiurl.
+       * Once successful, sends the Success-flashmessage.
+       * @param model: The Response-object to be saved
+       */
+      var backup = this;//.get('routing'); // Used for routing when a new Entity is created
+      var resource = this.get('resource');
+      var shouldCreateEntity = false;
+      var singleAPIForEntity = null;
+      Ember.Logger.log("Resource in Show Response: " + resource.id);
       if( !this.get('model').get('entity').get('id')) {
-        this.get("routing").transitionTo("entities.new");
-        return;
+        Ember.Logger.log("Got entity.");
+        this.get('api').forEach(function(singleApi) {
+          var apiId = singleApi.id;
+          var resourId = resource.get('api').get('id');
+          if( apiId == resourId) {
+            var var_entity = backup.get('store').createRecord('entity', {
+              name: '',
+              description: '',
+              api: singleApi
+            });
+            var_entity.save();
+            singleApi.save();
+            backup.sendAction('routeToNewEntity', var_entity);
+          }
+          else {
+            Ember.Logger.log("API and Resource don't match.");
+          }
+        });
+      } else {
+        model.save();
+        Ember.Logger.log("Data is saved for Response id: " + model.id);
+        Ember.get(this, 'flashMessages').success('Saved!');
       }
-      model.save();
-      Ember.Logger.log("Data is saved for Response id: " + model.id);
-      Ember.get(this, 'flashMessages').success('Saved!');
+      if( shouldCreateEntity) {
+        Ember.Logger.log("Routing to entities.new");
+        this.get("routing").transitionTo("entities.new", singleAPIForEntity);
+      }
     },
     saveEntity(entity, component) {
+      /**
+       * Saves the selected Response to the correct entity, and
+       * removes the relationship from the previous Entity.
+       * @param entity: The Entity-object to be saved
+       * @param component: the component of the selection, not used
+       */
       var entities = this.get('entities');
       var myResponse = component.get('response');
       entities.forEach( function(entity2) {

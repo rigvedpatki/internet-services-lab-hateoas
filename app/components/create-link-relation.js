@@ -3,6 +3,11 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 actions: {
     createLinkRelation() {
+      /**
+       * Creates a new Link Relation for the model of this function.
+       * Closes all other Link Relations, Query Parameters and Responses
+       * Once the object is created, reroutes to the created Resource.
+       */
       var method = this.get('model');
       method.get('linkRelations').forEach(function(object) {
         object.set('visible', false);

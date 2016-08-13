@@ -6,6 +6,16 @@ export default Ember.Route.extend({
     return this.store.findRecord('method', params.method_id);
   },
   afterModel(method, transition) {
+    /**
+     * Deletes the given method and everything linked to it.
+     * That is, deletes all the Link Relations, Query Parameters 
+     * and Responses that are linked to the given Method. Also
+     * removes the relationships between Responses and Entities.
+     * Once the objects are deleted, transition sends a flash 
+     * message that deletion was successful.
+     * @ param method: the method object to be deleted
+     * @ param transition: Not used (aborted)
+     */
     const flashMessages = Ember.get(this, 'flashMessages');
     let methodId = method.id;
 

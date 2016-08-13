@@ -6,6 +6,10 @@ export default Ember.Component.extend({
   ],
   willRender() {
     this.set('hints', {
+      /**
+       * Represents the selections that are possible for the link type.
+       * Also contains descriptions for them.
+       */
       "about": "Refers to a resource that is the subject of the link's context.",
       "alternate": "Refers to a substitute for this context",
       "appendix": "Refers to an appendix.",
@@ -90,6 +94,13 @@ export default Ember.Component.extend({
   errorMessage: "Rel must be a URL starting with 'http' or 'coap' and have a trailing '/' after domain (e.g. 'http://example.org/' or 'http://example.org/rels/todo')",
   actions: {
     save(model) {
+      /**
+       * Saves the given Link Relation- model.
+       * Checks that the pattern for self-registered url is correct. If incorrect, aborts and 
+       * sets validationError 'true'.
+       * Once successful, sends the Success-flashmessage.
+       * @param model: the Link Relation- object to be saved
+       */
       if( !this.get('model').get('registered')) {
         var pattern = new RegExp("(http|coap):\/\/[a-z]*.[a-z]*\/[a-z\/]*"); // matches a url starting with "http" or "coap", and requires trailing / after ".org", e.g. "http://example.org/" or "http://example.org/rels/todo"
         var ans = pattern.test(this.get('model').get('rel'));
@@ -113,6 +124,12 @@ export default Ember.Component.extend({
       linkRelation.save();
     },
     saveRel: function(selection, component) {
+      /**
+       * Saves the relation of the given Link Relation- model.
+       * Once successful, sends the Success-flashmessage.
+       * @param selection: The selection made, not used
+       * @param component: The component, not used
+       */
       var linkRelation = this.get('model');
       linkRelation.save();
       Ember.Logger.log("Data is saved for linkRelation id: " + linkRelation.id);

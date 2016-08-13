@@ -14,12 +14,12 @@
 
   <div>
 
-    <h3>Methods<button id="mtd" class="btn btn-success btn-md round "{{action "createMethod" model.resource}}>Add </button>
+    <h3>Methods<button id="mtd" class="btn btn-success btn-md round "{{action "createMethod" model.resource}}>Add a {{ownApi}}</button>
     </h3>
       {{#if model.resource.methods}}
         {{#each model.resource.methods as |method|}}
           <div id="sep" class="panel panel-default">
-            {{show-method model=method entities=model.entities store=store}}
+            {{show-method model=method entities=model.entities api=model.apis store=store resource=model.resource routeToNewEntity='routeToNewEntity'}}
           </div>
         {{/each}}
       {{else}}

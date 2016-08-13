@@ -6,6 +6,16 @@ export default Ember.Route.extend({
     return this.store.findRecord('apiurl', params.apiurl_id);
   },
   afterModel(apiurl, transition) {
+    /**
+     * Deletes the given apiurl and everything linked to it.
+     * That is, deletes all the Resources, Methods, Link Relations,
+     * Query Parameters, Responses, Entities and Properties that
+     * are linked to the given apiurl.
+     * Once the objects are deleted, transitions to Application and
+     * sends a flash message that deletion was successful.
+     * @ param apiurl: the apiurl object to be deleted
+     * @ param transition: Not used
+     */
     apiurl.get('resources').forEach( function(resource) {
       resource.get('methods').forEach( function(method) {
         method.get('queryParams').forEach( function(queryParam) {

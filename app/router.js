@@ -32,8 +32,8 @@ Router.map(function() {
 
   this.route('entity', { path: '/entities/:entity_id' });
   this.route('entities', function() {
-    this.route('new');
-    this.route('delete', { path: '/entities/delete/:enitity_id' });
+    this.route('new', { path: '/entities/new/:apiurl_id' });
+    this.route('delete', { path: '/entities/delete/:entity_id' });
   });
   this.route('property', { path: '/properties/:property_id' });
   this.route('properties', function() {

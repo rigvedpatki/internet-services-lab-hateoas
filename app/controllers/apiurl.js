@@ -2,10 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   protos:[
+    /**
+     * The different HTTPS protocols
+     */
     "HTTP/1.1",
     "HTTPS/1.1"
   ],
   auths:[
+    /**
+     * The different authorizations available in HTTP
+     */
     {"name":"Custom authentication","code":"CUSTOM"},
     {"name":"Plain FTP authentication","code":"FTP_PLAIN"},
     {"name":"Amazon IAM-based authentication","code":"HTTP_AWS_IAM"},
@@ -26,6 +32,11 @@ export default Ember.Controller.extend({
     {"name":"Plain SMTP authentication","code":"SMTP_PLAIN"}
   ],
   getCode: function(authName , auths){
+    /**
+     * Returns the code of the given authName.
+     * @param authName: The description of the authentication protocol
+     * @param auths: List of possible authentication protocols
+     */
     for (var i = 0; i < 18; i++) {
       if (auths[i].name === authName) {
         return auths[i].code;
@@ -34,6 +45,11 @@ export default Ember.Controller.extend({
   },
   actions:{
     saveAuth: function(apiurl){
+      /**
+       * Saves the given apiurl.
+       * Once successful, sends the Success-flashmessage.
+       * @param apiurl: The Apiurl-object to be saved
+       */
       var authName = null;
       authName = apiurl.get('authProtoName');
       Ember.Logger.log(authName);

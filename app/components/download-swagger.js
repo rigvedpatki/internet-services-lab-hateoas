@@ -1,11 +1,15 @@
 import Ember from 'ember';
 
-/**
- * Receives: resources, entities, api
- */
 export default Ember.Component.extend({
   actions: {
     downloadFile: function() {
+      /**
+       * Generates a Swagger-file of the current api. The file includes all
+       * the Resources and Entities and everything they include.
+       * The generated file is called [apiurl-name].swagger, and a download-
+       * prompt is opened for the user.
+       * @requires: The Datastore must contain a selected apiurl
+       */
       var api = this.get('api');
       Ember.Logger.log("Generating Swagger file for api: " + api.get('generalInfoDescription') + " (" + api.id + ")");
       

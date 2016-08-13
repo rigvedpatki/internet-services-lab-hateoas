@@ -3,13 +3,15 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
       createLinkRelation() {
+      /**
+       * Creates a new Link Relation for the Entity-model of this function.
+       * Closes all other Link Relations, and Properties.
+       */
         var entity = this.get('model');
-        Ember.Logger.log(this.toString());
         entity.get('linkRelations').forEach(function(object) {
           object.set('visible', false);
           object.save();
         });
-        Ember.Logger.log("Entered new Link Relation.");
         entity.get('properties').forEach(function(object) {
           object.set('visible', false);
           object.save();

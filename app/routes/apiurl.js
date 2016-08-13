@@ -7,24 +7,23 @@ export default Ember.Route.extend({
   },
   actions: {
     saveSelectionProtocol(selection,component){
-      Ember.Logger.log("entered saveSelectionProtocol");
       this.set('protocol',selection);
     },
     saveSelectionAuthProtocol(selection,component){
-      Ember.Logger.log("entered saveSelectionAuthProtocol");
       this.set('authProtoName', selection);
-
     },
     save(apiurl) {
-      Ember.Logger.log("log: " + apiurl.get('protocol'));
+      /**
+       * Saves the given apiurl.
+       * Once the object is saved, sends a flash message that deletion was successful.
+       * @ param apiurl: the apiurl object to be saved
+       */
       var endpoint_url = null;
       var port = null;
         if (apiurl.get('protocol') === "HTTP/1.1"){
-          Ember.Logger.log("log: " + apiurl.id);
           endpoint_url = "http://"+apiurl.get('domain')+apiurl.get('base_path');
           port = 80;
         }else if (apiurl.get('protocol') === "HTTPS/1.1") {
-          Ember.Logger.log("log: " + apiurl.id);
           endpoint_url = "https://"+apiurl.get('domain')+apiurl.get('base_path');
           port = 443;
         }

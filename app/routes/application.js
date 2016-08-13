@@ -10,6 +10,10 @@ export default Ember.Route.extend({
   },
   actions: {
     reroute(route, objectId) {
+      /**
+       * Reroutes the application to the given object.
+       * @ param objectId: the id of the object to route to
+       */
       Ember.Logger.log("Rerouting.");
       this.transitionTo(route, objectId);
     }

@@ -3,6 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
   createResponse() {
+      /**
+       * Creates a new Response for the Method-model of this function.
+       * Closes all other Link Relations, Query Parameters and Responses
+       */
       var method = this.get('model');
       method.get('linkRelations').forEach(function(object) {
         object.set('visible', false);

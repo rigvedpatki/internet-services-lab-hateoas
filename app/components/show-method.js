@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   methods : [
+    /**
+     * The possible HTTP-methods
+     */
     "DELETE",
     "GET",
     "OPTIONS",
@@ -10,6 +13,11 @@ export default Ember.Component.extend({
     "PUT"
   ],
   actions: {
+      /**
+       * Saves the given method.
+       * Once successful, sends the Success-flashmessage.
+       * @param method: The Method-object to be saved
+       */
     save(method) {
       method.save();
       Ember.Logger.log("Data is saved for method id: " + method.id);
@@ -24,6 +32,14 @@ export default Ember.Component.extend({
         method.set('visible', true);
       }
       method.save();
+    },
+    routeToNewEntity(apiurl) {
+      /**
+       * Reroutes the application to the given object.
+       * @ param apiurl: the apiurl-model for which the Entity is created
+       */
+      Ember.Logger.log("Routing from Model.");
+      this.sendAction('routeToNewEntity', apiurl);
     }
   }
 });

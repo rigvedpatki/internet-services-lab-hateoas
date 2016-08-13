@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   types : [
+    /**
+     * The possible object types a Query Parameter can have.
+     */
     "String",
     "Integer",
     "Boolean",
@@ -13,6 +16,9 @@ export default Ember.Component.extend({
     "Timestamp"
   ],
   didReceiveAttrs() {
+      /**
+       * Adds all the entities of the selected api to the types-list.
+       */
     Ember.Logger.log("Starting to push entities.");
     var types = this.get('types');
     this.get('entities').forEach(function(entity) {
@@ -22,6 +28,11 @@ export default Ember.Component.extend({
   },
   actions: {
     save(model) {
+      /**
+       * Saves the given Query Parameter.
+       * Once successful, sends the Success-flashmessage.
+       * @param model: The Query Parameter-object to be saved
+       */
       model.save();
       Ember.Logger.log("Data is saved for Query Parameter id: " + model.id);
       Ember.get(this, 'flashMessages').success('Saved!');

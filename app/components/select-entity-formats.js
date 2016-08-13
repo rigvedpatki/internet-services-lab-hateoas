@@ -134,6 +134,12 @@ export default Ember.Component.extend({
   ],
   actions: {
     save: function(selection, component) {
+      /**
+       * Saves the entity.
+       * Once done, sends a Success-flashmessage
+       * @param selection: the selection made, not used
+       * @param component: the component where the selection was made, not used
+       */
       var entity = this.get('model');
       entity.save();
       Ember.Logger.log("Data is saved for entity id: " + entity.id);
