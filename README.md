@@ -2,7 +2,7 @@
 
 ## Graphical HATEOAS Representation for REST API Development
 
-An important aspect of Restful APIs is the concept of “Hypermedia as the engine of application state” (HATEOAS). In this project we will develop a graphical REST API prototyping system as a web application and include the concept of HATEOAS.
+An important aspect of Restful APIs is the concept of “Hypermedia as the engine of application state” (HATEOAS). In this project we developed a graphical REST API prototyping system as a web application and included the concept of HATEOAS in it.
 
 ## Prerequisites
 
